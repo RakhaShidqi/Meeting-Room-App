@@ -1,11 +1,24 @@
 html,body {
+    width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #816969;
+    /* background-color: #816969; */
+    background-image: url(../img/bg.jpg);
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/bg.jpg');
+    background-size: cover; /* Pastikan background penuh */
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .circle {

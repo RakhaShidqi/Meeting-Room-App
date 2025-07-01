@@ -21,8 +21,15 @@
             <input type="email" name="email" id="email" placeholder="       Email ID/Username" required>
             <br><br>
 
-            <input type="password" name="password" id="pass" placeholder="       Password" required>
-            <br><br>
+            <input type="password" name="password" id="pass" placeholder="       Password" required><br>
+
+            @if ($errors->any())
+                <span style="color: red; font-size: 14px; margin:0;">
+                    {{ $errors->first() }}
+                </span>
+            @endif
+
+
 
             <a href="{{ url('/forgot-password') }}">Lupa Password?</a>
             <br><br>
@@ -32,11 +39,9 @@
 
             <a href="{{ url('/register') }}">Belum ada akun? Daftar</a>
 
-            @if ($errors->any())
-                <div style="color:red; margin-top: 10px;">
-                    {{ $errors->first() }}
-                </div>
-            @endif
+            
+
+
         </form>
 
     </div>
