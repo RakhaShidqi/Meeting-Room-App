@@ -33,9 +33,21 @@ a{
     }
 
     input#email {
-    padding-left: 40px; /* beri ruang untuk ikon */
+    padding: 5px; /* beri ruang untuk ikon */
     background-image: url('../icon/user-solid.svg');
     background-repeat: no-repeat;
     background-position: 10px center;
     background-size: 20px 20px;
+    border-radius: 10px;
+    
+    
+    }
+
+    input#pass {
+        padding: 5px;
+        background-image: url('../icon/lock-solid.svg');
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        background-size: 20px 20px;
+        border-radius: 10px;
     }
