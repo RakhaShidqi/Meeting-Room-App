@@ -102,12 +102,62 @@ a{
         outline: none;
         border-radius: 10px;
     }
-        button:hover.reg {
-        background-color: rgba(136, 114, 114, 0.7);
-    }
-
+        
     input#email::placeholder,
 input#pass::placeholder,input#user::placeholder {
   color: #816969;
   opacity: 1; /* pastikan tidak transparan */
+}
+
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #d9d9d9; 
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    width: 80%; 
+    max-width: 350px; 
+    color: #333; 
+}
+
+.modal-content h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333; 
+}
+
+.modal-content p {
+    margin-bottom: 25px;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #555; 
+}
+
+.modal-content button {
+    background-color: rgba(136, 114, 114, 0.8); 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px; 
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: rgba(136, 114, 114, 1); 
 }

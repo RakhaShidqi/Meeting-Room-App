@@ -90,6 +90,11 @@ a{
         outline: none;
         border-radius: 10px;
     }
+
+    button:hover.log {
+        background-color: rgba(136, 114, 114, 0.7);
+    }
+    
         
     input#email::placeholder,
 input#pass::placeholder {
