@@ -13,18 +13,32 @@
   </div>
 
     <div class="container">
-        <form action="">
+        <form method="POST" action="/login">
+            @csrf
+
             <h2>Selamat Datang</h2>
-            <input type="email" name="" id="email" placeholder="         Email ID/Username">
+
+            <input type="email" name="email" id="email" placeholder="       Email ID/Username" required>
             <br><br>
-            <input type="password" name="" id="pass" placeholder="         Password">
+
+            <input type="password" name="password" id="pass" placeholder="       Password" required>
             <br><br>
-            <a href="http://">Lupa Password?</a>
+
+            <a href="{{ url('/forgot-password') }}">Lupa Password?</a>
             <br><br>
+
             <button type="submit" class="log">Login</button>
             <br><br>
-            <a href="http://127.0.0.1:8000/register">Belum ada akun? Daftar</a>
+
+            <a href="{{ url('/register') }}">Belum ada akun? Daftar</a>
+
+            @if ($errors->any())
+                <div style="color:red; margin-top: 10px;">
+                    {{ $errors->first() }}
+                </div>
+            @endif
         </form>
+
     </div>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,3 +18,10 @@ Route::get('/login', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('/forgot-password', function () {
+    return view('forgot-password');
+});
+
+Route::get('/login', [LoginController::class, 'view']);
+Route::post('/login', [LoginController::class, 'login']);
