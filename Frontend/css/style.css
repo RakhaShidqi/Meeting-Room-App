@@ -9,8 +9,8 @@ html,body {
 }
 
 .container {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 450px;
     background-color: white;
     display: flex;
     justify-content: center;  /* horizontal center */
@@ -30,6 +30,7 @@ a{
       width: 80%;
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
 
     input#email {
@@ -51,3 +52,12 @@ a{
         background-size: 20px 20px;
         border-radius: 10px;
     }
+    
+
+    button.log {
+        padding: 5px;
+        width: 50%;
+        text-align: center;
+    }
+        
+    
