@@ -10,9 +10,9 @@ html,body {
 
 .circle {
     position: absolute;
-  top: calc(50% - 280px); /* sesuaikan angka ini untuk menempel */
-  width: 75px;
-  height: 75px;
+  top: calc(50% - 275px); /* sesuaikan angka ini untuk menempel */
+  width: 87px;
+  height: 87px;
   border-radius: 50%;
   background-color: #d9d9d9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
