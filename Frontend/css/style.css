@@ -17,8 +17,15 @@ html,body {
     align-items: center;      /* vertical center */
     flex-direction: column;
     border-radius: 10px;
-}
 
+}
+h2{
+    text-align: center;
+    margin-top: -30px;
+}
+a{
+    text-align: center;
+}
     form {
       width: 80%;
       display: flex;
