@@ -36,5 +36,9 @@ Route::get('/forgot-password', function () {
     return view('forgot-password');
 });
 
+Route::get('/formbooking', function () {
+    return view('formbooking');
+});
+
 Route::get('/login', [LoginController::class, 'view']);
 Route::post('/login', [LoginController::class, 'login']);
