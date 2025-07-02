@@ -65,55 +65,82 @@
                         <img src="../img/ruangan.jpg" class="gambar-ruangan" alt="">
                         <h3>Ruangan 1</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto pariatur incidunt non consequuntur debitis nobis aspernatur, voluptatum veritatis aperiam impedit necessitatibus consequatur sint quod? Vitae dicta sint consequatur incidunt nam!</p>
+                        <button class="pilih" data-room="">Pilih Ruangan</button>
                     </div>
                     <div class="card">
                         <img src="../img/ruangan.jpg" class="gambar-ruangan" alt="">
                         <h3>Ruangan 2</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto pariatur incidunt non consequuntur debitis nobis aspernatur, voluptatum veritatis aperiam impedit necessitatibus consequatur sint quod? Vitae dicta sint consequatur incidunt nam!</p>
+                        <button class="pilih" data-room="">Pilih Ruangan</button>
                     </div>
                     <div class="card">
                         <img src="../img/ruangan.jpg" class="gambar-ruangan" alt="">
                         <h3>Ruangan 3</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto pariatur incidunt non consequuntur debitis nobis aspernatur, voluptatum veritatis aperiam impedit necessitatibus consequatur sint quod? Vitae dicta sint consequatur incidunt nam!</p>
+                        <button class="pilih" data-room="">Pilih Ruangan</button>
                     </div>
                     <div class="card2">
                         <img src="../img/ruangan.jpg" class="gambar-ruangan" alt="">
                         <h3>Ruangan 4</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto pariatur incidunt non consequuntur debitis nobis aspernatur, voluptatum veritatis aperiam impedit necessitatibus consequatur sint quod? Vitae dicta sint consequatur incidunt nam!</p>
+                        <button class="pilih" data-room="">Pilih Ruangan</button>
                     </div>
                     <div class="card2">
                         <img src="../img/ruangan.jpg" class="gambar-ruangan" alt="">
                         <h3>Ruangan 5</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto pariatur incidunt non consequuntur debitis nobis aspernatur, voluptatum veritatis aperiam impedit necessitatibus consequatur sint quod? Vitae dicta sint consequatur incidunt nam!</p>
+                        <button class="pilih" data-room="">Pilih Ruangan</button>
                     </div>
                     <div class="card2">
                         <img src="../img/ruangan.jpg" class="gambar-ruangan" alt="">
                         <h3>Ruangan 6</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto pariatur incidunt non consequuntur debitis nobis aspernatur, voluptatum veritatis aperiam impedit necessitatibus consequatur sint quod? Vitae dicta sint consequatur incidunt nam!</p>
+                        <button class="pilih" data-room="">Pilih Ruangan</button>
                     </div>
                     <div class="card2">
                         <img src="../img/ruangan.jpg" class="gambar-ruangan" alt="">
                         <h3>Ruangan 7</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto pariatur incidunt non consequuntur debitis nobis aspernatur, voluptatum veritatis aperiam impedit necessitatibus consequatur sint quod? Vitae dicta sint consequatur incidunt nam!</p>
+                        <button class="pilih" data-room="">Pilih Ruangan</button>
                     </div>
                     <div class="card2">
                         <img src="../img/ruangan.jpg" class="gambar-ruangan" alt="">
                         <h3>Ruangan 8</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto pariatur incidunt non consequuntur debitis nobis aspernatur, voluptatum veritatis aperiam impedit necessitatibus consequatur sint quod? Vitae dicta sint consequatur incidunt nam!</p>
+                        <button class="pilih" data-room="">Pilih Ruangan</button>
                     </div>
                     <div class="card2">
                         <img src="../img/ruangan.jpg" class="gambar-ruangan" alt="">
                         <h3>Ruangan 9</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto pariatur incidunt non consequuntur debitis nobis aspernatur, voluptatum veritatis aperiam impedit necessitatibus consequatur sint quod? Vitae dicta sint consequatur incidunt nam!</p>
+                        <button class="pilih" data-room="">Pilih Ruangan</button>
                     </div>
                     <div class="card2">
                         <img src="../img/ruangan.jpg" class="gambar-ruangan" alt="">
                         <h3>Ruangan 10</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto pariatur incidunt non consequuntur debitis nobis aspernatur, voluptatum veritatis aperiam impedit necessitatibus consequatur sint quod? Vitae dicta sint consequatur incidunt nam!</p>
+                        <button class="pilih" data-room="">Pilih Ruangan</button>
+                    </div>
+                    <div class="card2">
+                        <img src="../img/ruangan.jpg" class="gambar-ruangan" alt="">
+                        <h3>Ruangan 11</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto pariatur incidunt non consequuntur debitis nobis aspernatur, voluptatum veritatis aperiam impedit necessitatibus consequatur sint quod? Vitae dicta sint consequatur incidunt nam!</p>
+                        <button class="pilih" data-room="">Pilih Ruangan</button>
+                    </div>
+                    <div class="card2">
+                        <img src="../img/ruangan.jpg" class="gambar-ruangan" alt="">
+                        <h3>Ruangan 12</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto pariatur incidunt non consequuntur debitis nobis aspernatur, voluptatum veritatis aperiam impedit necessitatibus consequatur sint quod? Vitae dicta sint consequatur incidunt nam!</p>
+                        <button class="pilih" data-room="">Pilih Ruangan</button>
+                    </div>
+                    <div class="card2">
+                        <img src="../img/ruangan.jpg" class="gambar-ruangan" alt="">
+                        <h3>Ruangan 13</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto pariatur incidunt non consequuntur debitis nobis aspernatur, voluptatum veritatis aperiam impedit necessitatibus consequatur sint quod? Vitae dicta sint consequatur incidunt nam!</p>
+                        <button class="pilih" data-room="">Pilih Ruangan</button>
                     </div>
                 </div>
             </div>
-            <p id="copyright">Made with heart by Ryan/Tama/Rynetz/Tamskutt</p>
         </main>
     </div>
 
