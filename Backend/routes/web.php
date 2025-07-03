@@ -40,5 +40,53 @@ Route::get('/formbooking', function () {
     return view('formbooking');
 });
 
+Route::get('/formbooking2', function () {
+    return view('formbooking2');
+});
+
+Route::get('/formbooking3', function () {
+    return view('formbooking3');
+});
+
+Route::get('/formbooking4', function () {
+    return view('formbooking4');
+});
+
+Route::get('/formbooking5', function () {
+    return view('formbooking5');
+});
+
+Route::get('/formbooking6', function () {
+    return view('formbooking6');
+});
+
+Route::get('/formbooking7', function () {
+    return view('formbooking7');
+});
+
+Route::get('/formbooking8', function () {
+    return view('formbooking8');
+});
+
+Route::get('/formbooking9', function () {
+    return view('formbooking9');
+});
+
+Route::get('/formbooking10', function () {
+    return view('formbooking10');
+});
+
+Route::get('/formbooking11', function () {
+    return view('formbooking11');
+});
+
+Route::get('/formbooking12', function () {
+    return view('formbooking12');
+});
+
+Route::get('/formbooking13', function () {
+    return view('formbooking13');
+});
+
 Route::get('/login', [LoginController::class, 'view']);
 Route::post('/login', [LoginController::class, 'login']);
