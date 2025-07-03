@@ -13,6 +13,7 @@
                 <p>{{ $ruangan->deskripsi }}</p>
                 <form method="GET" action="{{ route('form.pemesanan', $ruangan->id) }}">
                     <button class="pilih">Pilih Ruangan</button>
+                    <br><button class="edit">Edit</button>
                 </form>
             </div>
         @endforeach
