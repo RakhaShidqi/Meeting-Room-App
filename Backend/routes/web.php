@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\RuanganController;
+use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +16,9 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/ruang-meeting', function () {
-    return view('ruang-meeting');
-});
+// Route::get('/ruangan-meeting', function () {
+//     return view('ruangan-meeting');
+// });
 
 Route::get('/jadwal', function () {
     return view('jadwal');
@@ -90,3 +91,5 @@ Route::get('/formbooking13', function () {
 
 Route::get('/login', [LoginController::class, 'view']);
 Route::post('/login', [LoginController::class, 'login']);
+Route::get('/form-pemesanan/{id}', [PemesananController::class, 'create'])->name('form.pemesanan');
+Route::get('/ruangan-meeting', [RuanganController::class, 'index'])->name('ruangan.index');
