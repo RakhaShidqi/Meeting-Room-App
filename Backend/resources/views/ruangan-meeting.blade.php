@@ -11,8 +11,8 @@
                 <p>{{ $ruangan->kapasitas }}</p>
                 <p>{{ $ruangan->lokasi }}</p>
                 <p>{{ $ruangan->deskripsi }}</p>
-                <form method="GET" action="{{ route('form.pemesanan', $ruangan->id) }}">
-                    <button class="pilih">Pilih Ruangan</button>
+                <form method="GET" action="{{ route('form.pemesanan', ['id' => $ruangan->id, 'nama' => Str::slug($ruangan->nama)]) }}">
+                    <button class="pilih" type="submit">Pilih Ruangan</button>
                     <br><button class="edit">Edit</button>
                 </form>
             </div>
