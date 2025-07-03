@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\PemesananController;
 use App\Http\Controllers\LoginController;
@@ -87,6 +88,14 @@ Route::get('/formbooking12', function () {
 
 Route::get('/formbooking13', function () {
     return view('formbooking13');
+});
+
+Route::get('/form-tambahruang', function () {
+    return view('form-tambahruang');
+});
+
+Route::get('/form-editruang', function () {
+    return view('form-editruang');
 });
 
 Route::get('/login', [LoginController::class, 'view']);

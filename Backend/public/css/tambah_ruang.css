@@ -1,0 +1,281 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.container{
+    margin: 0;
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: 100vh ;
+}
+
+.box-1{
+    background-color: rgb(250, 250, 250);
+    border-right: 1px solid;
+}
+
+.container-dashboard{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dashboard-header{
+    display: flex;
+    border: soid 1px;
+    height: 80px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dashboard-header h2{
+    margin: 0;
+    margin-left: 10px;
+}
+
+.dashboard-header img{
+    margin-left: 20px;
+    padding: 0;
+}
+
+hr{
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-body{
+    margin-top: 10px;
+    padding-left: 15px;
+    font-size: 90%;
+}
+
+.tombol{
+    display: flex;
+    align-items: center;
+}
+
+.tombol img{
+    padding: 0;
+    width: 10%;
+    height: 10%;
+}
+
+.tombol h3{
+    margin-left: 10px;
+}
+
+.gambar{
+    margin-left: 10px;
+}
+
+.main-header{
+    display: flex;
+    margin: 0;
+    height: 80px;
+    background-color: rgb(0, 170, 139);
+    justify-content: right;
+    color: aliceblue;
+}
+
+.main-header p,.main-header img{
+    margin: 0;
+    width: 35px;
+    height: 35px;
+    align-content: center;
+}
+
+.main-header p{
+    width: auto;
+    direction: rtl;
+}
+
+.main-header a{
+    display: inline;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.main-body{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 13px 23px; /* Reduced top/bottom padding */
+    gap: 30px; /* Slightly reduced gap */
+    flex-wrap: wrap;
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 17px;
+}
+
+.input-group > div {
+    flex: 1;
+}
+
+.selected-room-card {
+    flex: 1;
+    max-width: 350px;
+    flex-shrink: 0;
+    width: 300px;
+    align-items: flex-start;
+}
+
+.booking-form-container form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 9.5px; /* Reduced gap between form groups */
+}
+
+.time-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px; /* Reduced gap within time group */
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px; /* Reduced gap within form group */
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.booking-form-container {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px 25px; /* Increased padding slightly for more internal space */
+    max-width: 600px; /* Kept max-width from your initial compact form */
+    width: 90%; /* Adjusted width for better responsiveness and centering */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    flex: none; /* Changed from flex: 2 to flex: none as it's a primary container now */
+    min-width: 360px;
+    align-items: center; /* Stays the same for internal alignment */
+    margin: 0 auto; /* Added margin: 0 auto for horizontal centering */
+    max-height: none; /* Keep this as none to allow content to fit */
+}
+
+.booking-form-container h2 {
+    text-align: center;
+    margin-bottom: 0px; /* Increased margin below heading for more breathing room */
+    color: #00aa8b;
+}
+
+.booking-form-container label {
+    display: block;
+    margin-bottom: 4.5px;
+    font-weight: 500;
+    color: #333;
+    font-size: 15.25px;
+}
+
+.booking-form-container input {
+    width: 100%;
+    padding: 7px 11px; /* Slightly increased input padding for better feel */
+    margin-bottom: 0px;
+    border-radius: 4.25px;
+    border: 1px solid #ccc;
+    font-size: 10.5px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.booking-form-container input:focus {
+    outline: none;
+    border-color: #00aa8b;
+    box-shadow: 0 0 5px rgba(0, 170, 139, 0.3);
+}
+
+.btn-submit {
+    background-color: rgba(0, 170, 139, 0.85);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0px; /* Added margin-top to separate from last input field */
+}
+
+.btn-submit:hover {
+    background-color: #009877;
+}
+
+/* Specific adjustments for the photo input and preview section */
+.foto-preview-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Restore initial gap for visual separation */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    margin-bottom: 10px; /* Added margin-bottom for spacing before submit button */
+}
+
+.input-foto {
+    flex: 1;
+    min-width: 280px; /* Ensured enough width for inputs */
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-card {
+    width: 260px;
+    padding: 16px; /* Restored initial padding */
+    background-color: #fff;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column; /* Stack image and label/text if any */
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0; /* Align to the top of the flex container */
+    height: auto; /* Remove fixed height for more natural scaling */
+}
+
+.preview-card img.gambar-ruangan {
+    width: 100%;
+    height: 150px; /* Revert to initial height for image within preview card */
+    object-fit: cover; /* Revert to cover to ensure image fills space */
+    border-radius: 12px;
+    margin-bottom: 0; /* No margin here */
+}
+
+/* Tombol reset - restore original size or slightly smaller */
+.btn-reset-foto {
+    margin-top: 8px; /* Restore original margin-top */
+    background-color: #e74c3c;
+    color: white;
+    padding: 6px 12px; /* Restore original padding */
+    font-size: 13px; /* Restore original font size */
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    align-self: flex-start;
+    max-width: 120px; /* Restore original max-width */
+}
+
+.btn-reset-foto:hover {
+    background-color: #c0392b;
+}
