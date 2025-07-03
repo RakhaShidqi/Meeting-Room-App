@@ -60,6 +60,9 @@
                 <a href="{{ url('/akun') }}"><img class="profile-image" src="../img/user.png" alt=""></a>    
             </div>
             <div class="main-body">
+                 <button class="add-room-button">
+                    <span class="plus-icon-button">+</span> Tambah Ruangan
+                </button>
                 <div class="container-ruangan">
                     <div class="card">
                         <img src="../img/ruangan.jpg" class="gambar-ruangan" alt="">
