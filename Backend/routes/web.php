@@ -94,6 +94,10 @@ Route::get('/form-tambahruang', function () {
     return view('form-tambahruang');
 });
 
+Route::get('/form-editruang', function () {
+    return view('form-editruang');
+});
+
 Route::get('/login', [LoginController::class, 'view']);
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/form-pemesanan/{id}', [PemesananController::class, 'create'])->name('form.pemesanan');
