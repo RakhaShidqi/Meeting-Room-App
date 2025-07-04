@@ -46,6 +46,10 @@ Route::get('/form-editruang', function () {
     return view('form-editruang');
 });
 
+Route::get('/jadwalpop', function () {
+    return view('jadwalpop');
+});
+
 Route::get('/login', [LoginController::class, 'view']);
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/ruangan-meeting', [RuanganController::class, 'index'])->name('ruangan.index');

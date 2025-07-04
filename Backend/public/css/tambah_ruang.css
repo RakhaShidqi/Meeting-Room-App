@@ -279,3 +279,30 @@ hr{
 .btn-reset-foto:hover {
     background-color: #c0392b;
 }
+
+.back-button-text-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* Ukuran tombol */
+    height: 30px;
+    border-radius: 5px;
+    background-color: #f4f4f4; /* Latar belakang ringan */
+    color: #333; /* Warna panah */
+    font-size: 12px; /* Ukuran simbol panah */
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    margin-right: 15px; /* Jarak antara panah dan logo */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Bayangan lembut */
+    margin-top: 5px;
+}
+
+.back-button-text-link:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+.back-button-text {
+    line-height: 1; /* Membantu memusatkan karakter secara vertikal */
+}

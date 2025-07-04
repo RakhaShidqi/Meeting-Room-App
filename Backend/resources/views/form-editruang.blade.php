@@ -55,6 +55,9 @@
       </div>
 
       <div class="main-body">
+        <a href="{{ url('/home') }}" class="back-button-text-link">
+                        <span class="back-button-text">Back</span>
+                    </a>
         <div class="booking-form-container">
           <h2>Form Edit Ruang Meeting</h2>
           <form action="/tambah-ruangan" method="POST" enctype="multipart/form-data">
