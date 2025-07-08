@@ -17,7 +17,7 @@
             <h2>Password Reset</h2>
             <p>Masukan email Anda dan kami akan mengirimkan tautan untuk mengatur ulang kata sandi Anda</p>
             <br><br>
-            <input type="email" name="" id="email" placeholder="         Email ID">
+            <input type="email" name="" id="email" placeholder="Email ID">
             <br><br>
             <br><br>
             <button type="submit" class="sub">Submit</button>

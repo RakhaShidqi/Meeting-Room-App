@@ -64,6 +64,7 @@ a{
     background-color: rgba(129, 105, 105, 0.5);
     border:none;
     outline: none;
+    padding-left: 40px;
     }
 
     input#email {
@@ -76,6 +77,7 @@ a{
     background-color: rgba(129, 105, 105, 0.5);
     border:none;
     outline: none;
+    padding-left: 40px;
     }
 
     input#pass {
@@ -88,6 +90,7 @@ a{
         background-color: rgba(129, 105, 105, 0.5);
         border:none;
         outline: none;
+        padding-left: 40px;
         
     }
     

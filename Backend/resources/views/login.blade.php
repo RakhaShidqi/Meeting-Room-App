@@ -6,11 +6,11 @@
     <title>Meeting Room App</title>
     <link rel="icon" type="image/x-icon" href="../img/meeting-room.png ">
     <link rel="stylesheet" href="css/style.css">
-</head> 
+</head>
 <body>
 <div class="circle">
     <img src="../icon/user-regular.svg" alt="user icon" />
-  </div>
+</div>
 
     <div class="container">
         <form method="POST" action="/login">
@@ -18,18 +18,16 @@
 
             <h2>Selamat Datang</h2>
 
-            <input type="email" name="email" id="email" placeholder="       Email ID/Username" required>
+            <input type="email" name="email" id="email" placeholder="Email ID/Username" required>
             <br><br>
 
-            <input type="password" name="password" id="pass" placeholder="       Password" required><br>
+            <input type="password" name="password" id="pass" placeholder="Password" required><br>
 
             @if ($errors->any())
                 <span style="color: red; font-size: 14px; margin:0;">
                     {{ $errors->first() }}
                 </span>
             @endif
-
-
 
             <a href="{{ url('/forgot-password') }}">Lupa Password?</a>
             <br><br>
@@ -39,11 +37,7 @@
 
             <a href="{{ url('/register') }}">Belum ada akun? Daftar</a>
 
-            
-
-
         </form>
-
     </div>
 </body>
 </html>

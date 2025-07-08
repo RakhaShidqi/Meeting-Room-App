@@ -15,11 +15,11 @@
     <div class="container">
         <form action="">
             <h2>Pembuatan Akun Baru</h2>
-            <input type="text" name="" id="user" placeholder="         Username">
+            <input type="text" name="" id="user" placeholder="Username">
             <br>
-            <input type="email" name="" id="email" placeholder="         Email ID">
+            <input type="email" name="" id="email" placeholder="Email ID">
             <br>
-            <input type="password" name="" id="pass" placeholder="         Password">
+            <input type="password" name="" id="pass" placeholder="Password">
             <br>
             <br><br>
             <button type="submit" class="reg">Register</button>
