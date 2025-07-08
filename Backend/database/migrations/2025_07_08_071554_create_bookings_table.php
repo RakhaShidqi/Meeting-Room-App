@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
         $table->id();
         $table->foreignId('ruangan_id')->constrained('ruangans')->onDelete('cascade');
-        $table->date('tanggal');
-        $table->time('waktu_mulai');
-        $table->time('waktu_selesai');
         $table->string('nama_pemesan');
+        $table->string('divisi');
+        $table->string('event');
+        $table->date('tanggal');
+        $table->time('jam_mulai');
+        $table->time('jam_selesai');
         $table->timestamps();
 });
     }
