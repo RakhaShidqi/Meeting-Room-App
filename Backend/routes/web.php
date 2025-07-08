@@ -18,10 +18,6 @@ Route::get('/home', function () {
     return view('home');
 });
 
-// Route::get('/ruangan-meeting', function () {
-//     return view('ruangan-meeting');
-// });
-
 Route::get('/jadwal', function () {
     return view('jadwal');
 });
@@ -43,10 +39,6 @@ Route::get('/form-tambahruang', function () {
     return view('form-tambahruang');
 });
 
-// Route::get('/form-editruang', function () {
-//     return view('form-editruang');
-// });
-
 Route::get('/jadwalpop', function () {
     return view('jadwalpop');
 });
@@ -60,3 +52,4 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/ruangan-meeting', [RuanganController::class, 'index'])->name('ruangan.index');
 Route::get('/form-editruang/{id}/{nama?}', [EditController::class, 'create'])->name('form.editruang');
 Route::get('/form-booking/{id}/{nama?}', [BookingController::class, 'create'])->name('form.pemesanan');
+// Route::get('/form-tambahruang', [TambahRuangController::class, 'create'])->name('form.tambahruang');
