@@ -35,7 +35,7 @@
                         
                             <div class="tombol" id="ruang-meeting">
                                 <img src="../img/room.png" class="gambar" alt="">
-                                <a href="{{ url('/ruang-meeting') }}"><h3>Ruang Meeting</h3></a>                           
+                                <a href="{{ url('/ruangan-meeting') }}"><h3>Ruang Meeting</h3></a>                           
                             </div>
                         
                         <div class="tombol" id="jadwal">
