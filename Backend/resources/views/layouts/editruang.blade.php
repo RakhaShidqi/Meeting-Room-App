@@ -59,7 +59,7 @@
       </div>
 
       <div class="main-body">
-        <a href="{{ url('/home') }}" class="back-button-text-link">
+        <a href="{{ url()->previous() }}" class="back-button-text-link">
           <span class="back-button-text">Back</span>
         </a>
 
