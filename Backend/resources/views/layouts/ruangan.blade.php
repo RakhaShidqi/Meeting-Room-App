@@ -76,9 +76,11 @@
             </div>
 
             <div class="main-body">
-                <button class="add-room-button">
+                <form action="{{ route('ruangan.create', ['id' => $ruangan->id, 'nama' => Str::slug($ruangan->nama_ruangan)]) }}">
+                    <button class="add-room-button">
                     <span class="plus-icon-button">+</span> Tambah Ruangan
                 </button>
+                </form>
                 @yield('content')
             </div>
         </main>

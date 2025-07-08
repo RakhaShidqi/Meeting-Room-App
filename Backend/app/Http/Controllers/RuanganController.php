@@ -19,7 +19,7 @@ class RuanganController extends Controller
     // Form tambah Ruangan
     public function create()
     {
-        return view('ruangan.create');
+        return view('form-tambahruang');
     }
 
     // Simpan Ruangan Baru
@@ -53,7 +53,7 @@ class RuanganController extends Controller
     public function edit($id)
     {
         $ruangan = Ruangan::findOrFail($id);
-        return view('ruangan.edit', compact('ruangan'));
+        return view('form-editruang', compact('ruangan'));
     }
 
     // Update ruangan
@@ -89,7 +89,7 @@ class RuanganController extends Controller
     public function showBookingForm($id)
     {
         $ruangan = Ruangan::findOrFail($id);
-        return view('booking.create', compact('ruangan'));
+        return view('formbooking', compact('ruangan'));
     }
 
     // Simpan booking

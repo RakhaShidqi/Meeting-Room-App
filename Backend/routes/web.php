@@ -49,7 +49,12 @@ Route::get('/logactivity', function () {
 
 Route::get('/login', [LoginController::class, 'view']);
 Route::post('/login', [LoginController::class, 'login']);
+
 Route::get('/ruangan-meeting', [RuanganController::class, 'index'])->name('ruangan.index');
-Route::get('/form-editruang/{id}/{nama?}', [EditController::class, 'create'])->name('form.editruang');
-Route::get('/form-booking/{id}/{nama?}', [BookingController::class, 'create'])->name('form.pemesanan');
-// Route::get('/form-tambahruang', [TambahRuangController::class, 'create'])->name('form.tambahruang');
+Route::get('/tambah-ruangan', [RuanganController::class, 'create'])->name('ruangan.create');
+Route::post('/tambah-ruangan', [RuanganController::class, 'store'])->name('ruangan.store');
+Route::get('/ruangan-meeting/{id}/edit', [RuanganController::class, 'edit'])->name('ruangan.edit');
+Route::put('/ruangan-meeting/{id}', [RuanganController::class, 'update'])->name('ruangan.update');
+
+Route::get('/ruangan-meeting/{id}/booking', [RuanganController::class, 'showBookingForm'])->name('ruangan.booking.form');
+Route::post('/ruangan-meeting/{id}/booking', [RuanganController::class, 'storeBooking'])->name('ruangan.booking.store');

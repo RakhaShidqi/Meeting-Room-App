@@ -11,10 +11,10 @@
                 <p>{{ $ruangan->kapasitas }}</p>
                 <p>{{ $ruangan->lokasi }}</p>
                 <p>{{ $ruangan->deskripsi }}</p>
-                <form method="GET" action="{{ route('form.pemesanan', ['id' => $ruangan->id, 'nama' => Str::slug($ruangan->nama_ruangan)]) }}">
+                <form method="GET" action="{{ route('ruangan.booking.form', ['id' => $ruangan->id, 'nama' => Str::slug($ruangan->nama_ruangan)]) }}">
                     <button class="pilih" type="submit">Pilih Ruangan</button>
                 </form>
-                <form action="{{ route('form.editruang', ['id' => $ruangan->id, 'nama' => Str::slug($ruangan->nama_ruangan)]) }}">
+                <form action="{{ route('ruangan.edit', ['id' => $ruangan->id, 'nama' => Str::slug($ruangan->nama_ruangan)]) }}">
                     <br><button class="edit">Edit</button>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <button class="del">Delete</button>
