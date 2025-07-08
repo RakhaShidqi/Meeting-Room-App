@@ -17,12 +17,12 @@
     <div class="booking-form-container">
         <h2>Form Booking Ruangan</h2>
 
-        <form action="/booking" method="POST">
+        <form action="{{ route('ruangan.booking.store', $ruangan->id) }}" method="POST">
             @csrf {{-- Token keamanan Laravel --}}
             <input type="hidden" name="ruangan_id" value="{{ $ruangan->id }}">
             <div>
                 <label for="nama">Nama Lengkap</label>
-                <input type="text" id="nama" name="nama" required>
+                <input type="text" id="nama_pemesan" name="nama_pemesan" required>
             </div>
 
             <div>

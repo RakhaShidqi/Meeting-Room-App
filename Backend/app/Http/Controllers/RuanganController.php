@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Ruangan;
 use App\Models\Booking;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 class RuanganController extends Controller
 {
@@ -94,20 +95,23 @@ class RuanganController extends Controller
 
     // Simpan booking
     public function storeBooking(Request $request, $id)
+     
     {
         $request->validate([
             'tanggal' => 'required|date',
-            'waktu_mulai' => 'required',
-            'waktu_selesai' => 'required|after:waktu_mulai',
+            'jam_mulai' => 'required',
+            'jam_selesai' => 'required|after:jam_mulai',
             'nama_pemesan' => 'required|string',
         ]);
 
         Booking::create([
             'ruangan_id' => $id,
-            'tanggal' => $request->tanggal,
-            'waktu_mulai' => $request->waktu_mulai,
-            'waktu_selesai' => $request->waktu_selesai,
             'nama_pemesan' => $request->nama_pemesan,
+            'divisi' => $request->divisi,
+            'event' => $request->event,
+            'tanggal' => $request->tanggal,
+            'jam_mulai' => $request->jam_mulai,
+            'jam_selesai' => $request->jam_selesai,
         ]);
 
         return redirect()->route('ruangan.index')->with('success', 'Booking berhasil disimpan.');
