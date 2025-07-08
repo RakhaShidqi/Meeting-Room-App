@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\EditController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,9 +43,9 @@ Route::get('/form-tambahruang', function () {
     return view('form-tambahruang');
 });
 
-Route::get('/form-editruang', function () {
-    return view('form-editruang');
-});
+// Route::get('/form-editruang', function () {
+//     return view('form-editruang');
+// });
 
 Route::get('/jadwalpop', function () {
     return view('jadwalpop');
@@ -53,4 +54,5 @@ Route::get('/jadwalpop', function () {
 Route::get('/login', [LoginController::class, 'view']);
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/ruangan-meeting', [RuanganController::class, 'index'])->name('ruangan.index');
+Route::get('/form-editruang/{id}/{nama?}', [EditController::class, 'create'])->name('form.editruang');
 Route::get('/form-booking/{id}/{nama?}', [BookingController::class, 'create'])->name('form.pemesanan');
