@@ -50,6 +50,10 @@ Route::get('/jadwalpop', function () {
     return view('jadwalpop');
 });
 
+Route::get('/logactivity', function () {
+    return view('logactivity');
+});
+
 Route::get('/login', [LoginController::class, 'view']);
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/ruangan-meeting', [RuanganController::class, 'index'])->name('ruangan.index');
