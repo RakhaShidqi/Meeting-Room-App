@@ -13,7 +13,7 @@
                 <p>{{ $ruangan->deskripsi }}</p>
                 <form method="GET" action="{{ route('form.pemesanan', ['id' => $ruangan->id, 'nama' => Str::slug($ruangan->nama)]) }}">
                     <button class="pilih" type="submit">Pilih Ruangan</button>
-                    <br><button class="edit">Edit</button>
+                    <br><button class="edit">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="del">Delete</button>
                 </form>
             </div>
         @endforeach

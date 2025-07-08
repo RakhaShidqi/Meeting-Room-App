@@ -236,3 +236,8 @@ hr{
 }
 
 
+.del{
+    background-color: red;
+    border:none;
+    padding: 3.5px;
+}
