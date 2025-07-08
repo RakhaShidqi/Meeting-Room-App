@@ -28,7 +28,7 @@ a{
 
 .dashboard-header{
     display: flex;
-    border: soid 1px;
+    border: solid 1px;
     height: 80px;
     flex-direction: row;
     align-items: center;

@@ -1,0 +1,248 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: 100vh;
+}
+
+.box-1 {
+    background-color: rgb(250, 250, 250);
+    border-right: 1px solid;
+}
+
+.container-dashboard {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dashboard-header {
+    display: flex;
+    border: soid 1px;
+    height: 80px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dashboard-header h2 {
+    margin: 0;
+    margin-left: 10px;
+}
+
+.dashboard-header img {
+    margin-left: 20px;
+    padding: 0;
+}
+
+hr {
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-body {
+    margin-top: 10px;
+    padding-left: 15px;
+    font-size: 90%;
+}
+
+.tombol{
+    display: flex;
+    align-items: center;
+}
+
+.tombol img{
+    padding: 0;
+    width: 10%;
+    height: 10%;
+}
+
+.tombol h3{
+    margin-left: 10px;
+}
+
+.gambar{
+    margin-left: 10px;
+}
+
+.main-header{
+    display: flex;
+    margin: 0;
+    height: 80px;
+    background-color: rgb(0, 170, 139);
+    justify-content: right;
+    color: aliceblue;
+}
+
+.main-header p, .main-header img {
+    margin: 0;
+    width: 35px;
+    height: 35px;
+    align-content: center;
+}
+
+.main-header p {
+    width: auto;
+    direction: rtl;
+}
+
+.main-header a {
+    display: inline;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.profile-image {
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.main-body {
+    display: flex;
+    flex-direction: column; /* Changed to column to stack elements */
+    align-items: center; /* Center content horizontally */
+    padding: 20px;
+    gap: 20px; /* Gap between back button and log container */
+}
+
+.back-button-text-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px; /* Adjusted size */
+    height: 35px;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 14px; /* Adjusted font size */
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    align-self: flex-start; /* Align back button to the left */
+    margin-left: 20px; /* Add some margin from the left edge */
+}
+
+.back-button-text-link:hover {
+    background-color: #ddd;
+    color: #000;
+}
+
+.back-button-text {
+    line-height: 1;
+}
+
+/* --- Log Activity Specific Styles --- */
+.log-activity-container {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px 30px;
+    width: 95%; /* Make it wider to accommodate table */
+    max-width: 1000px; /* Max width for the log container */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid rgba(0, 0, 0, 0.225);
+}
+
+.log-activity-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #00aa8b;
+    font-size: 24px;
+}
+
+.log-table-wrapper {
+    overflow-x: auto; /* Enable horizontal scrolling for narrow screens */
+}
+
+.log-activity-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0px;
+}
+
+.log-activity-container th,
+.log-activity-container td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.log-activity-container th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+    color: #555;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.log-activity-container tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.log-activity-container tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.log-activity-container td {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Stack sidebar and main content */
+        grid-template-rows: auto 1fr;
+    }
+    .box-1 {
+        border-right: none;
+        border-bottom: 1px solid;
+    }
+    .dashboard-header {
+        justify-content: center;
+    }
+    .dashboard-body {
+        padding-left: 0;
+        text-align: center;
+    }
+    .dashboard-menu, .dashboard-akun {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .tombol {
+        justify-content: center;
+    }
+    .main-header {
+        justify-content: center;
+    }
+    .main-body {
+        padding: 10px;
+    }
+    .log-activity-container {
+        padding: 15px;
+        width: 100%;
+    }
+    .log-activity-container h2 {
+        font-size: 20px;
+    }
+    .log-activity-container th,
+    .log-activity-container td {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+    .back-button-text-link {
+        align-self: center; /* Center the back button on small screens */
+        margin-left: 0;
+    }
+}
