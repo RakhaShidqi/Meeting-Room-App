@@ -32,7 +32,7 @@
                             <a href="{{ url('/ruang-meeting') }}"><h3>Ruang Meeting</h3></a>
                         </div>
                         <div class="tombol" id="jadwal">
-                            <img src="../img/calender.png" class="gambar" alt="">
+                            <img src="{{ asset('/img/calender.png') }}" class="gambar" alt="">
                             <a href="{{ url('/jadwal') }}"><h3>Jadwal</h3></a>
                         </div>
                         <div class="tombol" id="log-activity">

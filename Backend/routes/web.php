@@ -43,7 +43,7 @@ Route::get('/jadwalpop', function () {
     return view('jadwalpop');
 });
 
-Route::get('/logactivity', function () {
+Route::get('/log-activity', function () {
     return view('logactivity');
 });
 
