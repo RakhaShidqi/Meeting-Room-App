@@ -14,7 +14,7 @@ class RuanganSeeder extends Seeder
     public function run(): void
     {
         Ruangan::create([
-            'nama' => 'Ruang Rapat 1',
+            'nama_ruangan' => 'Ruang Rapat 1',
             'kapasitas' => 10,
             'lokasi' => 'Proyektor, AC, Whiteboard',
             'deskripsi' => 'Ruang rapat untuk 10 orang, cocok untuk presentasi kecil.',
@@ -22,7 +22,7 @@ class RuanganSeeder extends Seeder
         ]);
         
        Ruangan::create([
-            'nama' => 'Ruang Rapat 2',
+            'nama_ruangan' => 'Ruang Rapat 2',
             'kapasitas' => 10,
             'lokasi' => 'Proyektor, AC, Whiteboard',
             'deskripsi' => 'Ruang rapat untuk 10 orang, cocok untuk presentasi kecil.',
@@ -30,7 +30,7 @@ class RuanganSeeder extends Seeder
         ]);
 
         Ruangan::create([
-            'nama' => 'Ruang Rapat 3',
+            'nama_ruangan' => 'Ruang Rapat 3',
             'kapasitas' => 10,
             'lokasi' => 'Proyektor, AC, Whiteboard',
             'deskripsi' => 'Ruang rapat untuk 10 orang, cocok untuk presentasi kecil.',
@@ -38,7 +38,7 @@ class RuanganSeeder extends Seeder
         ]);
 
         Ruangan::create([
-            'nama' => 'Ruang Rapat 4',
+            'nama_ruangan' => 'Ruang Rapat 4',
             'kapasitas' => 10,
             'lokasi' => 'Proyektor, AC, Whiteboard',
             'deskripsi' => 'Ruang rapat untuk 10 orang, cocok untuk presentasi kecil.',
@@ -46,7 +46,7 @@ class RuanganSeeder extends Seeder
         ]);
 
         Ruangan::create([
-            'nama' => 'Ruang Rapat 5',
+            'nama_ruangan' => 'Ruang Rapat 5',
             'kapasitas' => 10,
             'lokasi' => 'Proyektor, AC, Whiteboard',
             'deskripsi' => 'Ruang rapat untuk 10 orang, cocok untuk presentasi kecil.',
@@ -54,7 +54,7 @@ class RuanganSeeder extends Seeder
         ]);
 
         Ruangan::create([
-            'nama' => 'Ruang Rapat 6',
+            'nama_ruangan' => 'Ruang Rapat 6',
             'kapasitas' => 10,
             'lokasi' => 'Proyektor, AC, Whiteboard',
             'deskripsi' => 'Ruang rapat untuk 10 orang, cocok untuk presentasi kecil.',
@@ -62,7 +62,7 @@ class RuanganSeeder extends Seeder
         ]);
 
         Ruangan::create([
-            'nama' => 'Ruang Rapat 7',
+            'nama_ruangan' => 'Ruang Rapat 7',
             'kapasitas' => 10,
             'lokasi' => 'Proyektor, AC, Whiteboard',
             'deskripsi' => 'Ruang rapat untuk 10 orang, cocok untuk presentasi kecil.',
@@ -70,7 +70,7 @@ class RuanganSeeder extends Seeder
         ]);
 
         Ruangan::create([
-            'nama' => 'Ruang Rapat 8',
+            'nama_ruangan' => 'Ruang Rapat 8',
             'kapasitas' => 10,
             'lokasi' => 'Proyektor, AC, Whiteboard',
             'deskripsi' => 'Ruang rapat untuk 10 orang, cocok untuk presentasi kecil.',
@@ -78,7 +78,7 @@ class RuanganSeeder extends Seeder
         ]);
 
         Ruangan::create([
-            'nama' => 'Ruang Rapat 9',
+            'nama_ruangan' => 'Ruang Rapat 9',
             'kapasitas' => 10,
             'lokasi' => 'Proyektor, AC, Whiteboard',
             'deskripsi' => 'Ruang rapat untuk 10 orang, cocok untuk presentasi kecil.',
@@ -86,7 +86,7 @@ class RuanganSeeder extends Seeder
         ]);
 
         Ruangan::create([
-            'nama' => 'Ruang Rapat 10',
+            'nama_ruangan' => 'Ruang Rapat 10',
             'kapasitas' => 10,
             'lokasi' => 'Proyektor, AC, Whiteboard',
             'deskripsi' => 'Ruang rapat untuk 10 orang, cocok untuk presentasi kecil.',

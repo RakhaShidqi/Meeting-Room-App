@@ -12,7 +12,7 @@
 
         <div>
             <label for="nama_ruangan">Nama Ruangan</label>
-            <input type="text" id="nama_ruangan" name="nama_ruangan" value="{{ old('nama_ruangan', $ruangan->nama) }}" required>
+            <input type="text" id="nama_ruangan" name="nama_ruangan" value="{{ old('nama_ruangan', $ruangan->nama_ruangan) }}" required>
         </div>
 
         <div>

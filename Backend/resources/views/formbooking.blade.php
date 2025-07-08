@@ -7,7 +7,7 @@
     {{-- Kartu Ruangan yang Dipilih --}}
     <div class="selected-room-card">
         <div class="card">
-            <img src="{{ asset('storage/' . $ruangan->foto) }}" class="gambar-ruangan" alt="{{ $ruangan->nama }}">
+            <img src="{{ asset('storage/' . $ruangan->foto) }}" class="gambar-ruangan" alt="{{ $ruangan->nama_ruangan }}">
             <h3>{{ $ruangan->nama }}</h3>
             <p>{{ $ruangan->deskripsi }}</p>
         </div>
