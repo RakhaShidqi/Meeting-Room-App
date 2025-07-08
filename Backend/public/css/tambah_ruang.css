@@ -29,7 +29,7 @@ a{
 
 .dashboard-header{
     display: flex;
-    border: solid 1px;
+    border: soid 1px;
     height: 80px;
     flex-direction: row;
     align-items: center;
@@ -287,7 +287,7 @@ hr{
     width: 50px; /* Ukuran tombol */
     height: 30px;
     border-radius: 5px;
-    background-color: #f4f4f4; /* Latar belakang ringan */
+    background-color: #ddd6d6; /* Latar belakang ringan */
     color: #333; /* Warna panah */
     font-size: 12px; /* Ukuran simbol panah */
     text-decoration: none;
