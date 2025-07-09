@@ -93,29 +93,55 @@ class RuanganController extends Controller
         return view('formbooking', compact('ruangan'));
     }
 
-    // Simpan booking
-    public function storeBooking(Request $request, $id)
-     
-    {
-        $request->validate([
-            'tanggal' => 'required|date',
-            'jam_mulai' => 'required',
-            'jam_selesai' => 'required|after:jam_mulai',
-            'nama_pemesan' => 'required|string',
-        ]);
+//     public function storeBooking(Request $request, $id)
+// {
+//     // Validasi input
+//     $validated = $request->validate([
+//         'tanggal' => 'required|date',
+//         'jam_mulai' => 'required',
+//         'jam_selesai' => 'required|after:jam_mulai',
+//         'nama_pemesan' => 'required|string',
+//         'divisi' => 'required|string',
+//         'event' => 'required|string',
+//     ]);
 
-        Booking::create([
-            'ruangan_id' => $id,
-            'nama_pemesan' => $request->nama_pemesan,
-            'divisi' => $request->divisi,
-            'event' => $request->event,
-            'tanggal' => $request->tanggal,
-            'jam_mulai' => $request->jam_mulai,
-            'jam_selesai' => $request->jam_selesai,
-        ]);
+//     // Simpan data booking ke database dengan status default
+//     Booking::create([
+//         'ruangan_id' => $id,
+//         'nama_pemesan' => $validated['nama_pemesan'],
+//         'divisi' => $validated['divisi'],
+//         'event' => $validated['event'],
+//         'tanggal' => $validated['tanggal'],
+//         'jam_mulai' => $validated['jam_mulai'],
+//         'jam_selesai' => $validated['jam_selesai'],
+//         'status' => 'waiting approval', // Gunakan field 'status' saja, bukan 'approval_status'
+//     ]);
 
-        return redirect()->route('ruangan.index')->with('success', 'Booking berhasil disimpan.');
-    }
+//     return redirect()->route('ruangan.index')->with('success', 'Booking berhasil disimpan dan menunggu approval.');
+// }
+
+public function storeBooking(Request $request, $id)
+{
+    $validated = $request->validate([
+        'nama_pemesan' => 'required|string',
+        'divisi' => 'required|string',
+        'event' => 'required|string',
+        'tanggal' => 'required|date',
+        'jam_mulai' => 'required',
+        'jam_selesai' => 'required|after:jam_mulai',
+    ]);
+
+    // Simpan ke database
+    \App\Models\Booking::create(array_merge($validated, [
+        'ruangan_id' => $id,
+        'status' => 'waiting approval',
+    ]));
+
+    // Redirect kembali ke form booking dengan session flash
+    return redirect()->back()->with('success', 'Booking berhasil dikirim dan menunggu approval.');
+}
+
+
 }
 
 ?>
