@@ -1,0 +1,326 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.container{
+    margin: 0;
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: 100vh ;
+}
+
+.box-1{
+    background-color: rgb(250, 250, 250);
+    border-right: 1px solid;
+}
+
+.container-dashboard{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dashboard-header{
+    display: flex;
+    border: soid 1px;
+    height: 80px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dashboard-header h2{
+    margin: 0;
+    margin-left: 10px;
+}
+
+.dashboard-header img{
+    margin-left: 20px;
+    padding: 0;
+}
+
+hr{
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-body{
+    margin-top: 10px;
+    padding-left: 15px;
+    font-size: 90%;
+}
+
+.tombol{
+    display: flex;
+    align-items: center;
+}
+
+.tombol img{
+    padding: 0;
+    width: 10%;
+    height: 10%;
+}
+
+.tombol h3{
+    margin-left: 10px;
+}
+
+.gambar{
+    margin-left: 10px;
+}
+
+.main-header{
+    display: flex;
+    margin: 0;
+    height: 80px;
+    background-color: rgb(0, 170, 139);
+    justify-content: right;
+    color: aliceblue;
+}
+
+.main-header p,.main-header img{
+    margin: 0;
+    width: 35px;
+    height: 35px;
+    align-content: center;
+}
+
+.main-header p{
+    width: auto;
+    direction: rtl;
+}
+
+.main-header a{
+    display: inline;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.main-body{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    padding: 20px;
+    position: relative; 
+    padding-top: 40px;
+}
+
+.container-ruangan{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    width: 90%;
+    max-height: calc(75vh - 70px);
+    margin-top: 10px;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+}
+
+.card,.card2{
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    width: 260px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.225);
+}
+
+.card:hover,
+.card2:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.card2{
+    margin-top:5%;
+}
+
+
+.gambar-ruangan{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.container-ruangan h3, .container-ruangan p{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
+#ruang-meeting{
+    border-radius: 5px;
+    background-color: rgb(220, 220, 220);
+}
+
+/* NEW: Highlight for Pending Request menu item */
+#pending-request {
+    border-radius: 5px;
+    background-color: rgb(220, 220, 220); /* Highlight when active/selected */
+}
+/* END NEW */
+
+
+.profile-image{
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.pilih {
+    background-color: rgba(0, 170, 139, 0.85);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pilih:hover {
+    background-color: #009877;
+    transform: translateY(-2px);
+}
+
+.add-room-button {
+    background-color: #00a08d;
+    color: white;
+    padding: 8px 15px; 
+    border: none;
+    border-radius: 8px; 
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    width: 170px; 
+    height: auto; 
+    box-shadow: 0 2px 6px rgba(0, 170, 139, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    
+    position: static; 
+    top: auto; 
+    right: auto; 
+    z-index: auto; 
+    overflow: visible; 
+    white-space: nowrap;
+}
+
+.add-room-button:hover {
+    background-color: #008f7b; 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 170, 139, 0.4);
+}
+
+.add-room-button .plus-icon-button {
+    font-size: 20px;
+    line-height: 1; 
+    margin-right: 2px; 
+    transition: margin-right 0.3s ease;
+    flex-shrink: 0;
+}
+
+
+.del{
+    background-color: red;
+    border:none;
+    padding: 3.5px;
+}
+
+/* NEW: Styles for Pending Requests */
+.container-pending-requests {
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  width: 90%;
+  max-height: calc(75vh - 70px);
+  margin-top: 10px;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+}
+
+.pending-card {
+    width: 280px; /* Slightly wider cards for more details */
+    padding: 20px;
+    text-align: left; /* Align text to the left within the card */
+}
+
+.pending-card h3 {
+    text-align: center; /* Center room name */
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.booking-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.booking-details strong {
+    color: #333;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-around; /* Space out accept and reject buttons */
+    margin-top: 20px;
+    width: 100%;
+}
+
+.accept-button,
+.reject-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 45%; /* Make buttons take up almost half the width */
+}
+
+.accept-button {
+    background-color: #28a745; /* Green for accept */
+    color: white;
+}
+
+.accept-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.reject-button {
+    background-color: #dc3545; /* Red for reject */
+    color: white;
+}
+
+.reject-button:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+/* END NEW */

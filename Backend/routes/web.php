@@ -47,6 +47,10 @@ Route::get('/log-activity', function () {
     return view('logactivity');
 });
 
+Route::get('/req', function () {
+    return view('req');
+});
+
 Route::get('/login', [LoginController::class, 'view']);
 Route::post('/login', [LoginController::class, 'login']);
 
