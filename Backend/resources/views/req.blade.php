@@ -51,12 +51,10 @@
                             <a href="{{ url('/jadwal') }}"><h3>Jadwal</h3></a>             
                         </div>
                         
-                        {{-- NEW: Pending Request Menu Item --}}
                         <div class="tombol" id="pending-request">
                             <img src="{{ asset('img/req.png') }}" class="gambar" alt="Pending Request Icon"> {{-- Assuming you have a pending.png icon --}}
                             <a href="{{ url('/admin/pending-requests') }}"><h3>Pending Request</h3></a>             
                         </div>
-                        {{-- END NEW --}}
 
                     </div>
 
