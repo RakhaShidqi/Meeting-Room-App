@@ -43,6 +43,11 @@
                             <a href="{{ url('/jadwal') }}"><h3>Jadwal</h3></a>                            
                         </div>
 
+                         <div class="tombol" id="pending-request">
+                            <img src="{{ asset('img/req.png') }}" class="gambar" alt="Pending Request Icon"> {{-- Assuming you have a pending.png icon --}}
+                            <a href="{{ url('/admin/pending-requests') }}"><h3>Pending Request</h3></a>             
+                        </div>
+
                         <div class="tombol" id="log-activity">
                             <img src="../img/log.png" class="gambar" alt="Log Activity Icon"> {{-- Assuming you have a log.png icon --}}
                             <a href="{{ url('/log-activity') }}"><h3>Log Activity</h3></a>
