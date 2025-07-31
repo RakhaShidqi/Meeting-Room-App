@@ -52,6 +52,11 @@
                             <img src="../img/log.png" class="gambar" alt="Log Activity Icon"> {{-- Assuming you have a log.png icon --}}
                             <a href="{{ url('/log-activity') }}"><h3>Log Activity</h3></a>
                         </div>
+
+                        <div class="tombol" id="user-manage">
+                            <img src="../img/manage.png" class="gambar" alt="User Management Icon"> 
+                            <a href="{{ url('/user-manage') }}"><h3>User Management</h3></a>
+                        </div>
                     </div>
                     <div class="dashboard-akun">
                         <p>Akun<p>
