@@ -9,6 +9,8 @@ class Booking extends Model
 {
     use HasFactory;
 
+    protected $table = 'bookings';
+
     protected $fillable =[
         'ruangan_id',
         'nama_pemesan',
@@ -17,6 +19,10 @@ class Booking extends Model
         'tanggal',
         'jam_mulai',
         'jam_selesai',
-        'status',
+        'status'
+    ];
+    // Default value untuk status
+    protected $attributes = [
+        'status' => 'Waiting Approval'
     ];
 }
