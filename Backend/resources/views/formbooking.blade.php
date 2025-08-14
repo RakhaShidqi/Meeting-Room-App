@@ -16,30 +16,6 @@
     {{-- Formulir Booking --}}
         <div class="booking-form-container">
             <h2>Form Booking Ruangan</h2>
-            
-                @if (session('success'))
-                    <div id="popup-success" style="
-                        position: fixed;
-                        top: 20px;
-                        right: 20px;
-                        background: #4CAF50;
-                        color: white;
-                        padding: 12px 20px;
-                        border-radius: 8px;
-                        z-index: 9999;
-                    ">
-                        {{ session('success') }}
-                    </div>
-
-                    <script>
-                        setTimeout(() => {
-                            document.getElementById('popup-success').style.display = 'none';
-                        }, 3000);
-                    </script>
-                @endif
-
-
-
         <form action="{{ route('ruangan.booking.store', $ruangan->id) }}" method="POST">
             @csrf {{-- Token keamanan Laravel --}}
             <input type="hidden" name="ruangan_id" value="{{ $ruangan->id }}">
@@ -79,5 +55,5 @@
             </div>
         </form>
     </div>
-@endsection
+    @endsection
 

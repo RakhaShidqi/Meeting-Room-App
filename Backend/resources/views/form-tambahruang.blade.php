@@ -73,7 +73,8 @@
                     </a>
         <div class="booking-form-container">
           <h2>Form Tambah Ruang Meeting</h2>
-          <form action="/tambah-ruangan" method="POST" enctype="multipart/form-data">
+          <form action="{{route('ruangan.store')}}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div>
               <label for="nama_ruangan">Nama Ruangan</label>
               <input type="text" id="nama_ruangan" name="nama_ruangan" required>
@@ -82,6 +83,11 @@
             <div>
               <label for="kapasitas">Kapasitas Ruangan</label>
               <input type="number" id="kapasitas" name="kapasitas" required>
+            </div>
+
+            <div>
+              <label for="fasilitas">Fasilitas Ruangan</label>
+              <input type="text" id="fasilitas" name="fasilitas" required>
             </div>
 
             <div>
@@ -110,6 +116,7 @@
               <button type="submit" class="btn-submit">Simpan Ruangan</button>
             </div>
           </form>
+
         </div>
       </div>
     </main>

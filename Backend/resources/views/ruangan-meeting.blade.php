@@ -21,5 +21,29 @@
                 </form>
             </div>
         @endforeach
+
+        {{-- Load SweetAlert2 script first --}}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        {{-- SweetAlert Success --}}
+        @if(session('successcreate'))
+            <script>
+                    Swal.fire({
+                    title: "Berhasil",
+                    text: "Berhasil Tambah Ruangan",
+                    icon: "success"
+                });
+            </script>
+        @endif
+        
+        @if(session('success'))
+            <script>
+                    Swal.fire({
+                    title: "Booking Berhasil",
+                    text: "Silahkan Menunggu Approval",
+                    icon: "success"
+                });
+            </script>
+        @endif
     </div>
 @endsection

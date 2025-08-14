@@ -6,7 +6,7 @@ use App\Http\Controllers\EditController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
+// Route::get('/welcome', function () {
 //     return view('welcome');
 // });
 
@@ -60,9 +60,9 @@ Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/ruangan-meeting', [RuanganController::class, 'index'])->name('ruangan.index');
 Route::get('/tambah-ruangan', [RuanganController::class, 'create'])->name('ruangan.create');
-Route::post('/tambah-ruangan', [RuanganController::class, 'store'])->name('ruangan.store');
+Route::post('/tambah-ruangan', [RuanganController::class, 'storeRuangan'])->name('ruangan.store');
 Route::get('/ruangan-meeting/{id}/edit', [RuanganController::class, 'edit'])->name('ruangan.edit');
 Route::put('/ruangan-meeting/{id}', [RuanganController::class, 'update'])->name('ruangan.update');
 
-Route::get('/ruangan-meeting/{id}/booking', [RuanganController::class, 'showBookingForm'])->name('ruangan.booking.form');
-Route::post('/ruangan-meeting/{id}/booking', [RuanganController::class, 'storeBooking'])->name('ruangan.booking.store');
+Route::get('/ruangan-meeting/{id}/booking', [BookingController::class, 'showBookingForm'])->name('ruangan.booking.form');
+Route::post('/ruangan-meeting/{id}/booking', [BookingController::class, 'storeBookingForm'])->name('ruangan.booking.store');
