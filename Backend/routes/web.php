@@ -51,6 +51,10 @@ Route::get('/req', function () {
     return view('req');
 });
 
+Route::get('/manage', function () {
+    return view('manage');
+});
+
 Route::get('/login', [LoginController::class, 'view']);
 Route::post('/login', [LoginController::class, 'login']);
 
