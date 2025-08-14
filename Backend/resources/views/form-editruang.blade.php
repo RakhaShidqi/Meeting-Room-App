@@ -6,9 +6,8 @@
 <div class="booking-form-container">
     <h2>Form Edit Ruang Meeting</h2>
 
-    <form action="{{ url('/ruangan/' . $ruangan->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ url('/ruangan/' . $ruangan->id) }}" method="PUT" enctype="multipart/form-data">
         @csrf
-        @method('PUT')
 
         <div>
             <label for="nama_ruangan">Nama Ruangan</label>
