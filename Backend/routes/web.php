@@ -20,6 +20,10 @@ Route::get('/akun', function () {
     return view('.admin.akun');
 });
 
+Route::get('/user-akun', function () {
+    return view('.user.uakun');
+});
+
 Route::get('/register', function () {
     return view('register');
 });
@@ -40,6 +44,10 @@ Route::get('/jadwalpop', function () {
 
 Route::get('/manage', function () {
     return view('admin.manage');
+});
+
+Route::get('/user-home', function () {
+    return view('user.uhome');
 });
 
 // Login Page
