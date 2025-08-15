@@ -86,6 +86,22 @@ class RuanganController extends Controller
 
         return redirect()->route('ruangan.index')->with('editsuccess', 'Data ruangan diperbarui.');
     }
+
+    public function destroy($id)
+{
+    $ruangan = Ruangan::findOrFail($id);
+
+    // Hapus foto dari storage kalau ada
+    if ($ruangan->foto) {
+        Storage::disk('public')->delete($ruangan->foto);
+    }
+
+    // Hapus data ruangan
+    $ruangan->delete();
+
+    return redirect()->route('ruangan.index')->with('deletesuccess', 'Data ruangan berhasil dihapus.');
+}
+
 }
 
 ?>

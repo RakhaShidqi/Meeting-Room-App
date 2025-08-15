@@ -11,13 +11,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('login');
-});
-
-Route::get('/home', function () {
-    return view('admin.home');
-});
+// Route::get('/', function () {
+//     return view('login');
+// });
 
 
 Route::get('/akun', function () {
@@ -33,21 +29,14 @@ Route::get('/forgot-password', function () {
     return view('forgot-password');
 });
 
-// Route::get('/form-tambahruang', function () {
-//     return view('.admin.form-tambahruang');
-// });
-
 Route::get('/jadwalpop', function () {
     return view('admin.jadwalpop');
 });
 
-Route::get('/log-activity', function () {
-    return view('admin.logactivity');
-});
 
-Route::get('/admin/pending-requests', function () {
-    return view('admin.req');
-});
+// Route::get('/admin/pending-requests', function () {
+//     return view('admin.req');
+// });
 
 Route::get('/manage', function () {
     return view('admin.manage');
@@ -56,6 +45,11 @@ Route::get('/manage', function () {
 // Login Page
 Route::get('/login', [LoginController::class, 'view']);
 Route::post('/login', [LoginController::class, 'login']);
+
+// Sidebar Home
+Route::get('/home', function () {
+    return view('admin.home');
+})->name('admin.home');
 
 // Sidebar Ruang Meeting
 Route::get('/ruangan-meeting', [RuanganController::class, 'index'])->name('ruangan.index');
@@ -67,8 +61,11 @@ Route::get('/ruangan/{id}/edit', [RuanganController::class, 'edit'])->name('ruan
 
 // Proses update
 Route::put('/ruangan/{id}', [RuanganController::class, 'update'])->name('ruangan.update');
-
 Route::put('/ruangan-meeting/{id}', [RuanganController::class, 'update'])->name('ruangan.update');
+
+// proses Deleted
+Route::delete('/ruangan/{id}', [RuanganController::class, 'destroy'])->name('ruangan.destroy');
+
 Route::get('/ruangan-meeting/{id}/booking', [BookingController::class, 'showBookingForm'])->name('ruangan.booking.form');
 Route::post('/ruangan-meeting/{id}/booking', [BookingController::class, 'storeBookingForm'])->name('ruangan.booking.store');
 
@@ -81,9 +78,16 @@ Route::patch('/booking/{id}/reject', [BookingController::class, 'reject'])->name
 Route::get('/jadwal', [BookingController::class, 'jadwal'])->name('jadwal');
 Route::get('/api/bookings/approved', [BookingController::class, 'getApprovedBookings']);
 
-
 // Sidebar Log Activity
+Route::get('/admin/log-activity', function () {
+    return view('admin.logactivity');
+})->name('admin.log');
 
 // Sidebar User Management
 Route::get('/admin/user-management', [UserController::class, 'index'])->name('user.index');
+
+// Sidebar Akun saya
+Route::get('/akun', function () {
+    return view('.admin.akun');
+})->name('admin.akun');
 

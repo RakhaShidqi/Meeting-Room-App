@@ -236,8 +236,38 @@ hr{
 }
 
 
-.del{
+.action-buttons {
+    display: flex;
+    gap: 10px; /* jarak antar tombol */
+    margin-top: 10px;
+}
+
+.action-buttons form {
+    margin: 0;
+}
+
+.edit {
+    background-color: rgb(174, 174, 9); /* Hijau */
+    color: white;
+    padding: 7px 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.edit:hover {
+    background-color: rgb(232, 232, 54);
+}
+
+.del {
+    background-color: #790800; /* Merah */
+    color: white;
+    padding: 7px 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.del:hover {
     background-color: red;
-    border:none;
-    padding: 3.5px;
 }
