@@ -28,41 +28,41 @@
                         
                             <div class="tombol" id="home">
                                 <img src="../img/home.png" class="gambar" alt="">
-                                <a href="{{ url('/home') }}"><h3>Home</h3></a>                            
+                                <a href="{{ route('admin.home') }}"><h3>Home</h3></a>                            
                             </div>
                         
                         <p>Menu<p>
                         
                             <div class="tombol" id="ruang-meeting">
                                 <img src="../img/room.png" class="gambar" alt="">
-                                <a href="{{ url('/ruangan-meeting') }}"><h3>Ruang Meeting</h3></a>                           
+                                <a href="{{ route('ruangan.index') }}"><h3>Ruang Meeting</h3></a>                           
                             </div>
                         
                         <div class="tombol" id="jadwal">
                             <img src="../img/calender.png" class="gambar" alt="">
-                            <h3>Jadwal</h3>                            
+                            <a href="{{ route('jadwal') }}"></a><h3>Jadwal</h3>                            
                         </div>
 
                          <div class="tombol" id="pending-request">
                             <img src="{{ asset('img/req.png') }}" class="gambar" alt="Pending Request Icon"> {{-- Assuming you have a pending.png icon --}}
-                            <a href="{{ url('/admin/pending-requests') }}"><h3>Pending Request</h3></a>             
+                            <a href="{{ route('booking.waiting') }}"><h3>Pending Request</h3></a>             
                         </div>
 
                         <div class="tombol" id="log-activity">
                             <img src="../img/log.png" class="gambar" alt="Log Activity Icon">
-                            <a href="{{ url('/log-activity') }}"><h3>Log Activity</h3></a>
+                            <a href="{{ route('admin.log') }}"><h3>Log Activity</h3></a>
                         </div>
 
                         <div class="tombol" id="user-manage">
                             <img src="../img/manage.png" class="gambar" alt="User Management Icon"> 
-                            <a href="{{ url('/user-manage') }}"><h3>User Management</h3></a>
+                            <a href="{{ route('user.index') }}"><h3>User Management</h3></a>
                         </div>
                     </div>
                     <div class="dashboard-akun">
                         <p>Akun<p>
                         <div class="tombol" id="akun-saya">
                             <img src="../img/account.png" class="gambar" alt="">
-                            <a href="{{ url('/akun') }}"><h3>Akun Saya</h3></a>                            
+                            <a href="{{ route('admin.akun') }}"><h3>Akun Saya</h3></a>                            
                         </div>
                     </div>
                 </div>
