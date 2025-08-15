@@ -18,9 +18,6 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/jadwal', function () {
-    return view('jadwal');
-});
 
 Route::get('/akun', function () {
     return view('akun');
@@ -47,7 +44,7 @@ Route::get('/log-activity', function () {
     return view('logactivity');
 });
 
-Route::get('/req', function () {
+Route::get('/admin/pending-requests', function () {
     return view('req');
 });
 
@@ -55,14 +52,32 @@ Route::get('/manage', function () {
     return view('manage');
 });
 
+// Login Page
 Route::get('/login', [LoginController::class, 'view']);
 Route::post('/login', [LoginController::class, 'login']);
 
+// Sidebar Ruang Meeting
 Route::get('/ruangan-meeting', [RuanganController::class, 'index'])->name('ruangan.index');
 Route::get('/tambah-ruangan', [RuanganController::class, 'create'])->name('ruangan.create');
 Route::post('/tambah-ruangan', [RuanganController::class, 'storeRuangan'])->name('ruangan.store');
 Route::get('/ruangan-meeting/{id}/edit', [RuanganController::class, 'edit'])->name('ruangan.edit');
 Route::put('/ruangan-meeting/{id}', [RuanganController::class, 'update'])->name('ruangan.update');
-
 Route::get('/ruangan-meeting/{id}/booking', [BookingController::class, 'showBookingForm'])->name('ruangan.booking.form');
 Route::post('/ruangan-meeting/{id}/booking', [BookingController::class, 'storeBookingForm'])->name('ruangan.booking.store');
+
+// pending-req-booking
+Route::get('/admin/pending-requests', [BookingController::class, 'waitingApproval'])->name('booking.waiting');
+Route::patch('/booking/{id}/approve', [BookingController::class, 'approve'])->name('booking.approve');
+Route::patch('/booking/{id}/reject', [BookingController::class, 'reject'])->name('booking.reject');
+
+// Sidebar Jadwal
+// Route::get('/jadwal', function () {
+//     return view('jadwal');
+// });
+Route::get('/jadwal', [BookingController::class, 'jadwal'])->name('jadwal');
+Route::get('/api/bookings/approved', [BookingController::class, 'getApprovedBookings']);
+
+
+// Sidebar Log Activity
+
+

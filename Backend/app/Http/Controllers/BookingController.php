@@ -85,5 +85,44 @@ public function storeBookingForm(Request $request)
         // Kirim pesan error untuk SweetAlert
         return redirect()->route('ruangan.booking.form')->with('error', 'Gagal membuat booking: ' . $e->getMessage());
     }
+    }
+public function waitingApproval()
+{
+    // Ambil Semua booking yang statusnya waiting approval
+    $bookings = Booking::where('status','waiting approval')->get();
+
+    // Tampilkan dalam view
+    return view('req', compact('bookings'));
 }
+
+public function approve($id)
+{
+        Booking::where('id', $id)->update(['status' => 'approved']);
+        return back()->with('success', 'Booking berhasil di-approve');
+}
+
+    public function reject($id)
+{
+        Booking::where('id', $id)->update(['status' => 'rejected']);
+        return back()->with('success', 'Booking berhasil di-reject');
+}
+public function jadwal()
+{
+    // Ambil semua booking yang statusnya approved
+    $bookings = Booking::where('status', 'approved')->get();
+
+    // Kirim ke view jadwal.blade.php
+    return view('jadwal', compact('bookings'));
+}
+
+public function getApprovedBookings()
+{
+    $bookings = Booking::where('status', 'approved')
+        ->select('event', 'nama_pemesan', 'divisi', 'tanggal', 'jam_mulai', 'jam_selesai')
+        ->get();
+
+    return response()->json($bookings);
+}
+
+
 }

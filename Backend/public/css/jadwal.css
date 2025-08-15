@@ -190,3 +190,41 @@ hr{
     margin-right: 5%;
     color: rgb(220, 220, 220);
 }
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+}
+.popup-content h3 {
+    margin-top: 0;
+}
+
+.calendar-day {
+    position: relative;
+}
+
+.calendar-day .dot {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: blue;
+    border-radius: 50%;
+}
