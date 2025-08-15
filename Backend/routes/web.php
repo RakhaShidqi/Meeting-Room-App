@@ -19,6 +19,9 @@ Route::get('/home', function () {
     return view('admin.home');
 });
 
+Route::get('/user-home', function () {
+    return view('user.uhome');
+});
 
 Route::get('/akun', function () {
     return view('.admin.akun');
@@ -49,16 +52,16 @@ Route::get('/log-activity', function () {
     return view('admin.logactivity');
 });
 
+Route::get('/user-log', function () {
+    return view('user.ulogactivity');
+});
+
 Route::get('/admin/pending-requests', function () {
     return view('admin.req');
 });
 
 Route::get('/manage', function () {
     return view('admin.manage');
-});
-
-Route::get('/user-home', function () {
-    return view('user.uhome');
 });
 
 // Login Page
