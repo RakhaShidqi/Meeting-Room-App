@@ -55,7 +55,6 @@
                             <a href="{{ route('user.index') }}"><h3>User Management</h3></a>
                         </div>
 
-                    </div>
                     <div class="dashboard-akun">
                         <p>Akun<p>
                         <div class="tombol" id="akun-saya">
