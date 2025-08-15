@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('login');
 // });
 
+Route::get('/user-home', function () {
+    return view('user.uhome');
+});
 
 Route::get('/akun', function () {
     return view('.admin.akun');
@@ -38,16 +41,22 @@ Route::get('/jadwalpop', function () {
 });
 
 
+<<<<<<< HEAD
+Route::get('/user-log', function () {
+    return view('user.ulogactivity');
+});
+
+Route::get('/admin/pending-requests', function () {
+    return view('admin.req');
+});
+=======
 // Route::get('/admin/pending-requests', function () {
 //     return view('admin.req');
 // });
+>>>>>>> 015b42b3d7aa47fdfd36cf5951e8ea40774bd937
 
 Route::get('/manage', function () {
     return view('admin.manage');
-});
-
-Route::get('/user-home', function () {
-    return view('user.uhome');
 });
 
 // Login Page
