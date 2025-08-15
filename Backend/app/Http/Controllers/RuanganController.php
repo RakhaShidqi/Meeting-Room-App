@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ruangan;
 use App\Models\Booking;
+use App\Helpers\ActivityLogHelper;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
 
@@ -47,6 +48,14 @@ class RuanganController extends Controller
             'deskripsi'    => $request->deskripsi ?? '', // default kosong
             'foto' => $fotoPath,
         ]);
+
+        // Tambahkan log activity
+        ActivityLogHelper::add(
+        'Membuat Ruangan',
+        'Nama: ' . $request->nama_ruangan . 
+        ', Kapasitas: ' . $request->kapasitas . 
+        ', Lokasi: ' . $request->lokasi
+    );
 
         return redirect()->route('ruangan.index')->with('successcreate', 'Ruangan berhasil ditambahkan.');
     }
