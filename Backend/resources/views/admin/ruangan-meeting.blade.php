@@ -45,5 +45,15 @@
                 });
             </script>
         @endif
+
+        @if(session('editsuccess'))
+            <script>
+                    Swal.fire({
+                    title: "Success Edit",
+                    text: "Data Ruangan Diperbaharui",
+                    icon: "success"
+                });
+            </script>
+        @endif
     </div>
 @endsection

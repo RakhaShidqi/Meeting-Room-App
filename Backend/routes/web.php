@@ -61,7 +61,13 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::get('/ruangan-meeting', [RuanganController::class, 'index'])->name('ruangan.index');
 Route::get('/tambah-ruangan', [RuanganController::class, 'create'])->name('ruangan.create');
 Route::post('/tambah-ruangan', [RuanganController::class, 'storeRuangan'])->name('ruangan.store');
-Route::get('/ruangan-meeting/{id}/edit', [RuanganController::class, 'edit'])->name('ruangan.edit');
+
+// Form edit
+Route::get('/ruangan/{id}/edit', [RuanganController::class, 'edit'])->name('ruangan.edit');
+
+// Proses update
+Route::put('/ruangan/{id}', [RuanganController::class, 'update'])->name('ruangan.update');
+
 Route::put('/ruangan-meeting/{id}', [RuanganController::class, 'update'])->name('ruangan.update');
 Route::get('/ruangan-meeting/{id}/booking', [BookingController::class, 'showBookingForm'])->name('ruangan.booking.form');
 Route::post('/ruangan-meeting/{id}/booking', [BookingController::class, 'storeBookingForm'])->name('ruangan.booking.store');
@@ -72,9 +78,6 @@ Route::patch('/booking/{id}/approve', [BookingController::class, 'approve'])->na
 Route::patch('/booking/{id}/reject', [BookingController::class, 'reject'])->name('booking.reject');
 
 // Sidebar Jadwal
-// Route::get('/jadwal', function () {
-//     return view('jadwal');
-// });
 Route::get('/jadwal', [BookingController::class, 'jadwal'])->name('jadwal');
 Route::get('/api/bookings/approved', [BookingController::class, 'getApprovedBookings']);
 

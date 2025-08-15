@@ -84,7 +84,7 @@ class RuanganController extends Controller
             'deskripsi' => $request->deskripsi,
         ]);
 
-        return redirect()->route('ruangan.index')->with('success', 'Data ruangan diperbarui.');
+        return redirect()->route('ruangan.index')->with('editsuccess', 'Data ruangan diperbarui.');
     }
 }
 
