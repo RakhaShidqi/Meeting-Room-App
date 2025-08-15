@@ -35,7 +35,7 @@
                 <div class="dashboard-body">
                     <div class="dashboard-menu">
                         <div class="tombol" id="home">
-                            <img src="{{ asset('img/home.png') }}" class="gambar" alt="Home Icon">
+                            <img src="{{ asset('/img/home.png') }}" class="gambar" alt="Home Icon">
                             <a href="{{ url('/home') }}"><h3>Home</h3></a>             
                         </div>
 
@@ -59,7 +59,7 @@
                     </div>
 
                     <div class="tombol" id="log-activity">
-                            <img src="../img/log.png" class="gambar" alt="Log Activity Icon"> {{-- Assuming you have a log.png icon --}}
+                            <img src="{{ asset('/img/log.png') }}" class="gambar" alt="Log Activity Icon"> {{-- Assuming you have a log.png icon --}}
                             <a href="{{ url('/log-activity') }}"><h3>Log Activity</h3></a>
                         </div>
 
@@ -84,45 +84,40 @@
             <div class="main-body">
                 
                 {{-- NEW: Content for Pending Requests --}}
-                <div class="container-pending-requests">
-                    {{-- Loop through pending requests here --}}
-                    {{-- Example of a single pending request card --}}
-                    <div class="card pending-card">
-                        <img src="{{ asset('img/req.svg') }}" alt="Meeting Room" class="gambar-ruangan">
-                        <h3>Ruang Rapat 1</h3>
-                        <div class="booking-details">
-                            <p><strong>Nama:</strong> John Doe</p>
-                            <p><strong>Divisi:</strong> Marketing</p>
-                            <p><strong>Event/Acara:</strong> Kick-off Meeting Q3</p>
-                            <p><strong>Tanggal:</strong> 15/07/2025</p>
-                            <p><strong>Jam Mulai:</strong> 09:00</p>
-                            <p><strong>Jam Selesai:</strong> 11:00</p>
-                        </div>
-                        <div class="action-buttons">
-                            <button class="accept-button">Accept</button>
-                            <button class="reject-button">Reject</button>
-                        </div>
-                    </div>
+            <div class="container-pending-requests">
+                    @forelse($bookings as $booking)
+                        <div class="card pending-card">
+                            <img src="{{ asset('img/ruangan.jpg') }}" alt="Meeting Room" class="gambar-ruangan">
 
-                    <div class="card pending-card">
-                        <img src="{{ asset('img/meeting_room_placeholder.jpg') }}" alt="Meeting Room" class="gambar-ruangan">
-                        <h3>Ruang Rapat 2</h3>
-                        <div class="booking-details">
-                            <p><strong>Nama:</strong> Jane Smith</p>
-                            <p><strong>Divisi:</strong> HR</p>
-                            <p><strong>Event/Acara:</strong> Interview Session</p>
-                            <p><strong>Tanggal:</strong> 16/07/2025</p>
-                            <p><strong>Jam Mulai:</strong> 13:00</p>
-                            <p><strong>Jam Selesai:</strong> 16:00</p>
+                            <h3>{{ $booking->ruangan->nama_ruangan ?? 'Ruang Rapat' }}</h3>
+
+                            <div class="booking-details">
+                                <p><strong>Nama:</strong> {{ $booking->nama_pemesan }}</p>
+                                <p><strong>Divisi:</strong> {{ $booking->divisi }}</p>
+                                <p><strong>Event/Acara:</strong> {{ $booking->event }}</p>
+                                <p><strong>Tanggal:</strong> {{ \Carbon\Carbon::parse($booking->tanggal)->format('d/m/Y') }}</p>
+                                <p><strong>Jam Mulai:</strong> {{ \Carbon\Carbon::parse($booking->jam_mulai)->format('H:i') }}</p>
+                                <p><strong>Jam Selesai:</strong> {{ \Carbon\Carbon::parse($booking->jam_selesai)->format('H:i') }}</p>
+                            </div>
+
+                            <div class="action-buttons">
+                                <form action="{{ route('booking.approve', $booking->id) }}" method="POST" style="display:inline;">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button type="submit" class="accept-button">Accept</button>
+                                </form>
+
+                                <form action="{{ route('booking.reject', $booking->id) }}" method="POST" style="display:inline;">
+                                    @csrf
+                                    @method('PATCH')
+                                    <button type="submit" class="reject-button">Reject</button>
+                                </form>
+                            </div>
                         </div>
-                        <div class="action-buttons">
-                            <button class="accept-button">Accept</button>
-                            <button class="reject-button">Reject</button>
-                        </div>
-                    </div>
-                    {{-- End of example card --}}
+                    @empty
+                        <p>Tidak ada booking yang menunggu approval.</p>
+                    @endforelse
                 </div>
-                {{-- END NEW --}}
 
                 @yield('content')
             </div>

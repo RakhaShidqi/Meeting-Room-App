@@ -1,149 +1,168 @@
 const halaman = document.body.id;
 
-window.onload = function() {
+window.onload = function () {
     let username = localStorage.getItem("username");
     if (username) {
-        // Ambil semua elemen dengan kelas "username"
-        let usernameElements = document.getElementsByClassName("username");
-        
-        // Loop untuk mengisi semua elemen dengan kelas "username"
-        for (let i = 0; i < usernameElements.length; i++) {
-            usernameElements[i].textContent = username;
-        }
+        document.querySelectorAll(".username").forEach(el => el.textContent = username);
     }
 
     let savedImage = localStorage.getItem("profileImage");
     if (savedImage) {
-        let profileImages = document.querySelectorAll(".profile-image");
-        profileImages.forEach(img => {
-            img.src = savedImage;
-        });
+        document.querySelectorAll(".profile-image").forEach(img => img.src = savedImage);
+    }
+};
+
+if (halaman === "halaman-home") {
+    function updateJam() {
+        const now = new Date();
+        const hour = now.getHours().toString().padStart(2, "0");
+        const minute = now.getMinutes().toString().padStart(2, "0");
+        const second = now.getSeconds().toString().padStart(2, "0");
+        document.getElementById("jam").textContent = `${hour}:${minute}:${second}`;
     }
 
-}
+    function updateTanggal() {
+        const now = new Date();
+        const hariAngka = now.getDay(); // 0 = Minggu
+        const arrayHari = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', "Jum'at", 'Sabtu'];
+        const hari = arrayHari[hariAngka];
 
-if(halaman === "halaman-home"){
-    function updateJam(){
-        const now = new Date();
-        const hour = now.getHours().toString().padStart(2,0);
-        const minute = now.getMinutes().toString().padStart(2,0);
-        const second = now.getSeconds().toString().padStart(2,0);
-        const timeString = `${hour}:${minute}:${second}`
-        document.getElementById("jam").textContent = timeString;
+        const tanggal = now.getDate();
+        const bulanAngka = now.getMonth();
+        const arrayBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+        const bulan = arrayBulan[bulanAngka];
+
+        const tahun = now.getFullYear();
+        document.getElementById("tanggal").textContent = `${hari}, ${tanggal} ${bulan} ${tahun}`;
     }
-    
-    function updateTanggal(){
-        const now = new Date();
-        
-        const hariAngka = now.getDay();
-        arrayHari = ['Senin','Selasa','Rabu','Kamis','Jum\'at','Sabtu','Minggu']
-        const hari = arrayHari[hariAngka - 1]
-        
-        const tanggal = now.getDate().toString();
-    
-        const bulanAngka = (now.getMonth());
-        arrayBulan = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember']
-        const bulan = arrayBulan[bulanAngka]
-    
-        const tahun = now.getFullYear().toString();
-        const dateString = `${hari}, ${tanggal} ${bulan} ${tahun}`
-        document.getElementById("tanggal").textContent = dateString;
-    }
-          
+
     updateJam();
-    setInterval(updateJam,1000);
-    
+    setInterval(updateJam, 1000);
     updateTanggal();
-    setInterval(updateTanggal,1000);    
+    setInterval(updateTanggal, 1000);
 }
 
-else if(halaman === "halaman-akun"){
-    function saveName(){
+else if (halaman === "halaman-akun") {
+    window.saveName = function () {
         let usernameBaru = document.getElementById("input-username").value;
-        if(usernameBaru){
+        if (usernameBaru) {
             localStorage.setItem("username", usernameBaru);
-            let usernameElements = document.getElementsByClassName("username");
-            
-            // Loop untuk memperbarui semua elemen dengan kelas "username"
-            for (let i = 0; i < usernameElements.length; i++) {
-                usernameElements[i].textContent = usernameBaru;
-            }
-
-            
-            alert("username berhasil diubah");
+            document.querySelectorAll(".username").forEach(el => el.textContent = usernameBaru);
+            alert("Username berhasil diubah");
             document.getElementById("input-username").value = "";
+        } else {
+            alert("Masukkan username");
         }
-        else{
-            alert("masukkan username")
-        }
-    }
+    };
 
-    function savePhoto() {
+    window.savePhoto = function () {
         let fileInput = document.getElementById("input-file");
-        let profileImages = document.querySelectorAll(".profile-image"); // Ambil semua elemen dengan class "profile-image"
-
         if (fileInput.files && fileInput.files[0]) {
             let reader = new FileReader();
-
             reader.onload = function (e) {
                 let imageData = e.target.result;
-
-                // Loop semua elemen dengan class "profile-image" dan update src-nya
-                profileImages.forEach(img => {
-                    img.src = imageData;
-                });
-
-                // Simpan di localStorage
+                document.querySelectorAll(".profile-image").forEach(img => img.src = imageData);
                 localStorage.setItem("profileImage", imageData);
             };
-
-        reader.readAsDataURL(fileInput.files[0]);
+            reader.readAsDataURL(fileInput.files[0]);
         }
-    }
+    };
 }
 
 else if (halaman === "halaman-jadwal") {
     const monthYear = document.getElementById('monthYear');
     const daysContainer = document.getElementById('days');
-    const eventInput = document.getElementById('eventInput');
-    const eventList = document.getElementById('eventList');
     let currentDate = new Date();
-    let events = {}; // Menyimpan kegiatan per tanggal
+    let events = {}; // { 'YYYY-MM-DD': [{event, nama_pemesan, divisi, jam_mulai, jam_selesai}] }
 
-    function renderCalendar() {
-      const year = currentDate.getFullYear();
-      const month = currentDate.getMonth();
+    const popup = document.getElementById('popup');
+    const popupDetails = document.getElementById('popup-details');
+    const closePopup = document.getElementById('closePopup');
 
-      const firstDay = new Date(year, month, 1).getDay();
-      const lastDate = new Date(year, month + 1, 0).getDate();
+    // Ambil data booking approved dari Laravel
+    async function fetchApprovedBookings() {
+        try {
+            const res = await fetch('/api/bookings/approved');
+            const data = await res.json();
 
-      monthYear.textContent = currentDate.toLocaleDateString('id-ID', { month: 'long', year: 'numeric' });
+            data.forEach(b => {
+                const dateKey = b.tanggal;
+                if (!events[dateKey]) {
+                    events[dateKey] = [];
+                }
+                events[dateKey].push(b);
+            });
 
-      daysContainer.innerHTML = '';
-
-      for (let i = 1; i < firstDay; i++) {
-        daysContainer.innerHTML += '<div></div>';
-      }
-
-      for (let i = 1; i <= lastDate; i++) {
-        const dateKey = `${year}-${month}-${i}`;
-        const isActive = events[dateKey] ? 'active' : '';
-
-        daysContainer.innerHTML += `<div class="${isActive}" onclick="selectDate('${dateKey}')">${i}</div>`;
-      }
+            renderCalendar();
+        } catch (err) {
+            console.error('Gagal ambil data booking:', err);
+        }
     }
 
-        document.getElementById('prevMonth').addEventListener('click', () => {
+    function renderCalendar() {
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth();
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const lastDate = new Date(year, month + 1, 0).getDate();
+
+        monthYear.textContent = currentDate.toLocaleDateString('id-ID', { month: 'long', year: 'numeric' });
+        daysContainer.innerHTML = '';
+
+        for (let i = 1; i < firstDay; i++) {
+            daysContainer.innerHTML += '<div></div>';
+        }
+
+        // 
+        for (let i = 1; i <= lastDate; i++) {
+            const dateKey = `${year}-${(month + 1).toString().padStart(2, '0')}-${i.toString().padStart(2, '0')}`;
+            const hasEvent = events[dateKey] ? true : false;
+
+            daysContainer.innerHTML += `
+                <div class="calendar-day ${hasEvent ? 'active' : ''}" data-date="${dateKey}">
+                    ${i}
+                    ${hasEvent ? '<span class="dot"></span>' : ''}
+                </div>
+            `;
+        }
+
+        // Event listener untuk klik tanggal
+        document.querySelectorAll('#days div.active').forEach(day => {
+            day.addEventListener('click', function () {
+                const dateKey = this.getAttribute('data-date');
+                showPopup(events[dateKey]);
+            });
+        });
+    }
+
+    function showPopup(bookings) {
+        let html = '';
+        bookings.forEach(b => {
+            html += `
+                <p><strong>Event:</strong> ${b.event}</p>
+                <p><strong>Nama:</strong> ${b.nama_pemesan}</p>
+                <p><strong>Divisi:</strong> ${b.divisi}</p>
+                <p><strong>Jam:</strong> ${b.jam_mulai} - ${b.jam_selesai}</p>
+                <hr>
+            `;
+        });
+        popupDetails.innerHTML = html;
+        popup.style.display = 'flex';
+    }
+
+    closePopup.addEventListener('click', () => {
+        popup.style.display = 'none';
+    });
+
+    document.getElementById('prevMonth').addEventListener('click', () => {
         currentDate.setMonth(currentDate.getMonth() - 1);
         renderCalendar();
-        });
-  
-        document.getElementById('nextMonth').addEventListener('click', () => {
-        currentDate.setDate(1); 
-        currentDate.setMonth(currentDate.getMonth() + 1); 
-        renderCalendar();
-        });
-        
-    renderCalendar()
-}
+    });
 
+    document.getElementById('nextMonth').addEventListener('click', () => {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        renderCalendar();
+    });
+
+    fetchApprovedBookings();
+}

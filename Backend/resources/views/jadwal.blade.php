@@ -93,7 +93,14 @@
             <p id="copyright">Made with heart by Ryan/Tama/Rynetz/Tamskutt</p>
         </main>
     </div>
-
+    <!-- Popup Jadwal -->
+    <div id="popup" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <h3>Detail Jadwal</h3>
+            <div id="popup-details"></div>
+            <button id="closePopup">Tutup</button>
+        </div>
+    </div>
     <script src="../js/script.js"></script>
 </body>
 
