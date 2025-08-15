@@ -41,7 +41,6 @@ Route::get('/jadwalpop', function () {
 });
 
 
-<<<<<<< HEAD
 Route::get('/user-log', function () {
     return view('user.ulogactivity');
 });
@@ -49,11 +48,9 @@ Route::get('/user-log', function () {
 Route::get('/admin/pending-requests', function () {
     return view('admin.req');
 });
-=======
 // Route::get('/admin/pending-requests', function () {
 //     return view('admin.req');
 // });
->>>>>>> 015b42b3d7aa47fdfd36cf5951e8ea40774bd937
 
 Route::get('/manage', function () {
     return view('admin.manage');
