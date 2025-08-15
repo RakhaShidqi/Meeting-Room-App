@@ -4,6 +4,7 @@ use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/welcome', function () {
@@ -15,12 +16,12 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    return view('home');
+    return view('admin.home');
 });
 
 
 Route::get('/akun', function () {
-    return view('akun');
+    return view('.admin.akun');
 });
 
 Route::get('/register', function () {
@@ -32,24 +33,24 @@ Route::get('/forgot-password', function () {
     return view('forgot-password');
 });
 
-Route::get('/form-tambahruang', function () {
-    return view('form-tambahruang');
-});
+// Route::get('/form-tambahruang', function () {
+//     return view('.admin.form-tambahruang');
+// });
 
 Route::get('/jadwalpop', function () {
-    return view('jadwalpop');
+    return view('admin.jadwalpop');
 });
 
 Route::get('/log-activity', function () {
-    return view('logactivity');
+    return view('admin.logactivity');
 });
 
 Route::get('/admin/pending-requests', function () {
-    return view('req');
+    return view('admin.req');
 });
 
 Route::get('/manage', function () {
-    return view('manage');
+    return view('admin.manage');
 });
 
 // Login Page
@@ -80,4 +81,6 @@ Route::get('/api/bookings/approved', [BookingController::class, 'getApprovedBook
 
 // Sidebar Log Activity
 
+// Sidebar User Management
+Route::get('/admin/user-management', [UserController::class, 'index'])->name('user.index');
 

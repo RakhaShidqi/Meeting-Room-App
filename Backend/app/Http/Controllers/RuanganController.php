@@ -14,13 +14,13 @@ class RuanganController extends Controller
     public function index()
     {
         $ruangans = Ruangan::all(); // ambil semua data dari tabel ruangan
-        return view('ruangan-meeting', compact('ruangans'));
+        return view('admin.ruangan-meeting', compact('ruangans'));
     }
 
     // Form tambah Ruangan
     public function create()
     {
-        return view('form-tambahruang');
+        return view('admin.form-tambahruang');
     }
 
     // Simpan Ruangan Baru
@@ -55,7 +55,7 @@ class RuanganController extends Controller
     public function edit($id)
     {
         $ruangan = Ruangan::findOrFail($id);
-        return view('form-editruang', compact('ruangan'));
+        return view('admin.form-editruang', compact('ruangan'));
     }
 
     // Update ruangan

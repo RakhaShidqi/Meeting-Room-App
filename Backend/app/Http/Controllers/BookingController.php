@@ -18,7 +18,7 @@ class BookingController extends Controller
     {
         // Ambil data ruangan berdasarkan ID
         $ruangan = Ruangan::findOrFail($id);
-        return view('formbooking', compact('ruangan'));
+        return view('admin.formbooking', compact('ruangan'));
     }
 public function storeBookingForm(Request $request)
 {
@@ -92,7 +92,7 @@ public function waitingApproval()
     $bookings = Booking::where('status','waiting approval')->get();
 
     // Tampilkan dalam view
-    return view('req', compact('bookings'));
+    return view('admin.req', compact('bookings'));
 }
 
 public function approve($id)
@@ -112,7 +112,7 @@ public function jadwal()
     $bookings = Booking::where('status', 'approved')->get();
 
     // Kirim ke view jadwal.blade.php
-    return view('jadwal', compact('bookings'));
+    return view('admin.jadwal', compact('bookings'));
 }
 
 public function getApprovedBookings()
