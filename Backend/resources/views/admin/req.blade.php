@@ -36,14 +36,15 @@
                     <div class="dashboard-menu">
                         <div class="tombol" id="home">
                             <img src="{{ asset('/img/home.png') }}" class="gambar" alt="Home Icon">
-                            <a href="{{ url('/home') }}"><h3>Home</h3></a>             
+                            <a href="{{ route('admin.home')}}"><h3>Home</h3></a>             
                         </div>
 
                         <p>Menu</p>
 
                         <div class="tombol" id="ruang-meeting">
                             <img src="{{ asset('img/room.png') }}" class="gambar" alt="Room Icon">
-                            <h3>Ruang Meeting</h3>             
+                            <a href="{{ route('ruangan.index') }}"><h3>Ruang Meeting</h3></a>  
+                        
                         </div>
 
                         <div class="tombol" id="jadwal">
