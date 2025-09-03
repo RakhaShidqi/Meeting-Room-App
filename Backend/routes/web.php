@@ -7,18 +7,28 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Log;
 
-// Route::get('/welcome', function () {
-//     return view('welcome');
+// Middleware
+// Hanya admin bisa lihat daftar user
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/admin/home', [UserController::class, 'adminHome'])->name('admin.home');
+});
+
+// Hanya user
+Route::middleware(['auth', 'role:user'])->group(function () {
+    Route::get('/user/home', [UserController::class, 'userHome'])->name('user.uhome');
+});
+
+Route::get('/logtest', function () {
+    Log::info("✅ Test log masuk");
+    return "Cek log di storage/logs/laravel.log";
+});
+
+// Route::get('/user-home', function () {
+//     return view('user.uhome');
 // });
-
-Route::get('/', function () {
-    return view('login');
-});
-
-Route::get('/user-home', function () {
-    return view('user.uhome');
-});
 
 Route::get('/akun', function () {
     return view('.admin.akun');
@@ -28,14 +38,6 @@ Route::get('/user-akun', function () {
     return view('.user.uakun');
 });
 
-Route::get('/register', function () {
-    return view('register');
-});
-
-
-Route::get('/forgot-password', function () {
-    return view('forgot-password');
-});
 
 Route::get('/jadwalpop', function () {
     return view('admin.jadwalpop');
@@ -49,20 +51,25 @@ Route::get('/user-log', function () {
 Route::get('/admin/pending-requests', function () {
     return view('admin.req');
 });
-// Route::get('/admin/pending-requests', function () {
-//     return view('admin.req');
-// });
 
 Route::get('/manage', function () {
     return view('admin.manage');
 });
 
+// Global Page
 // Login Page
-Route::get('/login', [LoginController::class, 'view']);
-Route::post('/login', [LoginController::class, 'login']);
+Route::get('/', [LoginController::class, 'view'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 
+// Forgot Password
+Route::get('/forgot-password', function () {
+    return view('forgot-password');
+});
+
+// Admin Page
 // Register Page
 Route::get('/register', [RegisterController::class,'view'])->name('register');
+Route::post('/register-account', [RegisterController::class,'register'])->name('register.post');
 
 // Sidebar Home
 Route::get('/home', function () {
