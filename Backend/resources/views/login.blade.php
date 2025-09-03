@@ -6,6 +6,7 @@
     <title>Meeting Room App</title>
     <link rel="icon" type="image/x-icon" href="../img/meeting-room.png ">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <div class="circle">
@@ -13,7 +14,7 @@
 </div>
 
     <div class="container">
-        <form method="POST" action="/login">
+        <form method="POST" action="{{ route('login.post') }}">
             @csrf
 
             <h2>Selamat Datang</h2>
@@ -35,9 +36,19 @@
             <button type="submit" class="log">Login</button>
             <br><br>
 
-            <a href="{{ url('/register') }}">Belum ada akun? Daftar</a>
+            <a href="{{ route('register') }}">Belum ada akun? Daftar</a>
 
         </form>
     </div>
+    {{-- SweetAlert Success --}}
+        @if(session('successcreate'))
+            <script>
+                    Swal.fire({
+                    title: "Berhasil",
+                    text: "Berhasil Tambah Ruangan",
+                    icon: "success"
+                });
+            </script>
+        @endif
 </body>
 </html>

@@ -13,19 +13,29 @@
   </div>
 
     <div class="container">
-        <form action="">
+        <form action="{{ route('register.post') }}" method="POST">
             <h2>Pembuatan Akun Baru</h2>
-            <input type="text" name="" id="user" placeholder="Username">
+            @csrf
+            <input type="text" name="name" id="user" placeholder="Username">
             <br>
-            <input type="email" name="" id="email" placeholder="Email ID">
+            <input type="email" name="email" id="email" placeholder="Email ID">
             <br>
-            <input type="password" name="" id="pass" placeholder="Password">
+            <input type="password" name="password" id="pass" placeholder="Password">
             <br>
+            <input type="password" name="password_confirmation" id="pass" placeholder="Confirm Password" required>
+            <br>
+            <label for="role">Role</label>
+                <select name="role" required>
+                    <option value="">-- Pilih Role --</option>
+                    <option value="user">User</option>
+                    <option value="manager">Manager</option>
+                    <option value="admin">Admin</option>
+                </select>
             <br><br>
             <button type="submit" class="reg">Register</button>
             <br><br>
-            <a href="http://127.0.0.1:8000/login">Back to Home</a>
         </form>
+        <a href="{{route('login')}}">Back to Home</a>
     </div>
 </body>
 </html>
