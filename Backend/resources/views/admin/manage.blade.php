@@ -100,30 +100,29 @@
                                 <th>No.</th>
                                 <th>Email</th>
                                 <th>Username</th>
+                                <th>Role</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- Contoh Data Pengguna --}}
-                            <tr>
-                                <td>1</td>
-                                <td>user1@example.com</td>
-                                <td>userone</td>
-                                <td>
-                                    <button class="action-button edit-button" onclick="openEditUserModal('user1@example.com', 'userone')">Edit</button>
-                                    <button class="action-button delete-button" onclick="confirmDeleteUser('user1@example.com')">Hapus</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>user2@example.com</td>
-                                <td>usertwo</td>
-                                <td>
-                                    <button class="action-button edit-button" onclick="openEditUserModal('user2@example.com', 'usertwo')">Edit</button>
-                                    <button class="action-button delete-button" onclick="confirmDeleteUser('user2@example.com')">Hapus</button>
-                                </td>
-                            </tr>
-                            {{-- Tambahkan baris lain untuk pengguna lain --}}
+                            @forelse($users as $index => $user)
+                                <tr>
+                                    <td>{{ $index + 1 }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->role }}</td>
+                                    <td>
+                                        <button class="action-button edit-button" 
+                                            onclick="openEditUserModal('{{ $user->email }}', '{{ $user->name }}')">Edit</button>
+                                        <button class="action-button delete-button" 
+                                            onclick="confirmDeleteUser('{{ $user->email }}')">Hapus</button>
+                                    </td>
+                                </tr>
+                                @empty
+                                <tr>
+                                    <td colspan="5" style="text-align: center;">Tidak ada pengguna</td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
