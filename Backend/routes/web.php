@@ -74,6 +74,9 @@ Route::get('/user-log', function () {
 Route::get('/', [LoginController::class, 'view'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.post');
 
+// Logout
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
 // Forgot Password
 Route::get('/forgot-password', function () {
     return view('forgot-password');

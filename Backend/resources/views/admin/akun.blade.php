@@ -87,7 +87,10 @@
                     <button onclick="savePhoto()">Save</button>
                     <br><br>
                     <br><br>
-                    <button type="submit" class="logout">Log Out</button>
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="logout">Log Out</button>
+                    </form>
                 </div>
             </div>
             <p id="copyright">Made with heart by Developer</p>

@@ -7,7 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class ActivityLog extends Model
 {
     public $timestamps = false; // karena kita cuma pakai created_at manual
-    protected $fillable = ['user_id', 'activity', 'details'];
+    protected $fillable = [
+        'user_id',
+        'activity',
+        'details',
+        'ip_address',
+        'user_agent',
+    ];
 
     public function user()
     {

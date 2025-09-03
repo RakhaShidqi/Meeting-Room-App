@@ -41,11 +41,11 @@
         </form>
     </div>
     {{-- SweetAlert Success --}}
-        @if(session('successcreate'))
+        @if(session('success'))
             <script>
                     Swal.fire({
-                    title: "Berhasil",
-                    text: "Berhasil Tambah Ruangan",
+                    title: "Successfull",
+                    text: "Registration Successful! Please log in.",
                     icon: "success"
                 });
             </script>
