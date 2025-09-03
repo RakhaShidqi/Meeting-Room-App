@@ -8,6 +8,6 @@ class RegisterController extends Controller
 {
     public function view ()
     {
-        return view("register");
+        return view("admin.register");
     }
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,9 +12,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-// Route::get('/', function () {
-//     return view('login');
-// });
+Route::get('/', function () {
+    return view('login');
+});
 
 Route::get('/user-home', function () {
     return view('user.uhome');
@@ -59,6 +60,9 @@ Route::get('/manage', function () {
 // Login Page
 Route::get('/login', [LoginController::class, 'view']);
 Route::post('/login', [LoginController::class, 'login']);
+
+// Register Page
+Route::get('/register', [RegisterController::class,'view'])->name('register');
 
 // Sidebar Home
 Route::get('/home', function () {
