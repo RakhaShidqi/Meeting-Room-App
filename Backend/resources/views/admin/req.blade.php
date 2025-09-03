@@ -49,32 +49,32 @@
 
                         <div class="tombol" id="jadwal">
                             <img src="{{ asset('img/calender.png') }}" class="gambar" alt="Calendar Icon">
-                            <a href="{{ url('/jadwal') }}"><h3>Jadwal</h3></a>             
+                            <a href="{{ route('jadwal') }}"><h3>Jadwal</h3></a>             
                         </div>
                         
-                        <div class="tombol" id="pending-request">
+                        <div class="tombol" id="pending-requests">
                             <img src="{{ asset('img/req.png') }}" class="gambar" alt="Pending Request Icon"> {{-- Assuming you have a pending.png icon --}}
-                            <a href="{{ url('/admin/pending-requests') }}"><h3>Pending Request</h3></a>             
+                            <a href="{{ route('booking.waiting') }}"><h3>Pending Request</h3></a>             
                         </div>
 
                     </div>
 
                     <div class="tombol" id="log-activity">
                             <img src="{{ asset('/img/log.png') }}" class="gambar" alt="Log Activity Icon"> {{-- Assuming you have a log.png icon --}}
-                            <a href="{{ url('/log-activity') }}"><h3>Log Activity</h3></a>
+                            <a href="{{ route('admin.log') }}"><h3>Log Activity</h3></a>
                         </div>
                         
                         <div class="tombol" id="user-manage">
                             <img src="../img/manage.png" class="gambar" alt="User Management Icon"> 
-                            <a href="{{ url('/user-manage') }}"><h3>User Management</h3></a>
+                            <a href="{{ route('user.index') }}"><h3>User Management</h3></a>
                         </div>
                     <div class="dashboard-akun">
                         <p>Akun</p>
                         <div class="tombol" id="akun-saya">
                             <img src="{{ asset('img/account.png') }}" class="gambar" alt="Account Icon">
-                            <a href="{{ url('/akun') }}"><h3>Akun Saya</h3></a>             
+                            <a href="{{ route('admin.akun') }}"><h3>Akun Saya</h3></a>             
                         </div>
-                    </div>
+                    </div>  
                 </div>
             </div>
         </div>

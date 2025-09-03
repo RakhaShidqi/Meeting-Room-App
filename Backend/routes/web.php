@@ -31,9 +31,9 @@ Route::get('/akun', function () {
     return view('.admin.akun');
 });
 
-Route::get('/admin/pending-requests', function () {
-    return view('admin.req');
-});
+// Route::get('/admin/pending-requests', function () {
+//     return view('admin.req');
+// })->name('pending-request');
 
 Route::get('/manage', function () {
     return view('admin.manage');
