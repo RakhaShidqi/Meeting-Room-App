@@ -85,6 +85,9 @@
                     <br><br>
                     <input type="file" id="input-file">
                     <button onclick="savePhoto()">Save</button>
+                    <br><br>
+                    <br><br>
+                    <button type="submit" class="logout">Log Out</button>
                 </div>
             </div>
             <p id="copyright">Made with heart by Developer</p>

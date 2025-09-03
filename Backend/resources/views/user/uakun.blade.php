@@ -71,12 +71,15 @@
                     <img src="../img/user.png" class="profile-image" id="profile-image-akun" alt="">
                     <h1 class="username"></h1>
                     <input type="text" id="input-username" placeholder="Username baru">
-                    <button onclick="saveName()">Save</button>
+                    <button onclick="saveName()" class="save">Save</button>
                     <br><br><br>
                     <label for="file">Photo Profile</label>
                     <br><br>
                     <input type="file" id="input-file">
-                    <button onclick="savePhoto()">Save</button>
+                    <button onclick="savePhoto()" class="save">Save</button>
+                    <br><br>
+                    <br><br>
+                    <button type="submit" class="logout">Log Out</button>
                 </div>
             </div>
             <p id="copyright">Made with heart by Developer</p>

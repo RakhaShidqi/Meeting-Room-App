@@ -136,7 +136,7 @@ hr{
     outline: none;
 }
 
-.container-akun button{
+.save {
     border: none;
     background-color: rgb(0, 170, 139);
     color: white;
@@ -174,3 +174,15 @@ hr{
     height: 20vh;
     margin-top: 50px;
 }
+
+.logout {
+    background-color: #790800; /* Merah */
+    color: white;
+    padding: 7px 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;}
+
+    .logout:hover {
+        background-color: red;
+    }
