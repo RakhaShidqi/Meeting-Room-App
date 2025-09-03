@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Validation\ValidationException;
+use App\Helpers\ActivityLogHelper;
 use Throwable;
 
 class BookingController extends Controller
@@ -78,6 +79,21 @@ public function storeBookingForm(Request $request)
             'status'       => 'Waiting Approval',
         ]);
 
+        // 🔥 Log activity
+        $details = sprintf(
+            "Booking berhasil: Ruangan #%s | Pemesan: %s | Divisi: %s | Event: %s | Tanggal: %s | Waktu: %s - %s",
+            $request->ruangan_id,
+            $request->nama_pemesan,
+            $request->divisi,
+            $request->event,
+            $request->tanggal,
+            $request->jam_mulai,
+            $request->jam_selesai
+        );
+
+        ActivityLogHelper::add('Successful Booking', $details);
+
+
         return redirect()->route('ruangan.index')->with('success', 'Booking berhasil dibuat!');
     } catch (\Exception $e) {
         Log::error('❌ Gagal simpan booking', ['error' => $e->getMessage()]);
@@ -97,15 +113,48 @@ public function waitingApproval()
 
 public function approve($id)
 {
-        Booking::where('id', $id)->update(['status' => 'approved']);
-        return back()->with('success', 'Booking berhasil di-approve');
+    $booking = Booking::findOrFail($id);
+    $booking->update(['status' => 'approved']);
+
+    // 🔥 Tambahkan log activity
+    $details = sprintf(
+        "Booking #%s untuk ruangan %s telah di-approve. Pemesan: %s, Event: %s, Tanggal: %s, Jam: %s - %s",
+        $booking->id,
+        $booking->ruangan_id,
+        $booking->nama_pemesan,
+        $booking->event,
+        $booking->tanggal,
+        $booking->jam_mulai,
+        $booking->jam_selesai
+    );
+
+    ActivityLogHelper::add('Booking Approved', $details);
+
+    return back()->with('success', 'Booking berhasil di-approve');
 }
 
-    public function reject($id)
+public function reject($id)
 {
-        Booking::where('id', $id)->update(['status' => 'rejected']);
-        return back()->with('success', 'Booking berhasil di-reject');
+    $booking = Booking::findOrFail($id);
+    $booking->update(['status' => 'rejected']);
+
+    // 🔥 Tambahkan log activity
+    $details = sprintf(
+        "Booking #%s untuk ruangan %s telah di-reject. Pemesan: %s, Event: %s, Tanggal: %s, Jam: %s - %s",
+        $booking->id,
+        $booking->ruangan_id,
+        $booking->nama_pemesan,
+        $booking->event,
+        $booking->tanggal,
+        $booking->jam_mulai,
+        $booking->jam_selesai
+    );
+
+    ActivityLogHelper::add('Booking Rejected', $details);
+
+    return back()->with('success', 'Booking berhasil di-reject');
 }
+
 public function jadwal()
 {
     // Ambil semua booking yang statusnya approved

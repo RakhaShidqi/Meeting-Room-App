@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use App\Helpers\ActivityLogHelper;
 
 class RegisterController extends Controller
 {
@@ -37,6 +38,14 @@ class RegisterController extends Controller
 
             if ($user) {
                 Log::info("🎉 User berhasil dibuat dengan ID: " . $user->id);
+                // 🔥 Tambahkan log activity
+                $details = sprintf(
+                "User baru berhasil registrasi dengan email: %s, role: %s",
+                $user->email,
+                $user->role
+                );
+                ActivityLogHelper::add('User Registered', $details);    
+
             } else {
                 Log::error("❌ User gagal dibuat (return null/false)");
             }
@@ -45,6 +54,8 @@ class RegisterController extends Controller
 
         } catch (\Exception $e) {
             Log::error("❌ Error saat register: " . $e->getMessage());
+            // 🔥 Log activity untuk kegagalan
+             ActivityLogHelper::add('User Registration Failed', $e->getMessage());
             return back()->with('error', 'Terjadi kesalahan: '.$e->getMessage());
         }
     }

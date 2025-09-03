@@ -77,7 +77,7 @@
                 <a href="{{ url('/akun') }}"><img class="profile-image" src="{{ asset('img/user.png') }}" alt=""></a>    
             </div>
             <div class="main-body">
-                <a href="{{ url()->previous() }}" class="back-button-text-link">
+                <a href="{{ route('ruangan.index') }}" class="back-button-text-link">
                         <span class="back-button-text">Back</span>
                     </a>
                 @yield('content')

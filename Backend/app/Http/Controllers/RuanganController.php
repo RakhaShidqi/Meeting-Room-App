@@ -40,7 +40,7 @@ class RuanganController extends Controller
             $fotoPath = $request->file('foto')->store('ruangan', 'public');
         }
 
-        Ruangan::create([
+        $ruangan=Ruangan::create([
             'nama_ruangan' => $request->nama_ruangan,
             'kapasitas' => $request->kapasitas,
             'fasilitas' => $request->fasilitas,
@@ -51,10 +51,10 @@ class RuanganController extends Controller
 
         // Tambahkan log activity
         ActivityLogHelper::add(
-        'Membuat Ruangan',
-        'Nama: ' . $request->nama_ruangan . 
-        ', Kapasitas: ' . $request->kapasitas . 
-        ', Lokasi: ' . $request->lokasi
+        'Adding Ruangan',
+        'Nama: ' . $ruangan->nama_ruangan . 
+        ', Kapasitas: ' . $ruangan->kapasitas . 
+        ', Lokasi: ' . $ruangan->lokasi
     );
 
         return redirect()->route('ruangan.index')->with('successcreate', 'Ruangan berhasil ditambahkan.');
@@ -93,6 +93,12 @@ class RuanganController extends Controller
             'deskripsi' => $request->deskripsi,
         ]);
 
+        // 🔥 Log activity
+        ActivityLogHelper::add(
+        'Update Ruangan',
+        "ID: {$ruangan->id}, Nama: {$ruangan->nama_ruangan}, Kapasitas: {$ruangan->kapasitas}, Lokasi: {$ruangan->lokasi}"
+        );
+
         return redirect()->route('ruangan.index')->with('editsuccess', 'Data ruangan diperbarui.');
     }
 
@@ -107,6 +113,12 @@ class RuanganController extends Controller
 
     // Hapus data ruangan
     $ruangan->delete();
+
+    // 🔥 Log activity
+    ActivityLogHelper::add(
+    'Hapus Ruangan',
+    "ID: {$id}, Nama: {$ruangan->nama_ruangan}, Lokasi: {$ruangan->lokasi}"
+    );
 
     return redirect()->route('ruangan.index')->with('deletesuccess', 'Data ruangan berhasil dihapus.');
 }
