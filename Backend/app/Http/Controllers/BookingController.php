@@ -67,6 +67,22 @@ public function storeBookingForm(Request $request)
 
     Log::info('✅ Validasi sukses');
 
+    // 🔥 Cek bentrok jadwal
+    $conflict = Booking::where('ruangan_id', $request->ruangan_id)
+        ->where('tanggal', $request->tanggal)
+        ->where(function ($query) use ($request) {
+            $query->where(function ($q) use ($request) {
+                $q->where('jam_mulai', '<', $request->jam_selesai)
+                  ->where('jam_selesai', '>', $request->jam_mulai);
+            });
+        })
+        ->exists();
+
+    if ($conflict) {
+        return redirect()->route('ruangan.index')->with('errorconflict', '❌ Jadwal bentrok! Ruangan sudah terbooking pada jam tersebut.');
+    }
+
+
     try {
         Booking::create([
             'ruangan_id'   => $request->ruangan_id,
