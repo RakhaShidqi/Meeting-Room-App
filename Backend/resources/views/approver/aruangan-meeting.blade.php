@@ -1,4 +1,4 @@
-@extends('layouts user.uruangan')
+@extends('layouts.uruangan')
 
 @section('title', 'Daftar Ruangan Meeting')
 
