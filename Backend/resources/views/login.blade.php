@@ -36,7 +36,7 @@
             <button type="submit" class="log">Login</button>
             <br><br>
 
-            <a href="{{ route('register') }}">Belum ada akun? Daftar</a>
+            <!-- <a href="{{ route('register') }}">Belum ada akun? Daftar</a> -->
 
         </form>
     </div>
