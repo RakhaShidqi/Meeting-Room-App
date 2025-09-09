@@ -136,9 +136,11 @@ else if (halaman === "halaman-jadwal") {
     }
 
     function showPopup(bookings) {
+        console.log(bookings); // cek isi object
         let html = '';
         bookings.forEach(b => {
             html += `
+                <p><strong>Ruangan:</strong> ${b.nama_ruangan}</p>
                 <p><strong>Event:</strong> ${b.event}</p>
                 <p><strong>Nama:</strong> ${b.nama_pemesan}</p>
                 <p><strong>Divisi:</strong> ${b.divisi}</p>

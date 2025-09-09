@@ -120,6 +120,7 @@ public function approve($id)
     $details = sprintf(
         "Booking #%s untuk ruangan %s telah di-approve. Pemesan: %s, Event: %s, Tanggal: %s, Jam: %s - %s",
         $booking->id,
+        $booking->nama_ruangan,
         $booking->ruangan_id,
         $booking->nama_pemesan,
         $booking->event,
@@ -142,6 +143,7 @@ public function reject($id)
     $details = sprintf(
         "Booking #%s untuk ruangan %s telah di-reject. Pemesan: %s, Event: %s, Tanggal: %s, Jam: %s - %s",
         $booking->id,
+        $booking->nama_ruangan,
         $booking->ruangan_id,
         $booking->nama_pemesan,
         $booking->event,
@@ -158,6 +160,7 @@ public function reject($id)
 public function jadwal()
 {
     // Ambil semua booking yang statusnya approved
+
     $bookings = Booking::where('status', 'approved')->get();
 
     // Kirim ke view jadwal.blade.php
@@ -166,12 +169,30 @@ public function jadwal()
 
 public function getApprovedBookings()
 {
-    $bookings = Booking::where('status', 'approved')
-        ->select('event', 'nama_pemesan', 'divisi', 'tanggal', 'jam_mulai', 'jam_selesai')
+    $bookings = Booking::join('ruangans', 'bookings.ruangan_id', '=', 'ruangans.id')
+        ->where('bookings.status', 'approved')
+        ->select(
+            'bookings.event',
+            'bookings.nama_pemesan',
+            'bookings.divisi',
+            'bookings.tanggal',
+            'bookings.jam_mulai',
+            'bookings.jam_selesai',
+            'ruangans.nama_ruangan' // << tambah ini
+        )
         ->get();
 
     return response()->json($bookings);
 }
+
+// public function getApprovedBookings()
+// {
+//     $bookings = Booking::where('status', 'approved')
+//         ->select('event', 'nama_pemesan', 'divisi', 'tanggal', 'jam_mulai', 'jam_selesai')
+//         ->get();
+
+//     return response()->json($bookings);
+// }
 
 
 }

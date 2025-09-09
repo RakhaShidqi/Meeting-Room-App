@@ -25,4 +25,10 @@ class Booking extends Model
     protected $attributes = [
         'status' => 'Waiting Approval'
     ];
+
+    // Relasi ke tabel ruangan
+    public function ruangan()
+    {
+        return $this->belongsTo(Ruangan::class, 'ruangan_id');
+    }
 }
