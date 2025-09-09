@@ -1,4 +1,4 @@
-@extends('layouts user.ubooking')
+@extends('layouts approver.abooking')
 
 @section('title', 'Form Booking')
 

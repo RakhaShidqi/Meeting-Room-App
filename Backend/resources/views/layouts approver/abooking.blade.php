@@ -54,6 +54,7 @@
                             <a href="{{ url('/log-activity') }}"><h3>Log Activity</h3></a>
                         </div>
 
+                    </div>
                     <div class="dashboard-akun">
                         <p>Akun</p>
                         <div class="tombol" id="akun-saya">
