@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     
     <title>@yield('title', 'Meeting X')</title>
 
@@ -106,19 +107,24 @@
                         </thead>
                         <tbody>
                             @forelse($users as $index => $user)
-                                <tr>
+                                <tr id="user-row-{{ $user->id }}">
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->role }}</td>
                                     <td>
                                         <button class="action-button edit-button" 
-                                            onclick="openEditUserModal('{{ $user->email }}', '{{ $user->name }}')">Edit</button>
+                                            onclick="openEditUserModal('{{ $user->email }}', '{{ $user->name }}')">
+                                            Edit
+                                        </button>
+
                                         <button class="action-button delete-button" 
-                                            onclick="confirmDeleteUser('{{ $user->email }}')">Hapus</button>
+                                            onclick="confirmDeleteUser('{{ $user->id }}, {{ $user->email }}')">
+                                            Hapus
+                                        </button>
                                     </td>
                                 </tr>
-                                @empty
+                            @empty
                                 <tr>
                                     <td colspan="5" style="text-align: center;">Tidak ada pengguna</td>
                                 </tr>
@@ -132,18 +138,32 @@
                     <div class="modal-content">
                         <span class="close-button" onclick="closeUserModal()">&times;</span>
                         <h2 id="modalTitle">Tambah Pengguna</h2>
-                        <form id="userForm">
+                        <form id="userForm" method="post" action="{{ route('users.store') }}">
+                            @csrf
+
                             <label for="email">Email:</label>
                             <input type="email" id="email" name="email" required>
                             
-                            <label for="username">Username:</label>
-                            <input type="text" id="username" name="username" required>
+                            <label for="name">Nama:</label>
+                            <input type="text" id="name" name="name" required>
                             
                             <label for="password">Password:</label>
                             <input type="password" id="password" name="password" required>
+
+                            <label for="password_confirmation">Konfirmasi Password:</label>
+                            <input type="password" id="password_confirmation" name="password_confirmation" required>
+
+                            <label for="role">Role</label>
+                            <select name="role" required>
+                                <option value="">-- Pilih Role --</option>
+                                <option value="user">User</option>
+                                <option value="manager">Manager</option>
+                                <option value="admin">Admin</option>
+                            </select>
                             
                             <button type="submit" class="submit-button">Simpan</button>
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -152,58 +172,71 @@
 
     <script src="../js/script.js"></script>
     <script>
-        // Fungsi untuk membuka modal tambah pengguna
-        function openAddUserModal() {
-            document.getElementById('modalTitle').innerText = 'Tambah Pengguna Baru';
-            document.getElementById('userForm').reset();
-            // --- PENTING: Ubah display menjadi 'flex' di sini ---
-            document.getElementById('userModal').style.display = 'flex'; 
-        }
 
-        // Fungsi untuk membuka modal edit pengguna
-        function openEditUserModal(email, username) {
-            document.getElementById('modalTitle').innerText = 'Edit Pengguna';
-            document.getElementById('email').value = email;
-            document.getElementById('username').value = username;
-            document.getElementById('password').value = ''; // Password biasanya tidak diisi ulang saat edit
-            // --- PENTING: Ubah display menjadi 'flex' di sini ---
-            document.getElementById('userModal').style.display = 'flex'; 
-        }
+    // Fungsi untuk membuka modal tambah pengguna
+    function openAddUserModal() {
+        document.getElementById('modalTitle').innerText = 'Tambah Pengguna Baru';
+        document.getElementById('userForm').reset();
+        document.getElementById('userModal').style.display = 'flex'; 
+    }
 
-        // Fungsi untuk menutup modal
-        function closeUserModal() {
-            document.getElementById('userModal').style.display = 'none';
-        }
+    // Fungsi untuk membuka modal edit pengguna
+    function openEditUserModal(email, name) {
+        document.getElementById('modalTitle').innerText = 'Edit Pengguna';
+        document.getElementById('email').value = email;
+        document.getElementById('name').value = name;
+        document.getElementById('password').value = ''; 
+        document.getElementById('userModal').style.display = 'flex'; 
+    }
 
-        // Fungsi konfirmasi hapus pengguna
-        function confirmDeleteUser(email) {
+    // Fungsi untuk menutup modal
+    function closeUserModal() {
+        document.getElementById('userModal').style.display = 'none';
+    }
+
+    // Fungsi konfirmasi hapus pengguna
+    // function confirmDeleteUser(email) {
+    //     if (confirm(`Apakah Anda yakin ingin menghapus pengguna ${email}?`)) {
+    //         alert(`Pengguna ${email} dihapus (simulasi).`);
+    //     }
+    // }
+
+    // ✅ Biarkan submit jalan normal ke Laravel
+    document.getElementById('userForm').addEventListener('submit', function() {
+        // tutup modal setelah tombol simpan ditekan
+        document.getElementById('userModal').style.display = 'none';
+        // form akan lanjut submit ke route users.store
+    });
+
+    function confirmDeleteUser(userId, email) {
             if (confirm(`Apakah Anda yakin ingin menghapus pengguna ${email}?`)) {
-                // Di sini Anda akan menambahkan logika untuk menghapus pengguna,
-                // misalnya, melakukan AJAX request ke backend Anda.
-                alert(`Pengguna ${email} dihapus (simulasi).`);
-                // Setelah penghapusan berhasil, Anda mungkin perlu me-refresh daftar pengguna
+                fetch(`/admin/users/${userId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message);
+                        // hapus baris user dari tabel tanpa reload
+                        document.querySelector(`#user-row-${userId}`).remove();
+                    } else {
+                        alert("❌ " + data.message);
+                    }
+                })
+                .catch(err => {
+                    console.error("❌ Error:", err);
+                    alert("Terjadi kesalahan saat menghapus user.");
+                });
             }
         }
 
-        // Contoh event listener untuk form submit
-        document.getElementById('userForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const email = document.getElementById('email').value;
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
 
-            const modalTitle = document.getElementById('modalTitle').innerText;
-            if (modalTitle === 'Tambah Pengguna Baru') {
-                alert(`Menambah pengguna baru:\nEmail: ${email}\nUsername: ${username}\nPassword: ${password}`);
-                // Di sini Anda akan menambahkan logika untuk menambah pengguna baru ke database
-            } else {
-                alert(`Mengedit pengguna:\nEmail: ${email}\nUsername: ${username}\nPassword (jika diubah): ${password}`);
-                // Di sini Anda akan menambahkan logika untuk mengedit pengguna yang sudah ada di database
-            }
-            closeUserModal();
-            // Setelah operasi selesai, Anda mungkin perlu me-refresh daftar pengguna
-        });
     </script>
+
 </body>
 
 </html>

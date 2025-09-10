@@ -106,6 +106,9 @@ Route::get('/admin/log-activity', function () {
 
 // Sidebar User Management
 Route::get('/admin/user-management', [UserController::class, 'index'])->name('user.index');
+Route::post('admin/users/store', [UserController::class, 'storeuser'])->name('users.store');
+Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+
 
 
 

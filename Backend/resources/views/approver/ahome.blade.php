@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meeting X - Home</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="../css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
         <div class="box-1">
             <div class="container-dashboard">
                 <div class="dashboard-header">
-                    <img src="{{ asset('img/logo_hypernet2.png') }}" alt="">
+                    <img src="../img/logo_hypernet2.png" alt="">
                     <h2>Meeting X</h2>
                 </div>
 
@@ -32,14 +32,19 @@
                         <p>Menu<p>                      
                             <div class="tombol" id="ruang-meeting">                               
                                 <img src="../img/room.png" class="gambar" alt="">
-                                <a href="{{ url('/ruangan-meeting') }}"><h3>Ruang Meeting</h3></a>                                                    
+                                <a href="{{ route('ruangan.index') }}"><h3>Ruang Meeting</h3></a>                                                    
                             </div>
 
                             <div class="tombol" id="jadwal">
                                 <img src="../img/calender.png" class="gambar" alt="">
                                 <a href="{{ url('/jadwal') }}"><h3>Jadwal</h3></a>                            
                             </div>
-                           
+
+                            <div class="tombol" id="pending-requests">
+                            <img src="{{ asset('img/req.png') }}" class="gambar" alt="Pending Request Icon"> {{-- Assuming you have a pending.png icon --}}
+                            <a href="{{ route('booking.waiting') }}"><h3>Pending Request</h3></a>             
+                        </div>
+
                             <div class="tombol" id="log-activity">
                             <img src="../img/log.png" class="gambar" alt="Log Activity Icon"> {{-- Assuming you have a log.png icon --}}
                             <a href="{{ url('/log-activity') }}"><h3>Log Activity</h3></a>
@@ -63,13 +68,14 @@
                     <a href="{{ url('/akun') }}"><img class="profile-image" src="../img/user.png" alt=""></a>               
             </div>
             <div class="main-body">
-                @yield('content')
+                <div id="jam">00:00:00</div>
+                <div id="tanggal"> Hari, 00, 00, 0000</div>
             </div>
 
         </main>
     </div>
 
-    <script src="{{ asset('js/script.js') }}"></script>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

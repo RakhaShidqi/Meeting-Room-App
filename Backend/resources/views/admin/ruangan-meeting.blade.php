@@ -46,6 +46,17 @@
                 });
             </script>
         @endif
+
+        {{-- SweetAlert Error Conflict Booking --}}
+        @if(session('errorconflict'))
+            <script>
+                    Swal.fire({
+                    title: "Error",
+                    text: "Jadwal Sudah Penuh",
+                    icon: "error"
+                });
+            </script>
+        @endif
         
         @if(session('success'))
             <script>

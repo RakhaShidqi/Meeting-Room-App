@@ -4,29 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>@yield('title', 'Meeting X')</title>
-
-    {{-- CSS --}}
-    <link rel="stylesheet" href="{{ asset('css/ruang_meeting.css') }}">
-
-    {{-- Google Fonts --}}
+    <title>@yield('title', 'Meeting X - Form Booking')</title>
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    {{-- Favicon --}}
     <link rel="icon" href="https://www.hypernet.co.id/wp-content/uploads/2020/01/cropped-hypernet-logo-192x192.png">
 </head>
 
 <body id="halaman-ruang-meeting">
     <div class="container">
-
-        {{-- Sidebar Kiri --}}
+        {{-- Sidebar kiri --}}
         <div class="box-1">
             <div class="container-dashboard">
                 <div class="dashboard-header">
-                    <img src="{{ asset('img/logo_hypernet2.png') }}" alt="Logo Hypernet">
+                    <img src="{{ asset('img/logo_hypernet2.png') }}" alt="">
                     <h2>Meeting X</h2>
                 </div>
 
@@ -35,32 +27,38 @@
                 <div class="dashboard-body">
                     <div class="dashboard-menu">
                         <div class="tombol" id="home">
-                            <img src="{{ asset('img/home.png') }}" class="gambar" alt="Home Icon">
+                            <img src="{{ asset('img/home.png') }}" class="gambar" alt="">
                             <a href="{{ url('/home') }}"><h3>Home</h3></a>                           
                         </div>
 
                         <p>Menu</p>
 
                         <div class="tombol" id="ruang-meeting">
-                            <img src="{{ asset('img/room.png') }}" class="gambar" alt="Room Icon">
-                            <h3>Ruang Meeting</h3>                           
+                            <img src="{{ asset('img/room.png') }}" class="gambar" alt="">
+                            <a href="{{ url('/ruangan-meeting') }}"><h3>Ruang Meeting</h3></a>                           
                         </div>
 
                         <div class="tombol" id="jadwal">
-                            <img src="{{ asset('img/calender.png') }}" class="gambar" alt="Calendar Icon">
+                            <img src="{{ asset('img/calender.png') }}" class="gambar" alt="">
                             <a href="{{ url('/jadwal') }}"><h3>Jadwal</h3></a>                           
                         </div>
                     </div>
                     
+                     <div class="tombol" id="pending-request">
+                            <img src="{{ asset('img/req.png') }}" class="gambar" alt="Pending Request Icon"> {{-- Assuming you have a pending.png icon --}}
+                            <a href="{{ url('/admin/pending-requests') }}"><h3>Pending Request</h3></a>             
+                        </div>
+
                     <div class="tombol" id="log-activity">
-                            <img src="../img/log.png" class="gambar" alt="Log Activity Icon"> {{-- Assuming you have a log.png icon --}}
+                            <img src="{{ asset('/img/log.png') }}" class="gambar" alt="Log Activity Icon"> {{-- Assuming you have a log.png icon --}}
                             <a href="{{ url('/log-activity') }}"><h3>Log Activity</h3></a>
                         </div>
 
+                    </div>
                     <div class="dashboard-akun">
                         <p>Akun</p>
                         <div class="tombol" id="akun-saya">
-                            <img src="{{ asset('img/account.png') }}" class="gambar" alt="Account Icon">
+                            <img src="{{ asset('img/account.png') }}" class="gambar" alt="">
                             <a href="{{ url('/akun') }}"><h3>Akun Saya</h3></a>                            
                         </div>
                     </div>
@@ -68,25 +66,20 @@
             </div>
         </div>
 
-        {{-- Konten Utama --}}
+        {{-- Konten utama --}}
         <main class="box-2">
             <div class="main-header">
                 <a href="{{ url('/akun') }}"><p class="username"></p></a>
-                <a href="{{ url('/akun') }}"><img class="profile-image" src="{{ asset('img/user.png') }}" alt="User Icon"></a>    
+                <a href="{{ url('/akun') }}"><img class="profile-image" src="{{ asset('img/user.png') }}" alt=""></a>    
             </div>
-
             <div class="main-body">
-                <form action="{{ route('ruangan.create', ['id' => $ruangan->id, 'nama' => Str::slug($ruangan->nama_ruangan)]) }}">
-                    <button class="add-room-button">
-                    <span class="plus-icon-button">+</span> Tambah Ruangan
-                </button>
-                </form>
+                <a href="{{ url()->previous() }}" class="back-button-text-link">
+                        <span class="back-button-text">Back</span>
+                    </a>
                 @yield('content')
             </div>
         </main>
     </div>
-
-    {{-- JS --}}
     <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>
