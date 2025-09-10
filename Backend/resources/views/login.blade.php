@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meeting Room App</title>
-    <link rel="icon" type="image/x-icon" href="../img/meeting-room.png ">
+    <link rel="icon" type="image/x-icon" href="../img/home.png ">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -17,7 +17,7 @@
         <form method="POST" action="{{ route('login.post') }}">
             @csrf
 
-            <h2>Selamat Datang</h2>
+            <h2>ADMIN LOGIN</h2>
 
             <input type="email" name="email" id="email" placeholder="Email ID/Username" required>
             <br><br>
@@ -33,7 +33,7 @@
             <a href="{{ url('/forgot-password') }}">Lupa Password?</a>
             <br><br>
 
-            <button type="submit" class="log">Login</button>
+            <button type="submit" class="log">LOGIN</button>
             <br><br>
 
             <a href="{{ route('register') }}">Belum ada akun? Daftar</a>

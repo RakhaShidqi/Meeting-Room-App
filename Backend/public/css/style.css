@@ -3,8 +3,10 @@ html,body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-image: url(../img/bg.jpg);
+    background-image: url(../img/hyp2.jpeg);
     background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,10 +16,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../img/bg.jpg');
-    background-size: cover; /* Pastikan background penuh */
-    background-repeat: no-repeat;
-    background-position: center center;
+    /* background-image: url('../img/hyp2.jpeg'); */
+    /* background-size: contain;  */
+    /* background-repeat: no-repeat; */
+    /* background-position: left; */
 }
 
 .circle {
@@ -28,7 +30,6 @@ body {
     border-radius: 50%;
     background-color: #d9d9d9;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,23 +40,27 @@ body {
     height: 50px;
 }
 .container {
-    width: 350px;
-    height: 450px;
-    background-color: white;
+    width: 419px;
+    height: 312px;
+    background-color: #00AA8B;
     display: flex;
     justify-content: center;  /* horizontal center */
     align-items: center;      /* vertical center */
     flex-direction: column;
     border-radius: 10px;
-
 }
 h2{
     text-align: center;
-    margin-top: -30px;
+    margin-top: 15px;
+    padding:15px;
+    color: white;
+    background-color: #11BF9F;
+    /* margin: 50px; */
 }
 a{
     text-align: center;
     font-style: italic;
+    color: white;
 }
     form {
       width: 80%;
@@ -65,50 +70,56 @@ a{
     }
 
     input#email {
-    padding: 5px; 
-    background-image: url('../icon/user-solid.svg');
+    padding: 6px; 
+    background-image: url('../icon/user.svg');
     background-repeat: no-repeat;
     background-position: 10px center;
     background-size: 20px 20px;
-    border-radius: 10px;
-    background-color: rgba(129, 105, 105, 0.5);
-    border:none;
+    border-radius: 8px;
+    border:1px groove rgba(0, 0, 0, 0.3);
     outline: none;
+    background-color: white;
     padding-left: 40px;
     }
 
     input#pass {
-        padding: 5px;
-        background-image: url('../icon/lock-solid.svg');
+        padding: 6px;
+        background-image: url('../icon/padlock.svg');
         background-repeat: no-repeat;
         background-position: 10px center;
         background-size: 20px 20px;
-        border-radius: 10px;
-        background-color: rgba(129, 105, 105, 0.5);
-        border:none;
+        border-radius: 8px;
+        background-color: white;
+        border:1px groove rgba(0, 0, 0, 0.3);
         outline: none;
         padding-left: 40px; 
     }
 
 
     button.log {
-        padding: 5px;
-        width: 50%;
+        padding: 5px 8px;
+        width: 60%;
         text-align: center;
-        background-color: rgba(136, 114, 114, 0.5);
+        font-weight:bold;
+        background-color:#20bba4;
         color: white;
-        border: none;
+        border:0.5px groove rgba(117, 107, 107, 0.2);
         outline: none;
-        border-radius: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 5px 8px 0 rgba(133, 131, 131, 0.2), 0 17px 50px 0 rgba(0,0,0,0.19);
+        
     }
 
     button:hover.log {
-        background-color: rgba(136, 114, 114, 0.7);
+        background-color: #3da18f;
+        box-shadow: 0 5px 8px 0 rgba(214, 208, 208, 0.2), 0 17px 50px 0 rgba(0,0,0,0.19);
     }
 
 
     input#email::placeholder,
 input#pass::placeholder {
-    color: #816969;
-    opacity: 1; 
+    color: gray;
+    opacity: 1;
+    font-size: 12px; 
 }
