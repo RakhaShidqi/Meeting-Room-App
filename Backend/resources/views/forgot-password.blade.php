@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meeting Room App</title>
+    <link href="https://fonts.google.com/specimen/Lato" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../img/meeting-room.png ">
     <link rel="stylesheet" href="css/lupapw.css">
 </head> 
@@ -15,14 +16,14 @@
     <div class="container">
         <form action="">
             <h2>Password Reset</h2>
-            <p>Masukan email Anda dan kami akan mengirimkan tautan untuk mengatur ulang kata sandi Anda</p>
+            <p>Enter your email and we'll send you a link to reset your password.</p>
             <br><br>
             <input type="email" name="" id="email" placeholder="Email ID">
             <br><br>
             <br><br>
             <button type="submit" class="sub">Submit</button>
             <br><br>
-            <a href="http://127.0.0.1:8000/login">Back To Home</a>
+            <a href="http://127.0.0.1:8000/">Back To Home</a>
         </form>
     </div>
 </body>

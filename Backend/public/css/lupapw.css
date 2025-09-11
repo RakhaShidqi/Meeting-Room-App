@@ -2,7 +2,7 @@ html,body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #816969;
+    background-color: #21ac97;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,30 +29,34 @@ html,body {
   
 }
 .container {
-    width: 350px;
-    height: 450px;
+    width: 419px;
+    height: 400px;
     background-color: white;
     display: flex;
-    justify-content: center;  /* horizontal center */
-    align-items: center;      /* vertical center */
+    justify-content: center; 
+    align-items: center;     
     flex-direction: column;
     border-radius: 10px;
+    box-shadow: 3px 2px 4px grey;
 
 }
 
 h2{
+    font-family: 'Lato', sans-serif;
     text-align: center;
-    margin-top: -30px;
+    margin-top: -1px;
 }
 
 p{
     font-size: 12px;
-    font-style: italic;
+    font-family: 'Lato', sans-serif;
     text-align: center;
+    color: gray;
 }
 a{
     text-align: center;
-    font-style: italic;
+    font-style: normal;
+    color: gray;
 }
     form {
       width: 80%;
@@ -64,33 +68,41 @@ a{
    
 
     input#email {
-    padding: 5px; /* beri ruang untuk ikon */
-    background-image: url('../icon/envelope-solid.svg');
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    background-size: 20px 20px;
-    border-radius: 10px;
-    background-color: rgba(129, 105, 105, 0.5);
-    border:none;
-    outline: none;
-    padding-left: 40px;
+    padding: 6px;
+        margin-top: -30px;
+        background-image: url('../icon/padlock.svg');
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        background-size: 20px 20px;
+        border-radius: 8px;
+        background-color: white;
+        border:1px groove rgba(0, 0, 0, 0.3);
+        outline: none;
+        padding-left: 40px;
+        box-shadow: 0px 3px 10px grey;
     }
 
    
-    
+
 
     button.sub {
-        padding: 5px;
-        width: 50%;
+        padding: 5px 8px;
+        margin-bottom: -10px;
+        width: 60%;
         text-align: center;
-        background-color: rgba(136, 114, 114, 0.5);
+        font-family: 'Lato', sans-serif;
+        font-weight:bold;
+        background-color:#20bba4;
         color: white;
-        border: none;
+        border:0.5px groove rgba(117, 107, 107, 0.2);
         outline: none;
-        border-radius: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0px 3px 10px grey;
     }
         button:hover.sub {
-        background-color: rgba(136, 114, 114, 0.7);
+        background-color: #1ba38a;
+        box-shadow: 0px 3px 10px grey;
     }
 
     input#email::placeholder,

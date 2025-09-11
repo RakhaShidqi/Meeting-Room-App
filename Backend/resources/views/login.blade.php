@@ -6,18 +6,27 @@
     <title>Meeting Room App</title>
     <link rel="icon" type="image/x-icon" href="../img/home.png ">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.google.com/specimen/Lato" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-<div class="circle">
+<!-- <div class="circle">
     <img src="../icon/user-regular.svg" alt="user icon" />
+</div> -->
+
 </div>
+<div class="right-panel">
+    <div class="welcome-text">
+        <h1>Hello !</h1>
+        <h2>Welcome Back</h2>
+    </div>
 
     <div class="container">
+        <div class="login-header">
+            <h3>ADMIN LOGIN</h3>
+        </div>
         <form method="POST" action="{{ route('login.post') }}">
             @csrf
-
-            <h2>ADMIN LOGIN</h2>
 
             <input type="email" name="email" id="email" placeholder="Email ID/Username" required>
             <br><br>
@@ -30,7 +39,7 @@
                 </span>
             @endif
 
-            <a href="{{ url('/forgot-password') }}">Lupa Password?</a>
+            <a href="{{ url('/forgot-password') }}">Forgot Password?</a>
             <br><br>
 
             <button type="submit" class="log">LOGIN</button>

@@ -16,10 +16,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-image: url('../img/hyp2.jpeg'); */
-    /* background-size: contain;  */
-    /* background-repeat: no-repeat; */
-    /* background-position: left; */
+    background-image: url('../img/hyp2.jpeg');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: left;
 }
 
 .circle {
@@ -39,27 +39,73 @@ body {
     width: 40px;
     height: 50px;
 }
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 880px; /* jarak dari kanan layar */
+}
+
+.welcome-text {
+    text-align: left;
+    width: 100%;
+    max-width: 419px; /* sejajar dengan container */
+    margin-bottom: 15px;
+}
+
+.welcome-text h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    text-shadow: 3px 3px 5px grey;
+}
+
+.welcome-text h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #20bba4;
+    margin: 5px 0 0 0;
+    font-family: 'Lato', sans-serif;
+    text-shadow: 3px 3px 5px rgb(165, 165, 165);
+    margin-bottom: 25px;
+}
+
 .container {
     width: 419px;
     height: 312px;
     background-color: #00AA8B;
     display: flex;
-    justify-content: center;  /* horizontal center */
-    align-items: center;      /* vertical center */
+    justify-content: center; 
+    align-items: center;     
     flex-direction: column;
     border-radius: 10px;
+    box-shadow: 0px 10px 10px grey;
 }
-h2{
-    text-align: center;
-    margin-top: 15px;
-    padding:15px;
-    color: white;
+
+.login-header {
+    width: 100%;
     background-color: #11BF9F;
-    /* margin: 50px; */
-}
-a{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 15px 0;
     text-align: center;
-    font-style: italic;
+    margin-bottom: 65px;
+}
+
+.login-header h3 {
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+}
+    
+a{
+    text-align: left;
+    font-style: normal;
     color: white;
 }
     form {
@@ -71,6 +117,7 @@ a{
 
     input#email {
     padding: 6px; 
+    margin-top: 0;
     background-image: url('../icon/user.svg');
     background-repeat: no-repeat;
     background-position: 10px center;
@@ -80,10 +127,12 @@ a{
     outline: none;
     background-color: white;
     padding-left: 40px;
+    padding-right: 30px;
     }
 
     input#pass {
         padding: 6px;
+        margin-top: -30px;
         background-image: url('../icon/padlock.svg');
         background-repeat: no-repeat;
         background-position: 10px center;
@@ -92,12 +141,14 @@ a{
         background-color: white;
         border:1px groove rgba(0, 0, 0, 0.3);
         outline: none;
-        padding-left: 40px; 
+        padding-left: 40px;
+        padding-right: 30px; 
     }
 
 
     button.log {
         padding: 5px 8px;
+        margin-bottom: -10px;
         width: 60%;
         text-align: center;
         font-weight:bold;
@@ -112,7 +163,7 @@ a{
     }
 
     button:hover.log {
-        background-color: #3da18f;
+        background-color: #11BF9F;
         box-shadow: 0 5px 8px 0 rgba(214, 208, 208, 0.2), 0 17px 50px 0 rgba(0,0,0,0.19);
     }
 
@@ -121,5 +172,5 @@ a{
 input#pass::placeholder {
     color: gray;
     opacity: 1;
-    font-size: 12px; 
+    font-size: 12px;
 }
