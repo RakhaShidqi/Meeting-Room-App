@@ -2,6 +2,7 @@ body {
     display: flex; /* Creates the two-column layout */
     margin: 0;
     padding: 0;
+    font-family: 'Lato', sans-serif;
     height: 100vh;
 }
 
@@ -189,7 +190,7 @@ input#pass::placeholder {
         padding: 20px;
         margin: auto; /* Center the panel horizontally */
         margin-top: 15vh; /* Push the panel down from the top */
-        /* Add a semi-transparent white background */
+        background-color: rgba(255, 255, 255, 0.9); /* Add a semi-transparent white background */
         border-radius: 10px;
     }
 

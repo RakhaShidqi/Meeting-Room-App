@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="../img/home.png ">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.google.com/specimen/Lato" rel="stylesheet">
+    <link href="https://fonts.google.com/specimen/Rubik" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
