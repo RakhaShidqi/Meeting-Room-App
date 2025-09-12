@@ -15,7 +15,7 @@
 
     <div class="container">
         <form action="">
-            <h2>Password Reset</h2>
+            <h2>Forgot Password</h2>
             <p>Enter your email and we'll send you a link to reset your password.</p>
             <br><br>
             <input type="email" name="" id="email" placeholder="Email ID">
