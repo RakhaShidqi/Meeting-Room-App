@@ -13,8 +13,8 @@
 <!-- <div class="circle">
     <img src="../icon/user-regular.svg" alt="user icon" />
 </div> -->
-
-</div>
+<div class="left-panel">
+        </div>
 <div class="right-panel">
     <div class="welcome-text">
         <h1>Hello !</h1>
