@@ -18,21 +18,23 @@ a{
 
 .box-1{
     background-color: rgb(255, 255, 255);
-    border-right: 1px solid;
     height: 100vh;
 }
 
 .container-dashboard{
-    padding-left: 15px;
+    padding-left: 7px;
     padding-right: 15px;
 }
 
 .dashboard-header{
     display: flex;
+    padding-left: 15px;
+    padding-right: 15px;
     border: soid 1px;
     height: 80px;
     flex-direction: row;
     align-items: center;
+    font-family: 'Lato', sans-serif;
 }
 
 .dashboard-header h2{
@@ -44,7 +46,15 @@ a{
     margin-left: 20px;
     padding: 0;
 }
-
+p{
+    font-family: 'Lato',sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: gray;
+}
+h3{
+    font-weight: 300;
+}
 hr{
     margin: 0;
     padding: 0;
@@ -59,6 +69,7 @@ hr{
 .tombol{
     display: flex;
     align-items: center;
+    font-family: 'Lato', sans-serif;
 }
 
 .tombol img{
@@ -123,7 +134,7 @@ hr{
 #jam{
     font-size: 4rem;
     margin-top: 30px;
-    color: white;
+    color: #201E43;
 }
 
 #tanggal{
@@ -133,7 +144,8 @@ hr{
 
 #home{
     border-radius: 5px;
-    background-color: rgb(220, 220, 220);
+    background-color: rgb(0, 170, 139);
+    color: aliceblue;
 }
 
 .profile-image{

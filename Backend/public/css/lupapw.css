@@ -2,32 +2,15 @@ html,body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #21ac97;
+    background-image: url('../img/pxfuel.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #00AA8B;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.circle {
-    position: absolute;
-  top: calc(50% - 275px); 
-  width: 87px;
-  height: 87px;
-  border-radius: 50%;
-  background-color: #d9d9d9;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.circle img {
-    width: 40px;
-  height: 50px;
-  
-  
-}
 .container {
     width: 419px;
     height: 400px;
@@ -37,8 +20,13 @@ html,body {
     align-items: center;     
     flex-direction: column;
     border-radius: 10px;
-    box-shadow: 3px 4px 4px grey;
+    box-shadow: 3px 4px 4px rgb(255, 255, 255);
+}
 
+.container img{
+    width: 20%;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 h2{
@@ -51,12 +39,16 @@ p{
     font-size: 12px;
     font-family: 'Lato', sans-serif;
     text-align: center;
+    font-style: italic;
     color: gray;
+    display: block;
 }
 a{
     text-align: center;
     font-style: normal;
+    font-size: 13px;
     color: gray;
+    text-decoration: none;
 }
     form {
       width: 80%;
@@ -65,43 +57,39 @@ a{
       align-items: center;
     }
 
-   
-
     input#email {
     padding: 6px;
         margin-top: -30px;
-        background-image: url('../icon/mail.svg');
         background-repeat: no-repeat;
-        background-position: 10px center;
+        background-position: 5px center;
         background-size: 20px 20px;
         border-radius: 8px;
         background-color: white;
         border:1px groove rgba(0, 0, 0, 0.3);
         outline: none;
-        padding-left: 40px;
+        padding-left: 13px;
+        padding-right: 40px;
         box-shadow: 0px 3px 10px grey;
     }
-
-   
-
 
     button.sub {
         padding: 5px 8px;
         margin-bottom: -10px;
         width: 60%;
         text-align: center;
-        font-family: 'Lato', sans-serif;
-        font-weight:bold;
-        background-color:#20bba4;
+        font-family: 'Rubik', sans-serif;
+        font-weight:medium;
+        background-color: #00AA8B;
         color: white;
         border:0.5px groove rgba(117, 107, 107, 0.2);
         outline: none;
         border-radius: 8px;
         cursor: pointer;
         box-shadow: 0px 3px 10px grey;
+        text-decoration: bold;
     }
         button:hover.sub {
-        background-color: #1ba38a;
+        background-color: #aa001f ;
         box-shadow: 0px 3px 10px grey;
     }
 

@@ -9,6 +9,7 @@
     <link href="https://fonts.google.com/specimen/Lato" rel="stylesheet">
     <link href="https://fonts.google.com/specimen/Rubik" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" href="https://www.hypernet.co.id/wp-content/uploads/2020/01/cropped-hypernet-logo-192x192.png">
 </head>
 <body>
 <!-- <div class="circle">
