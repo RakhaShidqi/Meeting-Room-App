@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meeting X - Akun Saya</title>
+    <title>Meeting X - My Account</title>
     <link rel="stylesheet" href="../css/akun.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,12 +35,12 @@
                         
                             <div class="tombol" id="ruangan-meeting">
                                 <img src="../img/room.png" class="gambar" alt="">
-                                <a href="{{ url('/ruangan-meeting') }}"><h3>Ruang Meeting</h3></a>                           
+                                <a href="{{ url('/ruangan-meeting') }}"><h3>Meeting Room</h3></a>                           
                             </div>
                         
                         <div class="tombol" id="jadwal">
                             <img src="../img/calender.png" class="gambar" alt="">
-                            <a href="{{ url('/jadwal') }}"><h3>Jadwal</h3></a>                            
+                            <a href="{{ url('/jadwal') }}"><h3>Schedule</h3></a>                            
                         </div>
 
                          <div class="tombol" id="pending-request">
@@ -59,10 +59,10 @@
                         </div>
                     </div>
                     <div class="dashboard-akun">
-                        <p>Akun<p>
+                        <p>Account<p>
                         <div class="tombol" id="akun-saya">
                             <img src="../img/account.png" class="gambar" alt="">
-                            <h3>Akun Saya</h3>                            
+                            <h3>My Account</h3>                            
                         </div>
                     </div>
                 </div>

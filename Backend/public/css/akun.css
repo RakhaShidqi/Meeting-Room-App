@@ -20,19 +20,24 @@ a{
 
 .box-1{
     background-color: rgb(250, 250, 250);
-    border-right: 1px solid;
+    height: 90vh;
+    
 }
 
 .container-dashboard{
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 7px;
+    padding-right: 14px;
 }
 
 .dashboard-header{
     display: flex;
+    padding-left: 20px;
+    padding-right: 15px;
+    /* border: solid 1px; */
     height: 80px;
     flex-direction: row;
     align-items: center;
+    font-family: 'Lato', sans-serif;
 }
 
 .dashboard-header h2{
@@ -45,6 +50,16 @@ a{
     padding: 0;
 }
 
+p{
+    font-family: 'Lato',sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: gray;
+}
+h3{
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
 hr{
     margin: 0;
     padding: 0;
@@ -69,8 +84,19 @@ hr{
     height: 10%;
 }
 
+.tombol:hover img.gambar {
+    transform: scale(1.2);
+    filter: brightness(1.2);    
+}
+
 .tombol h3{
     margin-left: 10px;
+}
+
+.tombol:hover{
+    color: gray;
+    transform: scale(1.0);
+    filter: brightness(1.2);  
 }
 
 .gambar{
@@ -176,7 +202,7 @@ hr{
 }
 
 .logout {
-    background-color: #790800; /* Merah */
+    background-color: red; /* Merah */
     color: white;
     padding: 7px 14px;
     border: none;
@@ -184,5 +210,11 @@ hr{
     border-radius: 5px;}
 
     .logout:hover {
-        background-color: red;
+        background-color: #970a00;
     }
+
+#akun-saya{
+    border-radius: 5px;
+    background-color: rgb(0, 170, 139);
+    color: aliceblue;
+}

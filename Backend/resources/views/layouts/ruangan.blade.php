@@ -43,12 +43,12 @@
 
                         <div class="tombol" id="ruang-meeting">
                             <img src="{{ asset('img/room.png') }}" class="gambar" alt="Room Icon">
-                            <a href="{{ route('ruangan.index') }}"></a><h3>Ruang Meeting</h3>                           
+                            <a href="{{ route('ruangan.index') }}"></a><h3>Meeting Room</h3>                           
                         </div>
 
                         <div class="tombol" id="jadwal">
                             <img src="{{ asset('img/calender.png') }}" class="gambar" alt="Calendar Icon">
-                            <a href="{{ route('jadwal') }}"><h3>Jadwal</h3></a>                           
+                            <a href="{{ route('jadwal') }}"><h3>Schedule</h3></a>                           
                         </div>
                     </div>
                     
@@ -68,10 +68,10 @@
                         </div>
 
                     <div class="dashboard-akun">
-                        <p>Akun</p>
+                        <p>Account</p>
                         <div class="tombol" id="akun-saya">
                             <img src="{{ asset('img/account.png') }}" class="gambar" alt="Account Icon">
-                            <a href="{{ route('admin.akun') }}"><h3>Akun Saya</h3></a>                            
+                            <a href="{{ route('admin.akun') }}"><h3>My Account</h3></a>                            
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
             <div class="main-body">
                 <form action="{{ route('ruangan.create', ['id' => $ruangan->id, 'nama' => Str::slug($ruangan->nama_ruangan)]) }}">
                     <button class="add-room-button">
-                    <span class="plus-icon-button">+</span> Tambah Ruangan
+                    <span class="plus-icon-button">+</span> Add Room
                 </button>
                 </form>
                 @yield('content')

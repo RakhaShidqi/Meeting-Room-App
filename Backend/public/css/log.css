@@ -8,7 +8,11 @@ a {
     color: inherit;
     text-decoration: none;
 }
-
+/* Span (Back) */
+span{ 
+    font-weight: 400;
+    color: white;
+}
 .container {
     margin: 0;
     display: grid;
@@ -18,20 +22,23 @@ a {
 
 .box-1 {
     background-color: rgb(250, 250, 250);
-    border-right: 1px solid;
+    height: 90vh;
 }
 
 .container-dashboard {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 7px;
+    padding-right: 14px;
 }
 
 .dashboard-header {
     display: flex;
-    border: soid 1px;
+    padding-left: 20px;
+    padding-right: 15px;
+    /* border: soid 1px; */
     height: 80px;
     flex-direction: row;
     align-items: center;
+    font-family: 'Lato', sans-serif;
 }
 
 .dashboard-header h2 {
@@ -43,7 +50,16 @@ a {
     margin-left: 20px;
     padding: 0;
 }
-
+p{
+    font-family: 'Lato',sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: gray;
+}
+h3{
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
 hr {
     margin: 0;
     padding: 0;
@@ -58,6 +74,7 @@ hr {
 .tombol{
     display: flex;
     align-items: center;
+    font-family: 'Lato', sans-serif;
 }
 
 .tombol img{
@@ -68,6 +85,17 @@ hr {
 
 .tombol h3{
     margin-left: 10px;
+}
+
+.tombol:hover img.gambar {
+    transform: scale(1.2);
+    filter: brightness(1.2);    
+}
+
+.tombol:hover{
+    color: gray;
+    transform: scale(1.0);
+    filter: brightness(1.2);  
 }
 
 .gambar{
@@ -122,7 +150,7 @@ hr {
     width: 80px; /* Adjusted size */
     height: 35px;
     border-radius: 5px;
-    background-color: #f4f4f4;
+    background-color: #00aa8b;
     color: #333;
     font-size: 14px; /* Adjusted font size */
     text-decoration: none;
@@ -133,7 +161,7 @@ hr {
 }
 
 .back-button-text-link:hover {
-    background-color: #ddd;
+    background-color: #59a093;
     color: #000;
 }
 
@@ -197,7 +225,11 @@ hr {
     font-size: 14px;
     color: #666;
 }
-
+#log-activity{
+    border-radius: 5px;
+    background-color: rgb(0, 170, 139);
+    color: aliceblue;
+}
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {
     .container {

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meeting X - Jadwal</title>
+    <title>Meeting X - Schedule</title>
     <link rel="stylesheet" href="../css/jadwal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,12 +35,12 @@
                         
                             <div class="tombol" id="ruang-meeting">
                                 <img src="../img/room.png" class="gambar" alt="">
-                                <a href="{{ route('ruangan.index') }}"><h3>Ruang Meeting</h3></a>                           
+                                <a href="{{ route('ruangan.index') }}"><h3>Meeting Room</h3></a>                           
                             </div>
                         
                         <div class="tombol" id="jadwal">
                             <img src="../img/calender.png" class="gambar" alt="">
-                            <a href="{{ route('jadwal') }}"></a><h3>Jadwal</h3>                            
+                            <a href="{{ route('jadwal') }}"></a><h3>Schedule</h3>                            
                         </div>
 
                          <div class="tombol" id="pending-request">
@@ -59,10 +59,10 @@
                         </div>
                     </div>
                     <div class="dashboard-akun">
-                        <p>Akun<p>
+                        <p>Account<p>
                         <div class="tombol" id="akun-saya">
                             <img src="../img/account.png" class="gambar" alt="">
-                            <a href="{{ route('admin.akun') }}"><h3>Akun Saya</h3></a>                            
+                            <a href="{{ route('admin.akun') }}"><h3>My Account</h3></a>                            
                         </div>
                     </div>
                 </div>

@@ -23,14 +23,14 @@ a{
 
 .container-dashboard{
     padding-left: 7px;
-    padding-right: 15px;
+    padding-right: 14px;
 }
 
 .dashboard-header{
     display: flex;
-    padding-left: 15px;
+    padding-left: 20px;
     padding-right: 15px;
-    border: soid 1px;
+    /* border: solid 1px; */
     height: 80px;
     flex-direction: row;
     align-items: center;
@@ -77,15 +77,22 @@ hr{
     width: 10%;
     height: 10%;
 }
-
+.tombol:hover img.gambar {
+    transform: scale(1.2);
+    filter: brightness(1.2);    
+}
 .tombol h3{
     margin-left: 10px;
 }
 
+.tombol:hover{
+    color: gray;
+    transform: scale(1.0);
+    filter: brightness(1.2);  
+}
 .gambar{
     margin-left: 10px;
 }
-
 
 .main-header{
     display: flex;
@@ -95,8 +102,6 @@ hr{
     justify-content: right;
     color: aliceblue;
 }
-
-
 
 .main-header p,.main-header img{
     margin: 0;

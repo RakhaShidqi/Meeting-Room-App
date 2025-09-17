@@ -32,12 +32,12 @@
                         <p>Menu<p>                      
                             <div class="tombol" id="ruang-meeting">                               
                                 <img src="../img/room.png" class="gambar" alt="">
-                                <a href="{{ route('ruangan.index') }}"><h3>Ruang Meeting</h3></a>                                                    
+                                <a href="{{ route('ruangan.index') }}"><h3>Meeting Room</h3></a>                                                    
                             </div>
 
                             <div class="tombol" id="jadwal">
                                 <img src="../img/calender.png" class="gambar" alt="">
-                                <a href="{{ route('jadwal') }}"><h3>Jadwal</h3></a>                            
+                                <a href="{{ route('jadwal') }}"><h3>Schedule</h3></a>                            
                             </div>
 
                              <div class="tombol" id="pending-request">
@@ -57,10 +57,10 @@
 
                     </div>
                     <div class="dashboard-akun">
-                        <p>Akun<p>
+                        <p>Account<p>
                         <div class="tombol" id="akun-saya">
                             <img src="../img/account.png" class="gambar" alt="">
-                            <a href="{{ route('admin.akun') }}"><h3>Akun Saya</h3></a>                        
+                            <a href="{{ route('admin.akun') }}"><h3>My Account</h3></a>                        
                         </div>
                     </div>
                 </div>
