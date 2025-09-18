@@ -69,14 +69,14 @@
                 <a href="{{ url('/home') }}" class="back-button-text-link">
                     <span class="back-button-text">Back</span>
                 </a>
-                <div class="log-activity-container"> <h2>Log Aktivitas Pengguna</h2>
+                <div class="log-activity-container"> <h2>User Log Activity</h2>
                     <div class="log-table-wrapper">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Waktu</th>
-                                    <th>Pengguna</th>
-                                    <th>Aktivitas</th>
+                                    <th>Time</th>
+                                    <th>User</th>
+                                    <th>Activity</th>
                                     <th>Detail</th>
                                 </tr>
                             </thead>

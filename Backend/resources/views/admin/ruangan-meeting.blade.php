@@ -1,6 +1,6 @@
 @extends('layouts.ruangan')
 
-@section('title', 'Daftar Ruangan Meeting')
+@section('title', 'List Meeting Room')
 
 @section('content')
     <div class="container-ruangan">
@@ -13,7 +13,7 @@
                     <p>{{ $ruangan->deskripsi }}</p>
 
                     <form method="GET" action="{{ route('ruangan.booking.form', ['id' => $ruangan->id, 'nama' => Str::slug($ruangan->nama_ruangan)]) }}">
-                        <button class="pilih" type="submit">Pilih Ruangan</button>
+                        <button class="pilih" type="submit">Select Room</button>
                     </form>
 
                     <div class="action-buttons">

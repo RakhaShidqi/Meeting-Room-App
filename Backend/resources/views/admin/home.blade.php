@@ -21,7 +21,7 @@
                     <h2>Meeting X</h2>
                 </div>
 
-                <hr>
+                <!-- <hr> -->
                 
                 <div class="dashboard-body">
                     <div class="dashboard-menu">
