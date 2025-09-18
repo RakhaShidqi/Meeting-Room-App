@@ -16,6 +16,11 @@ class UserController extends Controller
         $users = User::all();
         return view('admin.manage', compact('users'));
     }
+
+    public function akun()
+    {
+        return view('admin.akun');
+    }
     
     public function storeuser(Request $request)
 {

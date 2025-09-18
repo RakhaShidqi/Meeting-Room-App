@@ -27,9 +27,9 @@ Route::get('/logtest', function () {
 
 
 // Tampilan Admin
-Route::get('/akun', function () {
-    return view('.admin.akun');
-});
+// Route::get('/akun', function () {
+//     return view('.admin.akun')->name('admin.akun');
+// });
 
 // Route::get('/admin/pending-requests', function () {
 //     return view('admin.req');
@@ -44,9 +44,7 @@ Route::get('/register', [RegisterController::class,'view'])->name('register');
 Route::post('/register-account', [RegisterController::class,'register'])->name('register.post');
 
 // Sidebar Akun saya
-Route::get('/akun', function () {
-    return view('.admin.akun');
-})->name('admin.akun');
+Route::get('/admin/akun', [UserController::class, 'akun'])->name('admin.akun');
 
 // Form edit
 Route::get('/ruangan/{id}/edit', [RuanganController::class, 'edit'])->name('ruangan.edit');
