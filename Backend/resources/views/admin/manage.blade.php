@@ -44,12 +44,12 @@
 
                         <div class="tombol" id="ruang-meeting">
                             <img src="{{ asset('img/room.png') }}" class="gambar" alt="Room Icon">
-                            <a href="{{ url('/ruangan-meeting') }}"><h3>Ruang Meeting</h3></a>           
+                            <a href="{{ url('/ruangan-meeting') }}"><h3>Meeting Room</h3></a>           
                         </div>
 
                         <div class="tombol" id="jadwal">
                             <img src="{{ asset('img/calender.png') }}" class="gambar" alt="Calendar Icon">
-                            <a href="{{ url('/jadwal') }}"><h3>Jadwal</h3></a>             
+                            <a href="{{ url('/jadwal') }}"><h3>Schedule</h3></a>             
                         </div>
                         
                         <div class="tombol" id="pending-request">
@@ -65,15 +65,15 @@
                         </div>
 
                          <div class="tombol" id="user-manage">
-                            <img src="../img/manage.png" class="gambar" alt="User Management Icon"> 
+                            <img src="../img/umanage.png" class="gambar" alt="User Management Icon"> 
                             <a href="{{ url('/user-manage') }}"><h3>User Management</h3></a>
                         </div>
 
                     <div class="dashboard-akun">
-                        <p>Akun</p>
+                        <p>Account</p>
                         <div class="tombol" id="akun-saya">
                             <img src="{{ asset('img/account.png') }}" class="gambar" alt="Account Icon">
-                            <a href="{{ url('/akun') }}"><h3>Akun Saya</h3></a>             
+                            <a href="{{ url('/akun') }}"><h3>My Account</h3></a>             
                         </div>
                     </div>
                 </div>
@@ -89,12 +89,12 @@
                 <h2>User Management</h2>
                 <div class="user-management-actions">
                     <button class="add-user-button" onclick="openAddUserModal()">
-                        <span class="plus-icon-button">+</span> Tambah Pengguna Baru
+                        <span class="plus-icon-button">+</span> Add New User
                     </button>
                 </div>
 
                 <div class="user-list-container">
-                    <h3>Daftar Pengguna</h3>
+                    <h3>User List</h3>
                     <table class="user-table">
                         <thead>
                             <tr>
@@ -102,7 +102,7 @@
                                 <th>Email</th>
                                 <th>Username</th>
                                 <th>Role</th>
-                                <th>Aksi</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -120,7 +120,7 @@
 
                                         <button class="action-button delete-button" 
                                             onclick="confirmDeleteUser('{{ $user->id }}, {{ $user->email }}')">
-                                            Hapus
+                                            Delete
                                         </button>
                                     </td>
                                 </tr>

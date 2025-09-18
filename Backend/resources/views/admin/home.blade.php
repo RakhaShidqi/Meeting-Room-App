@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="tombol" id="user-manage">
-                            <img src="{{asset('img/manage.png')}}" class="gambar" alt="User Management Icon"> 
+                            <img src="{{asset('img/umanage.png')}}" class="gambar" alt="User Management Icon"> 
                             <a href="{{ route('user.index') }}"><h3>User Management</h3></a>
                         </div>
 
