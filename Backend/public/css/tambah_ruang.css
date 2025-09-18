@@ -18,20 +18,25 @@ a{
 
 .box-1{
     background-color: rgb(250, 250, 250);
-    border-right: 1px solid;
+    /* border-right: 1px solid; */
 }
 
 .container-dashboard{
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 7px;
+    padding-right: 14px;
 }
 
 .dashboard-header{
     display: flex;
-    border: soid 1px;
+    padding-left: 20px;
+    padding-right: 15px;
+    /* border: soid 1px; */
     height: 80px;
     flex-direction: row;
     align-items: center;
+    font-family: 'Lato', sans-serif;
+    /* background-color: aliceblue;
+    box-shadow: 0px 2px 4px grey; */
 }
 
 .dashboard-header h2{
@@ -42,6 +47,16 @@ a{
 .dashboard-header img{
     margin-left: 20px;
     padding: 0;
+}
+
+p{
+    font-family: 'Lato',sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: gray;
+}
+h3{
+    font-weight: 400;
 }
 
 hr{
@@ -65,11 +80,18 @@ hr{
     width: 10%;
     height: 10%;
 }
-
+.tombol:hover img.gambar {
+    transform: scale(1.2);
+    filter: brightness(1.2);    
+}
 .tombol h3{
     margin-left: 10px;
 }
-
+.tombol:hover{
+    color: gray;
+    transform: scale(1.0);
+    filter: brightness(1.2);  
+}   
 .gambar{
     margin-left: 10px;
 }
@@ -304,4 +326,9 @@ hr{
 
 .back-button-text {
     line-height: 1; /* Membantu memusatkan karakter secara vertikal */
+}
+#ruang-meeting{
+    border-radius: 5px;
+    background-color: rgb(0, 170, 139);
+    color: aliceblue;
 }

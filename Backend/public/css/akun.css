@@ -202,7 +202,7 @@ hr{
 }
 
 .logout {
-    background-color: red; /* Merah */
+    background-color: #dc3545; 
     color: white;
     padding: 7px 14px;
     border: none;
@@ -210,7 +210,7 @@ hr{
     border-radius: 5px;}
 
     .logout:hover {
-        background-color: #970a00;
+        background-color: #c82333;
     }
 
 #akun-saya{
