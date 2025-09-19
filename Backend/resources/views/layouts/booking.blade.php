@@ -22,7 +22,7 @@
                     <h2>Meeting X</h2>
                 </div>
 
-                <hr>
+                <!-- <hr> -->
                 
                 <div class="dashboard-body">
                     <div class="dashboard-menu">
@@ -35,12 +35,12 @@
 
                         <div class="tombol" id="ruang-meeting">
                             <img src="{{ asset('img/room.png') }}" class="gambar" alt="">
-                            <a href="{{ url('/ruangan-meeting') }}"><h3>Ruang Meeting</h3></a>                           
+                            <a href="{{ url('/ruangan-meeting') }}"><h3>Meeting Room</h3></a>                           
                         </div>
 
                         <div class="tombol" id="jadwal">
                             <img src="{{ asset('img/calender.png') }}" class="gambar" alt="">
-                            <a href="{{ url('/jadwal') }}"><h3>Jadwal</h3></a>                           
+                            <a href="{{ url('/jadwal') }}"><h3>Schedule</h3></a>                           
                         </div>
                     </div>
                     
@@ -55,15 +55,15 @@
                         </div>
 
                         <div class="tombol" id="user-manage">
-                            <img src="../img/manage.png" class="gambar" alt="User Management Icon"> 
-                            <a href="{{ url('/user-manage') }}"><h3>User Management</h3></a>
+                            <img src="../img/umanage.png" class="gambar" alt="User Management Icon"> 
+                            <a href="{{ route('user.index') }}"><h3>User Management</h3></a>
                         </div>
 
                     <div class="dashboard-akun">
-                        <p>Akun</p>
+                        <p>Account</p>
                         <div class="tombol" id="akun-saya">
                             <img src="{{ asset('img/account.png') }}" class="gambar" alt="">
-                            <a href="{{ url('/akun') }}"><h3>Akun Saya</h3></a>                            
+                            <a href="{{ url('/akun') }}"><h3>My Account</h3></a>                            
                         </div>
                     </div>
                 </div>
