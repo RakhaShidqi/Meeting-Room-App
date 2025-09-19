@@ -30,7 +30,7 @@
         <form method="POST" action="{{ route('login.post') }}">
             @csrf
 
-            <input type="email" name="email" id="email" placeholder="Email ID/Username" required>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required>
             <br><br>
 
             <input type="password" name="password" id="pass" placeholder="Password" required><br>
