@@ -40,12 +40,12 @@
                         
                         <div class="tombol" id="jadwal">
                             <img src="../img/calender.png" class="gambar" alt="">
-                            <a href="{{ url('/jadwal') }}"><h3>Schedule</h3></a>                            
+                            <a href="{{ route('ruangan.index') }}"><h3>Schedule</h3></a>                            
                         </div>
 
                          <div class="tombol" id="pending-request">
                             <img src="{{ asset('img/req.png') }}" class="gambar" alt="Pending Request Icon"> {{-- Assuming you have a pending.png icon --}}
-                            <a href="{{ url('/admin/pending-requests') }}"><h3>Pending Request</h3></a>             
+                            <a href="{{ route('booking.waiting') }}"><h3>Pending Request</h3></a>             
                         </div>
 
                         <div class="tombol" id="log-activity">
