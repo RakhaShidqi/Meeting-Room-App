@@ -24,7 +24,7 @@
                     <div class="dashboard-menu">
                         <div class="tombol" id="home">
                             <img src="../img/home.png" class="gambar" alt="">
-                            <a href="{{ url('/home') }}"><h3>Home</h3></a>
+                            <a href="{{ route('admin.home') }}"><h3>Home</h3></a>
                         </div>
                         <p>Menu</p>
                         <div class="tombol" id="ruang-meeting">
@@ -45,7 +45,7 @@
                         </div>
                         <div class="tombol" id="user-manage">
                             <img src="../img/umanage.png" class="gambar" alt="User Management Icon"> 
-                            <a href="{{ url('/user-manage') }}"><h3>User Management</h3></a>
+                            <a href="{{ route('user.index') }}"><h3>User Management</h3></a>
                         </div>
                     </div>
                     <div class="dashboard-akun">
