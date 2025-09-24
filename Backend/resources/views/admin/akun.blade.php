@@ -28,7 +28,7 @@
                         
                             <div class="tombol" id="home">
                                 <img src="../img/home.png" class="gambar" alt="">
-                                <a href="{{ url('/home') }}"><h3>Home</h3></a>                            
+                                <a href="{{ route('admin.home') }}"><h3>Home</h3></a>                            
                             </div>
                         
                         <p>Menu<p>
