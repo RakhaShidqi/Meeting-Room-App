@@ -69,8 +69,8 @@
 
         <main class="box-2">
             <div class="main-header">               
-                    <a href="{{ url('/akun') }}"><p class="username"></p></a>
-                    <a href="{{ url('/akun') }}"><img class="profile-image" src="../img/user.png" alt=""></a>               
+                    <a href="{{ route('admin.akun') }}"><p class="username"></p></a>
+                    <a href="{{ route('admin.akun') }}"><img class="profile-image" src="../img/user.png" alt=""></a>               
             </div>
             <div class="main-body">
                 <div id="jam">00:00:00</div>
