@@ -91,7 +91,7 @@
                     <span class="plus-icon-button">+</span> Add Room
                 </button>
                 </form>
-                @yield('content')v
+                @yield('content')
             </div>
         </main>
     </div>
