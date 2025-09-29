@@ -26,7 +26,7 @@ a{
     overflow-y: auto;
 }
 .container-dashboard{
-    padding-left: 7px;
+    padding-left: 3px;
     padding-right: 14px;
     background-color: #f9f9f9;
 }
@@ -53,6 +53,11 @@ a{
     margin-left: 20px;
     padding: 0;
 }
+.container-dashboard .dashboard-header {
+    margin-left: -7px;
+    margin-right: -14px;
+}
+
 p{
     font-family: 'Lato',sans-serif;
     font-weight: bold;
