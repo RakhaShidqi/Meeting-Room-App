@@ -28,34 +28,34 @@
                     <div class="dashboard-menu">
                         <div class="tombol" id="home">
                             <img src="{{ asset('img/home.png') }}" class="gambar" alt="">
-                            <a href="{{ url('/home') }}"><h3>Home</h3></a>                           
+                            <a href="{{ route('admin.home') }}"><h3>Home</h3></a>                           
                         </div>
 
                         <p>Menu</p>
 
                         <div class="tombol" id="ruang-meeting">
                             <img src="{{ asset('img/room.png') }}" class="gambar" alt="">
-                            <a href="{{ url('/ruangan-meeting') }}"><h3>Meeting Room</h3></a>                           
+                            <a href="{{ route('ruangan.index') }}"><h3>Meeting Room</h3></a>                           
                         </div>
 
                         <div class="tombol" id="jadwal">
                             <img src="{{ asset('img/calender.png') }}" class="gambar" alt="">
-                            <a href="{{ url('/jadwal') }}"><h3>Schedule</h3></a>                           
+                            <a href="{{ route('jadwal') }}"><h3>Schedule</h3></a>                           
                         </div>
                     </div>
                     
                      <div class="tombol" id="pending-request">
                             <img src="{{ asset('img/req.png') }}" class="gambar" alt="Pending Request Icon"> {{-- Assuming you have a pending.png icon --}}
-                            <a href="{{ url('/admin/pending-requests') }}"><h3>Pending Request</h3></a>             
+                            <a href="{{ route('booking.waiting') }}"><h3>Pending Request</h3></a>             
                         </div>
 
                     <div class="tombol" id="log-activity">
                             <img src="{{ asset('/img/log.png') }}" class="gambar" alt="Log Activity Icon"> {{-- Assuming you have a log.png icon --}}
-                            <a href="{{ url('/log-activity') }}"><h3>Log Activity</h3></a>
+                            <a href="{{ route('admin.log') }}"><h3>Log Activity</h3></a>
                         </div>
 
                         <div class="tombol" id="user-manage">
-                            <img src="../img/umanage.png" class="gambar" alt="User Management Icon"> 
+                            <img src="{{ asset('/img/umanage.png') }}" class="gambar" alt="User Management Icon"> 
                             <a href="{{ route('user.index') }}"><h3>User Management</h3></a>
                         </div>
 
@@ -63,7 +63,7 @@
                         <p>Account</p>
                         <div class="tombol" id="akun-saya">
                             <img src="{{ asset('img/account.png') }}" class="gambar" alt="">
-                            <a href="{{ url('/akun') }}"><h3>My Account</h3></a>                            
+                            <a href="{{ route('admin.akun') }}"><h3>My Account</h3></a>                            
                         </div>
                     </div>
                 </div>
