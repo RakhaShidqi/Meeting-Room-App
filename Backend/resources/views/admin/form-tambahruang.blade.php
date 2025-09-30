@@ -72,7 +72,7 @@
                         <span class="back-button-text">Back</span>
                     </a>
         <div class="booking-form-container">
-          <h2>Form Tambah Ruang Meeting</h2>
+          <h2>Add Meeting Room Form</h2>
           <form action="{{route('ruangan.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div>
@@ -104,11 +104,11 @@
               <div class="input-foto">
                 <label for="foto">Room Photo</label>
                 <input type="file" id="foto" name="foto" accept="image/*" onchange="previewFoto()" required>
-                <button type="button" class="btn-reset-foto" onclick="resetPreview()">Reset Foto</button>
+                <button type="button" class="btn-reset-foto" onclick="resetPreview()">Reset Photo</button>
               </div>
 
               <div class="preview-card">
-                <img id="preview-img" class="gambar-ruangan" src="../img/placeholder.jpg" alt="Preview Foto Ruangan">
+                <img id="preview-img" class="gambar-ruangan" src="../img/placeholder.jpg" alt="Preview Room Photo">
               </div>
             </div>
 

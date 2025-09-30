@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="booking-form-container">
-    <h2>Form Edit Ruang Meeting</h2>
+    <h2>Edit Meeting Room Form</h2>
 
     <form action="{{ route('ruangan.update', $ruangan->id) }}" method="POST" enctype="multipart/form-data">
         @csrf

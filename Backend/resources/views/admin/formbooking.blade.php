@@ -15,37 +15,37 @@
 
     {{-- Formulir Booking --}}
         <div class="booking-form-container">
-            <h2>Form Booking Ruangan</h2>
+            <h2>Room Booking Form</h2>
         <form action="{{ route('ruangan.booking.store', $ruangan->id) }}" method="POST">
             @csrf {{-- Token keamanan Laravel --}}
             <input type="hidden" name="ruangan_id" value="{{ $ruangan->id }}">
             <div>
-                <label for="nama">Nama Lengkap</label>
+                <label for="nama">Full Name</label>
                 <input type="text" id="nama_pemesan" name="nama_pemesan" required>
             </div>
 
             <div>
-                <label for="divisi">Divisi/Jabatan</label>
+                <label for="divisi">Division/Position</label>
                 <input type="text" id="divisi" name="divisi" required>
             </div>
 
             <div>
-                <label for="event">Event/Acara</label>
+                <label for="event">Event</label>
                 <input type="text" id="event" name="event" required>
             </div>
 
             <div>
-                <label for="tanggal">Tanggal Booking</label>
+                <label for="tanggal">Booking Date</label>
                 <input type="date" id="tanggal" name="tanggal" min="{{ date('Y-m-d') }}" required>
             </div>
 
             <div class="time-group">
                 <div>
-                    <label for="jam_mulai">Jam Mulai</label>
+                    <label for="jam_mulai">Start Time</label>
                     <input type="time" id="jam_mulai" name="jam_mulai" required>
                 </div>
                 <div>
-                    <label for="jam_selesai">Jam Selesai</label>
+                    <label for="jam_selesai">Finish Time</label>
                     <input type="time" id="jam_selesai" name="jam_selesai" required>
                 </div>
             </div>
