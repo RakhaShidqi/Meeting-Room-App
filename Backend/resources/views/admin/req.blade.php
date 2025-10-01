@@ -27,7 +27,7 @@
             <div class="container-dashboard">
                 <div class="dashboard-header">
                     <img src="{{ asset('img/logo_hypernet2.png') }}" alt="Logo Hypernet">
-                    <h2>Meeting X</h2>
+                    <h2>Hyper Meet</h2>
                 </div>
 
                 <hr>
