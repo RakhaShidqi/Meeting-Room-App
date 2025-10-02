@@ -29,8 +29,6 @@
                     <img src="{{ asset('img/logo_hypernet2.png') }}" alt="Logo Hypernet">
                     <h2>Hyper Meet</h2>
                 </div>
-
-                <hr>
                 
                 <div class="dashboard-body">
                     <div class="dashboard-menu">

@@ -21,8 +21,6 @@
                     <h2>Hyper Meet</h2>
                 </div>
 
-                <hr>
-                
                 <div class="dashboard-body">
                     <div class="dashboard-menu">
                         
