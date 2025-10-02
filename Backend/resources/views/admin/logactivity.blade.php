@@ -52,7 +52,7 @@
                         <p>Account</p>
                         <div class="tombol" id="akun-saya">
                             <img src="../img/account.png" class="gambar" alt="">
-                            <a href="{{ url('/akun') }}"><h3>My Account</h3></a>
+                            <a href="{{ route('admin.akun') }}"><h3>My Account</h3></a>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
             </div>
 
             <div class="main-body">
-                <a href="{{ url('/home') }}" class="back-button-text-link">
+                <a href="{{ route('admin.home') }}" class="back-button-text-link">
                     <span class="back-button-text">Back</span>
                 </a>
                 <div class="log-activity-container"> <h2>User Log Activity</h2>
