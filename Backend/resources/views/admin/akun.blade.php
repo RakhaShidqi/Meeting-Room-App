@@ -75,7 +75,9 @@
             <div class="main-body">
                 <div class="container-akun">
                     <img src="../img/user.png" class="profile-image" id="profile-image-akun" alt="">
-                    <h1 class="username"></h1>
+                    <h1 class="username"></h1> 
+                    <label for="username">Username</label>
+                    <br><br>
                     <input type="text" id="input-username" placeholder="Username baru">
                     <button onclick="saveName()">Save</button>
                     <br><br><br>

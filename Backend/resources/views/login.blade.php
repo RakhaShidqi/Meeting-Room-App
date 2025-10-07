@@ -21,6 +21,7 @@
     <div class="welcome-text">
         <h1>Hello !</h1>
         <h2>Welcome Back</h2>
+        <h3>Please enter your details</h3>
     </div>
 
     <div class="container">
@@ -31,9 +32,12 @@
             @csrf
 
             <input type="email" name="email" id="email" placeholder="Enter your email" required>
-            <br><br>
-
-            <input type="password" name="password" id="pass" placeholder="Password" required><br>
+            <br>
+            <!-- update hide and seek password -->
+            <div class="password-container">
+                <input type="password" name="password" id="pass" placeholder="Password" required>
+                <img src="../icon/view.svg" id="togglePassword" alt="Toggle Password">
+            </div>
 
             @if ($errors->any())
                 <span style="color: red; font-size: 14px; margin:0;">
@@ -61,5 +65,19 @@
                 });
             </script>
         @endif
+        <script>
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordField = document.getElementById('pass');
+
+    togglePassword.addEventListener('click', function () {
+        // Ganti tipe input
+        const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordField.setAttribute('type', type);
+        
+        // Ganti icon
+        this.src = type === 'password' ? '../icon/view.svg' : '../icon/hide.svg';
+    });
+</script>
+
 </body>
 </html>

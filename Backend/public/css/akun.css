@@ -145,13 +145,22 @@ hr{
 }
 
 .container-akun{
-    width: 90%;
+    /* width: 90%;
     height: 75vh;
-    margin-top: 50px;
+    
     border: 1px solid;
     border-radius: 5px;
     border-color: rgb(220, 220, 220);
-    overflow: hidden;
+    overflow: hidden; */
+    margin-top: 50px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px 30px;
+    width: 95%; /* Make it wider to accommodate table */
+    max-width: 1000px; /* Max width for the log container */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid rgba(0, 0, 0, 0.225);
 }
 
 
@@ -161,9 +170,13 @@ hr{
 }
 
 .container-akun input{
-    height: 25px;
-    border: none;
-    border-bottom: 1px solid;
+    height: 30px;
+    border: 1px solid rgba(66, 66, 66, 0.5);
+    border-radius: 6px;
+    padding-left: 15px;
+    padding-right: 30px;
+    margin-bottom: 1px;
+    /* border-bottom: 1px solid; */
 }
 
 .container-akun input:focus{
