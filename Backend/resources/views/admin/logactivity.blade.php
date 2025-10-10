@@ -66,9 +66,9 @@
             </div>
 
             <div class="main-body">
-                <a href="{{ route('admin.home') }}" class="back-button-text-link">
+                <!-- <a href="{{ route('admin.home') }}" class="back-button-text-link">
                     <span class="back-button-text">Back</span>
-                </a>
+                </a> -->
                 <div class="log-activity-container"> <h2>User Log Activity</h2>
                     <div class="log-table-wrapper">
                         <table>
