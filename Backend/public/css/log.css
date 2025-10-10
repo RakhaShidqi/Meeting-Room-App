@@ -119,6 +119,10 @@ hr {
     justify-content: right;
     color: aliceblue;
 }
+.username{
+    color: white;
+    font-weight: 550;
+}
 
 .main-header p, .main-header img {
     margin: 0;

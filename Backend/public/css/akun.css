@@ -47,6 +47,7 @@ a{
 .dashboard-header h2{
     margin: 0;
     margin-left: 10px;
+    color: rgba(0,170,139);
 }
 
 .dashboard-header img{
@@ -75,7 +76,6 @@ hr{
 
 .dashboard-body{
     margin-top: 10px;
-    border: 1px soid;
     padding-left: 15px;
     font-size: 90%;
 }
@@ -118,6 +118,10 @@ hr{
     background-color: rgb(0, 170, 139);
     justify-content: right;
     color: aliceblue;
+}
+a .username{
+    color: white;
+    font-weight: 550;
 }
 
 .main-header p,.main-header img{

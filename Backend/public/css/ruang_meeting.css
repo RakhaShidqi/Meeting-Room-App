@@ -14,7 +14,7 @@ a{
     margin: 0;
     display: grid;
     grid-template-columns: 250px auto;
-    grid-template-rows: 100vh ;
+    /* grid-template-rows: 100vh ; */
 }
 
 .box-1{
@@ -44,6 +44,7 @@ a{
 
 .dashboard-header h2{
     margin-left: 10px;
+    color: rgb(0, 170, 139);
 }
 
 .dashboard-header img{
@@ -109,6 +110,10 @@ hr{
     background-color: rgb(0, 170, 139);
     justify-content: right;
     color: aliceblue;
+}
+.username{
+    color: white;
+    font-weight: 550;
 }
 
 .main-header p,.main-header img{

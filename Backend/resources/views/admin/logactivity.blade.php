@@ -17,7 +17,7 @@
             <div class="container-dashboard">
                 <div class="dashboard-header">
                     <img src="../img/logo_hypernet2.png" alt="">
-                    <h2>Hyper Meet</h2>
+                    <h2>HyperMeet</h2>
                 </div>
 
                 <div class="dashboard-body">
@@ -66,9 +66,9 @@
             </div>
 
             <div class="main-body">
-                <!-- <a href="{{ route('admin.home') }}" class="back-button-text-link">
-                    <span class="back-button-text">Back</span>
-                </a> -->
+                    <!-- <a href="{{ route('admin.home') }}" class="back-button-text-link">
+                        <span class="back-button-text">Back</span>
+                    </a> -->
                 <div class="log-activity-container"> <h2>User Log Activity</h2>
                     <div class="log-table-wrapper">
                         <table>

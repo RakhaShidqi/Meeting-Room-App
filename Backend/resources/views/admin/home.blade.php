@@ -100,7 +100,7 @@
 
     <div class="card total">
         <div class="card-inner">
-            <h2>10</h2>
+            <h2>13</h2>
             <span class="material-icons-outlined">meeting_room</span>
         </div>
         <h1>Total Rooms</h1>
@@ -188,7 +188,7 @@ new Chart(ctx, {
       label: 'Bookings',
       data: [0, 5, 3, 14, 0, 6, 0, 0, 20, 0, 0, 0],
       borderColor: '#26667F',
-      backgroundColor: 'rgba(9,132,227,0.1)',
+      backgroundColor: 'white',
       fill: true,
       tension: 0.4
     }]

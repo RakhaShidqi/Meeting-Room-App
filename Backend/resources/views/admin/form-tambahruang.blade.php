@@ -18,7 +18,7 @@
       <div class="container-dashboard">
         <div class="dashboard-header">
           <img src="../img/logo_hypernet2.png" alt="">
-          <h2>Meeting X</h2>
+          <h2>HyperMeet</h2>
         </div>
         <!-- <hr> -->
         <div class="dashboard-body">

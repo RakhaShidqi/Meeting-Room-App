@@ -19,7 +19,7 @@
             <div class="container-dashboard">
                 <div class="dashboard-header">
                     <img src="{{ asset('img/logo_hypernet2.png') }}" alt="">
-                    <h2>Hyper Meet</h2>
+                    <h2>HyperMeet</h2>
                 </div>
 
                 <!-- <hr> -->
