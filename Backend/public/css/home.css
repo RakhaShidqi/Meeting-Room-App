@@ -47,6 +47,7 @@ a{
 
 .dashboard-header h2{
     margin-left: 10px;
+    color: rgb(0, 170, 139);
 }
 
 .dashboard-header img{
@@ -143,13 +144,7 @@ h3{
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-image: url(../img/pedro.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment:local;
-    background-size:cover;
-    height: 100%;
-   
+    /* background-image: url(../img/pedro.jpg); */   
 }
 
 #jam{
@@ -160,7 +155,7 @@ h3{
 
 #tanggal{
     font-size: 1rem;
-    color: white;
+    color: #201E43;
 }
 
 #home{
@@ -168,9 +163,185 @@ h3{
     background-color: rgb(0, 170, 139);
     color: aliceblue;
 }
+.main-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px; /* 🔹 jarak antar-card rapat */
+  margin: 30px 20px 0 20px; /* 🔹 hilangkan margin bawah */
+}
+
+.card {
+    flex: 1;
+    width: 170px;
+    height: 110px;
+    color: #fff;
+    border-radius: 10px;
+    padding: 15px 20px;
+    text-align: left;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+/* .card {
+  width: 180px;
+  height: 100px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+} */
+
+.card:hover {
+  transform: translateY(-5px);
+}
+.card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-inner .material-icons-outlined {
+  font-size: 50px !important;
+  line-height: 1; 
+  margin-left: 10px; 
+  color: rgba(255, 255, 255, 0.9); 
+  vertical-align: middle; 
+}
+.card-inner > span {
+  font-size: 70px;
+}
+.card h2 {
+    font-size: 50px;
+    margin: 0;
+}
+.card h1 {
+    font-size: 15px;
+    margin: 0;
+}
+.card span {
+    font-size: 0.8rem;
+}
+
+.card.available {
+    background-color: #00b894;
+}
+.card.booked {
+    background-color: #0984e3;
+}
+.card.total {
+    background-color: #636e72;
+}
+.card.rejected {
+    background-color: #d63031;
+}
+/* ======== Dashboard New Layout ======== */
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+  padding: 0 40px;
+}
+
+.chart-section, .activity-section {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+.chart-section select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.chart-section select{
+    position: unset;
+}
+
+.chart-section h2,
+.activity-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #201E43;
+  margin-bottom: 15px;
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.activity-header select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.activity-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.activity-section th,
+.activity-section td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.activity-section th {
+  color: #555;
+  font-weight: 600;
+}
+
+.status {
+  padding: 2px 10px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.status.in-progress {
+  background-color: #00b894;
+}
+.status.finished {
+  background-color: #0984e3;
+}
+.status.rejected {
+  background-color: #d63031;
+}
+
+/* Grafik canvas ukuran */
+#bookingChart {
+  width: 100% !important;
+  height: 250px !important;
+}
+
 
 .profile-image{
     border-radius: 100%;
     object-fit: cover;
 }
 
+@media screen and (max-width: 768px) {
+  .main-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .dashboard-content {
+    grid-template-columns: 1fr;
+  }
+}

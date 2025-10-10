@@ -211,6 +211,15 @@ hr{
     color: rgb(220, 220, 220);
 }
 
+label {
+  color: #333; /* Sets the text color */
+  font-family: Arial, sans-serif; /* Sets the font */
+  font-size: 16px; /* Sets the font size */
+  font-weight: bold; /* Makes the text bold */
+  display: block; /* Makes the label a block-level element, forcing it onto a new line */
+  margin-bottom: -10px; /* Adds space below the label */
+}
+
 .profile-image{
     border-radius: 100%;
     object-fit: cover;

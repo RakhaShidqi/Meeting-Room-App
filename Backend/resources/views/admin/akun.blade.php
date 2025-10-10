@@ -77,12 +77,12 @@
                     <img src="../img/user.png" class="profile-image" id="profile-image-akun" alt="">
                     <h1 class="username"></h1> 
                     <label for="username">Username</label>
-                    <br><br>
+                    <br>
                     <input type="text" id="input-username" placeholder="Username baru">
                     <button onclick="saveName()">Save</button>
                     <br><br><br>
                     <label for="file">Photo Profile</label>
-                    <br><br>
+                    <br>
                     <input type="file" id="input-file">
                     <button onclick="savePhoto()">Save</button>
                     <br><br>
