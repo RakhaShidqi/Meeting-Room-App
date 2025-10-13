@@ -1,6 +1,6 @@
 @extends('layouts.editruang')
 
-@section('title', 'Form Edit')
+@section('title', 'HyperMeet - Edit Meeting Room')
 
 @section('content')
 <div class="booking-form-container">

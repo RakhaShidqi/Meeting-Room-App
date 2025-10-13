@@ -1,6 +1,6 @@
 @extends('layouts.booking')
 
-@section('title', 'Form Booking')
+@section('title', 'HyperMeet - Booking Meeting Room')
 
 @section('content')
 

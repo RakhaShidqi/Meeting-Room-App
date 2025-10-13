@@ -1,6 +1,6 @@
 @extends('layouts.ruangan')
 
-@section('title', 'List Meeting Room')
+@section('title', 'HyperMeet - Meeting Room')
 
 @section('content')
     <div class="container-ruangan">
