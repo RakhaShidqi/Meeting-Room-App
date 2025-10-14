@@ -137,6 +137,11 @@ a{
     padding-right: 30px;
     }
 
+    input::-ms-reveal,
+    input::-ms-clear {
+        display: none;
+    }
+
     input#pass {
         all: unset;
         border-radius: 8px;
