@@ -104,7 +104,6 @@
             <span class="material-icons-outlined">meeting_room</span>
         </div>
         <h1>Total Rooms</h1>
-        <span>dd/mm/yy</span>
     </div>
 
     <div class="card rejected">
