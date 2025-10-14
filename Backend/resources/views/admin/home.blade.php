@@ -121,11 +121,11 @@
 <div class="dashboard-content">
     <div class="chart-section">
         <h2>Booking Statistic</h2>
-        <select name="" id="select-box">
-                <option>2025</option>
-                <option>2026</option>
-                <option>2027</option>
-            </select>
+        <select id="year-select">
+            <option value="2025" selected>2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+        </select>
         <canvas id="bookingChart"></canvas>
     </div>
 
@@ -180,13 +180,22 @@
     <script src="../js/script.js"></script>
     <script>
 const ctx = document.getElementById('bookingChart').getContext('2d');
-new Chart(ctx, {
+
+// Dataset berdasarkan tahun
+const bookingData = {
+  2025: [0, 5, 3, 14, 0, 6, 0, 0, 20, 0, 0, 0],
+  2026: [4, 8, 6, 10, 12, 5, 8, 15, 10, 7, 9, 11],
+  2027: [12, 10, 14, 9, 11, 13, 15, 12, 14, 10, 8, 9]
+};
+
+// Inisialisasi chart
+const bookingChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'DeC'],
+    labels: ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     datasets: [{
       label: 'Bookings',
-      data: [0, 5, 3, 14, 0, 6, 0, 0, 20, 0, 0, 0],
+      data: bookingData[2025],
       borderColor: '#26667F',
       backgroundColor: 'white',
       fill: true,
@@ -197,6 +206,13 @@ new Chart(ctx, {
     plugins: { legend: { display: false }},
     scales: { y: { beginAtZero: true } }
   }
+});
+
+// Event listener untuk select tahun
+document.getElementById('year-select').addEventListener('change', function() {
+  const selectedYear = this.value;
+  bookingChart.data.datasets[0].data = bookingData[selectedYear];
+  bookingChart.update();
 });
 </script>
 
