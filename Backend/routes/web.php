@@ -3,6 +3,7 @@
 use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -12,12 +13,12 @@ use Illuminate\Support\Facades\Log;
 // Hanya admin bisa lihat daftar user
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    Route::get('/admin/home', [UserController::class, 'adminHome'])->name('admin.home');
+    Route::get('/admin/home', [DashboardController::class, 'adminHome'])->name('admin.home');
 });
 
 // Hanya user
 Route::middleware(['auth', 'role:user'])->group(function () {
-    Route::get('/user/home', [UserController::class, 'userHome'])->name('user.uhome');
+    Route::get('/user/home', [DashboardController::class, 'userHome'])->name('user.uhome');
 });
 
 Route::get('/logtest', function () {

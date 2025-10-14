@@ -100,7 +100,7 @@
 
     <div class="card total">
         <div class="card-inner">
-            <h2>13</h2>
+            <h2>{{ $totalRuangans }}</h2>
             <span class="material-icons-outlined">meeting_room</span>
         </div>
         <h1>Total Rooms</h1>

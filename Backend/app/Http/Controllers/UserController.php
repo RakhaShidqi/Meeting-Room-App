@@ -98,15 +98,15 @@ class UserController extends Controller
 
 
 
-    // Dashboard untuk admin
-    public function adminHome()
-    {
-        return view('admin.home');
-    }
+    // // Dashboard untuk admin
+    // public function adminHome()
+    // {
+    //     return view('admin.home');
+    // }
 
-    // Dashboard untuk customer
-    public function userHome()
-    {
-        return view('user.uhome');
-    }
+    // // Dashboard untuk customer
+    // public function userHome()
+    // {
+    //     return view('user.uhome');
+    // }
 }
