@@ -91,10 +91,10 @@
 
     <div class="card booked">
         <div class="card-inner">
-            <h2>7</h2>
+            <h2>{{ $approvedBookings }}</h2>
             <span class="material-icons-outlined">lock</span>
         </div>
-        <h1>Booked Rooms</h1>
+        <h1>Booked Requests</h1>
         <span>dd/mm/yy</span>
     </div>
 
@@ -108,10 +108,10 @@
 
     <div class="card rejected">
         <div class="card-inner">
-            <h2>5</h2>
+            <h2>{{ $rejectedBookings }}</h2>
             <span class="material-icons-outlined">close</span>
         </div>
-        <h1>Rejected Rooms</h1>
+        <h1>Rejected Requests</h1>
         <span>dd/mm/yy</span>
     </div>
 </div>
