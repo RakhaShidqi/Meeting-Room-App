@@ -182,7 +182,7 @@ const ctx = document.getElementById('bookingChart').getContext('2d');
 
 // Dataset berdasarkan tahun
 const bookingData = {
-  2025: [0, 5, 3, 14, 0, 6, 0, 0, 20, 0, 0, 0],
+  2025: [0, 5, 3, 14, 0, 6, 0, 0, 10, 0, 0, 0],
   2026: [4, 8, 6, 10, 12, 5, 8, 15, 10, 7, 9, 11],
   2027: [12, 10, 14, 9, 11, 13, 15, 12, 14, 10, 8, 9]
 };
@@ -191,7 +191,7 @@ const bookingData = {
 const bookingChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    labels: ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
     datasets: [{
       label: 'Bookings',
       data: bookingData[2025],

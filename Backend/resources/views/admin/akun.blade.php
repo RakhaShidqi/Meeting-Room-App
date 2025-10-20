@@ -76,23 +76,25 @@
                 <div class="container-akun">
                     <img src="../img/user.png" class="profile-image" id="profile-image-akun" alt="">
                     <div class="info-akun">
-                <h1 class="username"></h1> 
-                <label for="username">Username</label>
-                <input type="text" id="input-username" placeholder="Username baru">
-                <button onclick="saveName()">Save</button>
-                <br><br>
-                <label for="file">Photo Profile</label>
-                <input type="file" id="input-file">
-                <button onclick="savePhoto()">Save</button>
-                <br><br>
-        <form action="{{ route('logout') }}" method="POST">
+                    <h1 class="username"></h1> 
+                    <label for="username">New Username</label>
+                    <div class="username-group">
+                        <input type="text" id="input-username" placeholder="Enter new username">
+                        <button class="btn-save" onclick="saveName()">Save</button>
+                    </div>
+                    <label for="file">Photo Profile</label>
+                    <div class="Photo-profile">
+                        <input type="file" id="input-file">
+                        <button class="btn-save" onclick="savePhoto()">Save</button>
+                    </div>
+            <form action="{{ route('logout') }}" method="POST">
             @csrf
             <button type="submit" class="logout">Log Out</button>
         </form>
     </div>
                 </div>
             </div>
-            <p id="copyright">Made with heart by Developer</p>
+            <p id="copyright">&copy; 2025 Hypernet.</p>
         </main>
     </div>
 

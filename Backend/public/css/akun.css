@@ -148,10 +148,8 @@ a .username{
     justify-content: center;
 }
 
-.container-akun{
-    margin-top: 50px;
-    background-color: #fff;
-    border-radius: 12px;
+.container-akun {
+    margin-top: 130px;
     padding: 25px 30px;
     width: 95%; /* Make it wider to accommodate table */
     max-width: 1000px; /* Max width for the log container */
@@ -159,57 +157,102 @@ a .username{
     font-family: 'Roboto', sans-serif;
     border: 1px solid rgba(0, 0, 0, 0.225);
     display: flex;
-    align-items: center; /* sejajarkan vertikal */
-    gap: 30px;
+    align-items: center;
+    gap: 40px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    transition: all 0.3s ease;
 }
+
+.container-akun:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 .container-akun .info-akun {
     display: flex;
     flex-direction: column;
 }
 
 #profile-image-akun {
-    width: 20vh;
-    height: 20vh;
-    margin-top: 0; /* hapus margin atas agar sejajar */
-    margin-left: 30px;
-    object-fit: cover;
-    border-radius: 100%;
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  object-fit: cover;
+  border: 0.5px solid rgb(0, 170, 139);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 
 .container-akun img, .container-akun h1,.container-akun label, .container-akun input,.container-akun button{
     margin-left: 50px;
+    margin-top: 10px;
 }
 
-.container-akun input{
-    height: 30px;
-    border: 1px solid rgba(66, 66, 66, 0.5);
-    border-radius: 6px;
-    padding-left: 15px;
-    padding-right: 30px;
-    margin-bottom: 1px;
-    /* border-bottom: 1px solid; */
-}
 
 .container-akun input:focus{
     outline: none;
 }
 
-.save {
-    border: none;
+.info-akun {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.info-akun h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+label {
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* --- Input styling --- */
+#input-username,
+#input-file {
+  width: 70%;
+  max-width: 300px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+
+#input-username:focus,
+#input-file:focus {
+  outline: none;
+  border-color: rgb(0, 170, 139);
+  box-shadow: 0 0 0 2px rgba(0, 170, 139, 0.15);
+}
+
+/* --- Tombol Save --- */
+.btn-save {
+    margin-top: 10px;
+    margin-left: 5px;
+    width: fit-content;
     background-color: rgb(0, 170, 139);
     color: white;
-    width: 50px;
-    height: 30px;
-    border-radius: 5px;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
 }
 
-#input-file,#input-username{
-    width: 180px;
-}
-
-#input-username{
-    width: 175px;
+.btn-save:hover {
+  background-color: #008f7b;
+  transform: translateY(-2px);
 }
 
 #akun-saya{
@@ -220,17 +263,9 @@ a .username{
 #copyright{
     text-align: right;
     margin-right: 5%;
-    color: rgb(220, 220, 220);
+    color: rgb(189, 188, 188);
 }
 
-label {
-  color: #333; /* Sets the text color */
-  font-family: Arial, sans-serif; /* Sets the font */
-  font-size: 16px; /* Sets the font size */
-  font-weight: bold; /* Makes the text bold */
-  display: block; /* Makes the label a block-level element, forcing it onto a new line */
-  margin-bottom: -10px; /* Adds space below the label */
-}
 
 .profile-image{
     border-radius: 100%;
@@ -240,23 +275,53 @@ label {
 #profile-image-akun{
     width: 20vh;
     height: 20vh;
-    margin-top: 50px;
+    margin-top: 1px;
 }
 
 .logout {
-    background-color: #dc3545; 
-    color: white;
-    padding: 7px 14px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;}
+  background-color: #dc3545;
+  color: white;
+  padding: 7px 14px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 25px;
+  width: fit-content;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s;
+}
 
-    .logout:hover {
-        background-color: #c82333;
-    }
+.logout:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
 
 #akun-saya{
     border-radius: 5px;
     background-color: rgb(0, 170, 139);
     color: aliceblue;
+}
+
+@media (max-width: 768px) {
+  .container-akun {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .info-akun {
+    align-items: center;
+  }
+
+  #input-username, #input-file {
+    width: 70%;
+  }
+
+  .btn-save, .logout {
+    width: 70%;
+  }
+
+  #profile-image-akun {
+    margin-bottom: 20px;
+  }
 }
