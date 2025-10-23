@@ -118,7 +118,7 @@
                             </div>
                         </div>
                     @empty
-                        <p>Tidak ada booking yang menunggu approval.</p>
+                        <p>No bookings awaiting approval.</p>
                     @endforelse
                 </div>
 
