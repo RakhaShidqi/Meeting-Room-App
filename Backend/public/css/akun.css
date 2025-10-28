@@ -149,8 +149,8 @@ a .username{
 }
 
 .container-akun {
-    margin-top: 130px;
-    padding: 25px 30px;
+    margin-top: 100px;
+    padding: 40px 10px ;
     width: 95%; /* Make it wider to accommodate table */
     max-width: 1000px; /* Max width for the log container */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -180,6 +180,12 @@ a .username{
   object-fit: cover;
   border: 0.5px solid rgb(0, 170, 139);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+#profile-image-akun:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(0, 170, 139, 0.6);
+  border-color: rgb(0, 170, 139);
 }
 
 

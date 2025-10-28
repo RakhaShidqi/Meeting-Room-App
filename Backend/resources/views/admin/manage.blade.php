@@ -84,7 +84,7 @@
                 <a href="{{ url('/akun') }}"><img class="profile-image" src="../img/user.png" alt=""></a>
             </div>
             <div class="main-body">
-                <h2>User Management</h2>
+                <!-- <h2>User Management</h2> -->
                 <div class="user-management-actions">
                     <button class="add-user-button" onclick="openAddUserModal()">
                         <span class="plus-icon-button">+</span> Add New User
@@ -124,7 +124,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="5" style="text-align: center;">Tidak ada pengguna</td>
+                                    <td colspan="5" style="text-align: center;">No Users</td>
                                 </tr>
                             @endforelse
                         </tbody>

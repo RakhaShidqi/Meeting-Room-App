@@ -66,9 +66,10 @@
             </div>
 
             <div class="main-body">
-                <div class="log-activity-container"> <h2>User Log Activity</h2>
-                    <div class="log-table-wrapper">
-                        <table>
+                <div class="log-activity-container"> 
+                    <h2>User Log Activity</h2>
+                    <!-- <div class="log-table-wrapper"> -->
+                        <table class="log-table-wrapper">
                             <thead>
                                 <tr>
                                     <th>Time</th>
@@ -110,7 +111,7 @@
                                 </tr>
                                 </tbody>
                         </table>
-                    </div>
+                    <!-- </div> -->
                 </div>
             </div>
         </main>

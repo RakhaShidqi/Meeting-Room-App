@@ -85,7 +85,7 @@
             </div>
 
             <div class="main-body">
-                
+                <!-- <h2>Pending Request</h2> -->
                 {{-- NEW: Content for Pending Requests --}}
             <div class="container-pending-requests">
                     @forelse($bookings as $booking)
