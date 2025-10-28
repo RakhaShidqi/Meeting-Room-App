@@ -89,29 +89,28 @@ hr{
     font-family: 'Lato', sans-serif;
 }
 
-.tombol img{
+.tombol .gambar{
     padding: 0;
     width: 10%;
     height: 10%;
+    filter: opacity(50%);
 }
-
-.tombol:hover img.gambar {
-    transform: scale(1.2);
-    filter: brightness(1.2);    
+.tombol:hover .gambar {
+    /* transform: scale(1.1); */
+    filter: opacity(100%);
 }
-
 .tombol h3{
     margin-left: 10px;
 }
 
-.gambar{
-    margin-left: 10px;
+.tombol:hover{
+    transform: scale(1.0);
+    background-color: #ebebeb;
+    border-radius: 5px;
 }
 
-.tombol:hover{
-    color: gray;
-    transform: scale(1.0);
-    filter: brightness(1.2);  
+.gambar{
+    margin-left: 10px;
 }
 
 .main-header{
@@ -500,4 +499,9 @@ hr{
     background-color: red;
     border:none;
     padding: 3.5px;
+}
+#user-manage{
+    border-radius: 5px;
+    background-color: rgb(0, 170, 139);
+    color: aliceblue;
 }

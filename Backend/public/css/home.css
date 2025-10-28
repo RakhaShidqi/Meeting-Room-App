@@ -81,23 +81,24 @@ h3{
     font-family: 'Lato', sans-serif;
 }
 
-.tombol img{
+.tombol .gambar{
     padding: 0;
     width: 10%;
     height: 10%;
+    filter: opacity(50%);
 }
-.tombol:hover img.gambar {
-    transform: scale(1.2);
-    filter: brightness(1.2);    
+.tombol:hover .gambar {
+    /* transform: scale(1.1); */
+    filter: opacity(100%);
 }
 .tombol h3{
     margin-left: 10px;
 }
 
 .tombol:hover{
-    color: gray;
     transform: scale(1.0);
-    filter: brightness(1.2);  
+    background-color: #ebebeb;
+    border-radius: 5px;
 }
 .gambar{
     margin-left: 10px;
@@ -216,7 +217,7 @@ h3{
     background-color: #00b894;
 }
 .card.booked {
-    background-color: #0984e3;
+    background-color: #26667F;
 }
 .card.total {
     background-color: #636e72;
