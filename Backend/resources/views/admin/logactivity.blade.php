@@ -79,36 +79,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>2025-07-07 10:30</td>
-                                    <td>John Doe</td>
-                                    <td>Membuat Booking</td>
-                                    <td>Ruangan: Meeting Room A, Waktu: 14:00-15:00</td>
-                                </tr>
-                                <tr>
-                                    <td>2025-07-07 09:15</td>
-                                    <td>Jane Smith</td>
-                                    <td>Mengedit Ruangan</td>
-                                    <td>Ruangan: Creative Hub, Kapasitas: 12 -> 15</td>
-                                </tr>
-                                <tr>
-                                    <td>2025-07-06 16:00</td>
-                                    <td>Admin User</td>
-                                    <td>Menghapus Booking</td>
-                                    <td>Booking ID: #12345, Ruangan: Conf Room C</td>
-                                </tr>
-                                <tr>
-                                    <td>2025-07-06 11:45</td>
-                                    <td>John Doe</td>
-                                    <td>Login</td>
-                                    <td>IP Address: 192.168.1.100</td>
-                                </tr>
-                                <tr>
-                                    <td>2025-07-05 08:00</td>
-                                    <td>Jane Smith</td>
-                                    <td>Logout</td>
-                                    <td></td>
-                                </tr>
+                                @forelse ($logs as $log)
+                                    <tr>
+                                        <td>{{ $log->created_at->format('Y-m-d H:i') }}</td>
+                                        <td>{{ $log->user_name ?? 'System' }}</td>
+                                        <td>{{ $log->activity }}</td>
+                                        <td>{{ $log->details }}</td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="4" style="text-align: center;">Tidak ada log aktivitas</td>
+                                    </tr>
+                                @endforelse
                                 </tbody>
                         </table>
                     <!-- </div> -->

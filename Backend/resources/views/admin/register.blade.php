@@ -28,7 +28,7 @@
                 <select name="role" required>
                     <option value="">-- Pilih Role --</option>
                     <option value="user">User</option>
-                    <option value="manager">Manager</option>
+                    <option value="Approver">Approver</option>
                     <option value="admin">Admin</option>
                 </select>
             <br><br>

@@ -5,7 +5,9 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ActivityLogController;
 use App\Http\Controllers\UserController;
+use App\Models\ActivityLog;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Log;
 
@@ -99,13 +101,11 @@ Route::get('/jadwal', [BookingController::class, 'jadwal'])->name('jadwal');
 Route::get('/api/bookings/approved', [BookingController::class, 'getApprovedBookings']);
 
 // Sidebar Log Activity
-Route::get('/admin/log-activity', function () {
-    return view('admin.logactivity');
-})->name('admin.log');
+Route::get('/admin/activity-log', [ActivityLogController::class, 'index'])->name('admin.activity-log');
 
 // Sidebar User Management
 Route::get('/admin/user-management', [UserController::class, 'index'])->name('user.index');
-Route::post('admin/users/store', [UserController::class, 'storeuser'])->name('users.store');
+Route::post('admin/user-management/addUser', [UserController::class, 'storeuser'])->name('users.store');
 Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
 

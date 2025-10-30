@@ -59,7 +59,7 @@
 
                     <div class="tombol" id="log-activity">
                             <img src="../img/log.png" class="gambar" alt="Log Activity Icon"> 
-                            <a href="{{ route('admin.log') }}"><h3>Log Activity</h3></a>
+                            <a href="{{ route('admin.activity-log') }}"><h3>Log Activity</h3></a>
                         </div>
 
                          <div class="tombol" id="user-manage">
@@ -116,8 +116,8 @@
                                             Edit
                                         </button>
 
-                                        <button class="action-button delete-button" 
-                                            onclick="confirmDeleteUser('{{ $user->id }}, {{ $user->email }}')">
+                                        <button class="action-button delete-button"
+                                            onclick="confirmDeleteUser('{{ $user->id }}', '{{ $user->name }}')">
                                             Delete
                                         </button>
                                     </td>
@@ -146,16 +146,16 @@
                             <input type="text" id="name" name="name" required>
                             
                             <label for="password">Password:</label>
-                            <input type="password" id="password" name="password" required>
+                            <input type="password" id="password" name="password" minlength="8" required>
 
                             <label for="password_confirmation">Konfirmasi Password:</label>
-                            <input type="password" id="password_confirmation" name="password_confirmation" required>
+                            <input type="password" id="password_confirmation" name="password_confirmation" minlength="8" required>
 
                             <label for="role">Role</label>
                             <select name="role" required>
                                 <option value="">-- Pilih Role --</option>
                                 <option value="user">User</option>
-                                <option value="manager">Manager</option>
+                                <option value="approver">Approver</option>
                                 <option value="admin">Admin</option>
                             </select>
                             
@@ -206,9 +206,9 @@
         // form akan lanjut submit ke route users.store
     });
 
-    function confirmDeleteUser(userId, email) {
-            if (confirm(`Apakah Anda yakin ingin menghapus pengguna ${email}?`)) {
-                fetch(`/admin/users/${userId}`, {
+    function confirmDeleteUser(id, name) {
+            if (confirm(`Apakah Anda yakin ingin menghapus pengguna ${name}?`)) {
+                fetch(`/admin/users/${id}`, {
                     method: 'DELETE',
                     headers: {
                         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
@@ -220,7 +220,7 @@
                     if (data.success) {
                         alert(data.message);
                         // hapus baris user dari tabel tanpa reload
-                        document.querySelector(`#user-row-${userId}`).remove();
+                        document.querySelector(`#user-row-${id}`).remove();
                     } else {
                         alert("❌ " + data.message);
                     }

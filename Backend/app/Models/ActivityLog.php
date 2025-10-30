@@ -15,6 +15,12 @@ class ActivityLog extends Model
         'user_agent',
     ];
 
+    // Pastikan kolom tanggal dikonversi ke Carbon
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
