@@ -27,7 +27,8 @@
 
     <div class="container">
         <div class="login-header">
-            <h3>ADMIN LOGIN</h3>
+            <h3>LOGIN</h3>
+            <h3>Sign In to Your Account</h3>
         </div>
         <form method="POST" action="{{ route('login.post') }}">
             @csrf
