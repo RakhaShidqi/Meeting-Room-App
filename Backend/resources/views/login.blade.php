@@ -22,7 +22,7 @@
     <div class="welcome-text">
         <h1>Hello !</h1>
         <h2>Welcome Back</h2>
-        <h3>Please enter your details</h3>
+        <!-- <h3>Please enter your details</h3> -->
     </div>
 
     <div class="container">

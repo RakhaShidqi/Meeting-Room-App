@@ -51,7 +51,7 @@
 
                     <div class="tombol" id="log-activity">
                             <img src="{{ asset('/img/log.png') }}" class="gambar" alt="Log Activity Icon"> {{-- Assuming you have a log.png icon --}}
-                            <a href="{{ route('admin.log') }}"><h3>Log Activity</h3></a>
+                            <a href="{{ route('admin.activity-log') }}"><h3>Log Activity</h3></a>
                         </div>
 
                         <div class="tombol" id="user-manage">
@@ -73,8 +73,8 @@
         {{-- Konten utama --}}
         <main class="box-2">
             <div class="main-header">
-                <a href="{{ url('/akun') }}"><p class="username"></p></a>
-                <a href="{{ url('/akun') }}"><img class="profile-image" src="{{ asset('img/user.png') }}" alt=""></a>    
+                <a href="{{ route('admin.akun') }}"><p class="username"></p></a>
+                <a href="{{ route('admin.akun') }}"><img class="profile-image" src="{{ asset('img/user.png') }}" alt=""></a>    
             </div>
             <div class="main-body">
                 <a href="{{ route('ruangan.index') }}" class="back-button-text-link">

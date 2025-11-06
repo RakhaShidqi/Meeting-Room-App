@@ -79,8 +79,8 @@
         {{-- Konten Utama --}}
         <main class="box-2">
             <div class="main-header">
-                <a href="{{ url('/akun') }}"><p class="username"></p></a>
-                <a href="{{ url('/akun') }}"><img class="profile-image" src="{{ asset('img/user.png') }}" alt="User Icon"></a>    
+                <a href="{{ route('admin.akun') }}"><p class="username"></p></a>
+                <a href="{{ route('admin.akun') }}"><img class="profile-image" src="{{ asset('img/user.png') }}" alt="User Icon"></a>    
             </div>
 
             <div class="main-body">

@@ -41,7 +41,7 @@
                         </div>
                         <div class="tombol" id="log-activity">
                             <img src="../img/log.png" class="gambar" alt="Log Activity Icon">
-                            <a href="{{ url('/log-activity') }}"><h3>Log Activity</h3></a>
+                            <a href="{{ route('admin.activity-log') }}"><h3>Log Activity</h3></a>
                         </div>
                         <div class="tombol" id="user-manage">
                             <img src="../img/umanage.png" class="gambar" alt="User Management Icon"> 
@@ -61,8 +61,8 @@
 
         <main class="box-2">
             <div class="main-header">
-                <a href="{{ url('/akun') }}"><p class="username"></p></a>
-                <a href="{{ url('/akun') }}"><img class="profile-image" src="../img/user.png" alt=""></a>
+                <a href="{{ route('admin.akun') }}"><p class="username"></p></a>
+                <a href="{{ route('admin.akun') }}"><img class="profile-image" src="../img/user.png" alt=""></a>
             </div>
 
             <div class="main-body">
