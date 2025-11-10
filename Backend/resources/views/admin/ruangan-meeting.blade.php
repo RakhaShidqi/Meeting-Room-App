@@ -8,8 +8,11 @@
                 <div class="card">
                     <img src="{{ asset('storage/' . $ruangan->foto) }}" class="gambar-ruangan" alt="{{ $ruangan->nama }}">
                     <h3>{{ $ruangan->nama_ruangan }}</h3>
+                    <span class="material-icons-outlined">person</span>
                     <p>{{ $ruangan->kapasitas }}</p>
+                    <span class="material-icons-outlined">location_on</span>
                     <p>{{ $ruangan->lokasi }}</p>
+                    <span class="material-icons-outlined">description</span>
                     <p>{{ $ruangan->deskripsi }}</p>
 
                     <form method="GET" action="{{ route('ruangan.booking.form', ['id' => $ruangan->id, 'nama' => Str::slug($ruangan->nama_ruangan)]) }}">

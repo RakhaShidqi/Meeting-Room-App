@@ -162,6 +162,7 @@ hr{
 }
 .card h3{
     font-family: 'Lato', sans-serif;
+    font-weight: bold;
 }
 
 .card,.card2{
@@ -195,6 +196,9 @@ hr{
   margin-bottom: 12px;
 }
 
+span{
+    filter: opacity(50%);
+}
 .container-ruangan h3, .container-ruangan p{
     margin-left: 10px;
     margin-right: 10px;
