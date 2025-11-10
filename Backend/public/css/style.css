@@ -26,7 +26,7 @@ body {
 }
 
 .welcome-text {
-    text-align: center;
+    text-align: left;
     width: 100%;
     max-width: 419px; /* sejajar dengan container */
     margin-bottom: 15px;
@@ -43,11 +43,11 @@ body {
 
 .welcome-text h2 {
     font-size: 30px;
-    font-weight: bold;
+    font-weight: 600;
     color: #00AA8B;
     margin: 5px 0 0 0;
     font-family: 'Lato', sans-serif;
-    text-shadow: 3px 3px 5px rgb(165, 165, 165);
+    /* text-shadow: 3px 3px 5px rgb(165, 165, 165); */
     margin-bottom: 10px;
 }
 
@@ -70,7 +70,8 @@ body {
     align-items: center;     
     flex-direction: column;
     border-radius: 10px;
-    box-shadow: 0px 3px 3px grey;
+    border: 1px solid #ccc;
+    /* box-shadow: 5px 10px 18px #888888; */
 }
 
 .main-container {
@@ -89,25 +90,33 @@ body {
     border-top-right-radius: 10px;
     padding: 15px 0;
     text-align: center;
-    margin-top: 0px;
+    margin-top: 20px;
     margin-bottom: 20px;
-    text-shadow: 5px 5px 10px gray;
+    /* text-shadow: 2px 2px 8px gray; */
 }
 
 .login-header h3 {
     margin: 0;
-    font-size: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #00AA8B;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login-sign h3{
+    margin: 0;
+    padding-top: 3px;
+    font-size: 15px;
     font-weight: bold;
     color: #00AA8B;
     font-family: 'Lato', sans-serif;
-    font-weight: 600;
 }
     
 a{
     text-align: left;
     font-style: normal;
     font-size: 13px;
-    color: white;
+    color: #00AA8B;
     text-decoration: none;
     margin-top: -1px;
     margin-bottom: -15px;  
@@ -128,8 +137,10 @@ a{
 
     input#email {
         all: unset;
+        display: inline-block;
         border-radius: 8px;
-        border:2px solid transparent;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
         box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0, 0.088);
         transition: border .3s ease-in-out;
         padding: 6px; 
@@ -137,11 +148,12 @@ a{
         background-image: url('../icon/user2.svg');
         background-repeat: no-repeat;
         background-position: 10px center;
-    background-size: 20px 20px;
-    outline: none;
-    background-color: white;
-    padding-left: 40px;
-    padding-right: 30px;
+        background-size: 20px 20px;
+        outline: none;
+        background-color: white;
+        padding-left: 40px;
+        padding-right: 30px;
+        transition: all 0.2s ease-in-out;
     }
 
     input::-ms-reveal,
@@ -151,8 +163,10 @@ a{
 
     input#pass {
         all: unset;
+        display: inline-block;
         border-radius: 8px;
-        border:2px solid transparent;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
         box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0, 0.088);
         transition: border .3s ease-in-out;
         padding: 6px;
@@ -162,16 +176,18 @@ a{
         background-repeat: no-repeat;
         background-position: 10px center;
         background-size: 20px 20px;
-        border-radius: 8px;
         background-color: white;
         outline: none;
         padding-left: 40px;
-        padding-right: 30px; 
+        padding-right: 30px;
+        transition: all 0.2s ease-in-out; 
     }
 
     input#email:focus,
-input#pass:focus{
-    border-color: #169687;
+    input#pass:focus{
+    outline: none;
+    border-color: rgb(0, 170, 139);
+    box-shadow: 0 0 0 2px rgba(0, 170, 139, 0.15);
 }
 
 .password-container {
@@ -209,8 +225,8 @@ input#pass:focus{
         margin-bottom: 10px;
         width: 60%;
         text-align: center;
-        font-weight:bold;
-        background:#11BF9F;
+        font-weight: 580;
+        background:#41AC98;
         color: white;
         border: 2px transparent;
         outline: none;
@@ -220,10 +236,9 @@ input#pass:focus{
         transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     }
 
-    button:hover.log {
-        color: #fff;
-        background: rgba (255, 255, 255, 0.5);
-        box-shadow: 0 5px 8px 0 rgba(214, 208, 208, 0.2), 0 17px 50px 0 rgba(0,0,0,0.19);
+    button.log:hover {
+        background-color: #01a08b; 
+        box-shadow: 0 4px 10px rgba(0, 170, 139, 0.4);
     }
 
     input#email::placeholder,
