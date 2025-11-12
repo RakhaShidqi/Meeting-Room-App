@@ -101,6 +101,7 @@ body {
     font-weight: bold;
     color: #00AA8B;
     font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 15px gray;
 }
 
 .login-sign h3{
@@ -130,7 +131,7 @@ a{
     form a {
     align-self: flex-end;
     margin-top: -5px;
-    margin-right: 35px;
+    margin-right: 38px;
     text-align: right;
     font-style: italic;
 }
@@ -225,7 +226,7 @@ a{
         margin-bottom: 10px;
         width: 60%;
         text-align: center;
-        font-weight: 580;
+        font-weight: 550;
         background:#41AC98;
         color: white;
         border: 2px transparent;
@@ -279,6 +280,10 @@ input#pass::placeholder {
     .container {
         width: 100%; /* Make the container take up the full width of its parent */
         height: auto;
+    }
+
+    .welcome-text{
+        align-items: center;
     }
 
 }

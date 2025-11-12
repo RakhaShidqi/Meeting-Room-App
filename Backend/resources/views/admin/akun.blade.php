@@ -74,7 +74,16 @@
             </div>
             <div class="main-body">
                 <div class="container-akun">
-                    <img src="../img/user.png" class="profile-image" id="profile-image-akun" alt="">
+                    <!-- <img src="../img/user.png" class="profile-image" id="profile-image-akun" alt=""> -->
+                    <!-- FOTO PROFIL -->
+                    <img class="profile-image" id="profile-image-akun" src="../img/user.png" alt="Profile Photo">
+
+                    <!-- POPUP VIEWER -->
+                    <div id="popup-profile" class="popup-overlay" onclick="closePopup()">
+                    <div class="popup-content">
+                        <img id="popup-image" src="" alt="Profile Detail">
+                    </div>
+                    </div>
                     <div class="info-akun">
                     <h1 class="username"></h1> 
                     <label for="username">New Username</label>

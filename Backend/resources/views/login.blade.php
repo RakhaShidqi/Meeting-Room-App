@@ -51,7 +51,7 @@
             <a href="{{ url('/forgot-password') }}">Forgot Password?</a>
             <br><br>
 
-            <button type="submit" class="log">LOGIN</button>
+            <button type="submit" class="log">Log in</button>
             <br><br>
 
             <!-- <a href="{{ route('register') }}">Belum ada akun? Daftar</a> -->

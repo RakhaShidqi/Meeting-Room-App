@@ -24,7 +24,7 @@
             <br><br>
             <button type="submit" class="sub">Send</button>
             <br><br>
-            <a href="http://127.0.0.1:8000/">Back To Login</a>
+            <a href="http://127.0.0.1:8000/">Back to Login</a>
         </form>
     </div>
 </body>

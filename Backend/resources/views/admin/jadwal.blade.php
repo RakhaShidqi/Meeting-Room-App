@@ -81,19 +81,19 @@
                         <button id="nextMonth">&gt;</button>
                       </div>
                       <div class="days-name">
-                        <div>Min</div>
-                        <div>Sen</div>
-                        <div>Sel</div>
-                        <div>Rab</div>
-                        <div>Kam</div>
-                        <div>Jum</div>
-                        <div>Sab</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wen</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                        <div>Sun</div>
                       </div>
                       <div class="days" id="days"></div>
                     </div>
                   </div>
             </div>
-            <p id="copyright">Made with heart by Ryan/Tama/Rynetz/Tamskutt</p>
+            <!-- <p id="copyright">&copy; 2025 Hypernet.</p> -->
         </main>
     </div>
     <!-- Popup Jadwal -->
