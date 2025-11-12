@@ -53,9 +53,6 @@
 
             <button type="submit" class="log">Log in</button>
             <br><br>
-
-            <!-- <a href="{{ route('register') }}">Belum ada akun? Daftar</a> -->
-
         </form>
     </div>
     {{-- SweetAlert Success --}}

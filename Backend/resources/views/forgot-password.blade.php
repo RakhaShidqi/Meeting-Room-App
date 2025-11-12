@@ -19,7 +19,7 @@
             <img src="../img/danger.png" alt="Icon forgot">
             <h2>Forgot Password</h2>
             <p>Enter your email and we'll send you a link to reset your password.</p>
-            <br><br>
+            <label for="Email">Email</label><br><br>
             <input type="email" name="" id="email" placeholder="Enter your email address">
             <br><br>
             <button type="submit" class="sub">Send</button>
