@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/jadwal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="https://www.hypernet.co.id/wp-content/uploads/2020/01/cropped-hypernet-logo-192x192.png">
 </head>
@@ -76,9 +77,9 @@
                 <div class="container-kalender">
                     <div class="kalender">
                       <div class="header-kalender">
-                        <button id="prevMonth">&lt;</button>
+                        <button id="prevMonth"><span class="material-icons">arrow_back_ios_new</span></button>
                         <span id="monthYear"></span>
-                        <button id="nextMonth">&gt;</button>
+                        <button id="nextMonth"><span class="material-icons">arrow_forward_ios</span></button>
                       </div>
                       <div class="days-name">
                         <div>Mon</div>

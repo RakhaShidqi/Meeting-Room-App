@@ -28,11 +28,19 @@ html, body {
 }
 
 .container img{
-    width: 20%;
+    width: 8%;
     height: auto;
+    padding: 8px 8px 8px 8px;
+    border-radius: 5px;
+    margin-top: -10px;
     margin-bottom: 10px;
+    background-color: #00AA8B;
 }
 
+img{
+    width: 20px;
+    height: auto;
+}
 h2{
     font-family: 'Lato', sans-serif;
     text-align: center;
@@ -46,51 +54,64 @@ p{
     font-style: italic;
     color: gray;
     display: block;
+    margin-top: -5px;
 }
 a{
+    margin-top: -10px;
     text-align: center;
     font-style: normal;
     font-size: 13px;
     color: #00AA8B;
     text-decoration: none;
 }
+a:hover{
+    color: #00967f;
+    text-decoration: underline;
+}
     form {
-      width: 80%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     }
-    label{
-        text-align: left;
-    }
+    form img,
+form h2{
+    align-self: center;
+    width: 100%;
+}
+    
+    label {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    opacity: 0.5;
+}
+
     input#email {
-        padding: 6px;
-        margin-top: -30px;
-        margin-left: 10px;
-        margin-right: 10px;
-        border: 1px solid #ccc;
-        background-repeat: no-repeat;
-        background-position: 5px center;
-        background-size: 20px 20px;
-        border-radius: 8px;
-        transition: border .3s ease-in-out;
-        background-color: aliceblue;
-        outline: none;
-        padding-left: 10px;
-        padding-right: 30px;
+    width: 100%;           /* disamakan dengan button */
+    padding: 8px 12px;    /* padding seimbang */
+    margin-top: -25px;    /* boleh disesuaikan */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border .3s ease-in-out;
+    background-color: aliceblue;
+    outline: none;
     }
 
     input#email:focus{
         border-color: #169687;
     }
     button.sub {
-        padding: 5px 8px;
+        align-self: center;
+        padding: 6px 12px;
         margin-bottom: -10px;
-        margin-top: -15px;
-        width: 60%;
+        margin-top: -25px;
+        width: 66%;
         text-align: center;
-        font-family: 'Rubik', sans-serif;
-        font-weight: 500;
+        font-family: 'Lato', sans-serif;
+        font-weight: 600;
         background-color: #41AC98;
         color: white;
         border:0.5px groove rgba(117, 107, 107, 0.2);

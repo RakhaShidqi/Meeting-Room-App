@@ -199,6 +199,9 @@ hr{
 span{
     filter: opacity(50%);
 }
+.plus-icon-button{
+    filter: none;
+}
 .container-ruangan h3, .container-ruangan p{
     margin-left: 10px;
     margin-right: 10px;
