@@ -90,20 +90,50 @@
             <div class="container-pending-requests">
                     @forelse($bookings as $booking)
                         <div class="card pending-card">
-                            <img src="{{ asset('img/ruangan.jpg') }}" alt="Meeting Room" class="gambar-ruangan">
-
-                            <h3>{{ $booking->ruangan->nama_ruangan ?? 'Ruang Rapat' }}</h3>
-
-                            <div class="booking-details">
-                                <p><strong>Name:</strong> {{ $booking->nama_pemesan }}</p>
-                                <p><strong>Division:</strong> {{ $booking->divisi }}</p>
-                                <p><strong>Event:</strong> {{ $booking->event }}</p>
-                                <p><strong>Date:</strong> {{ \Carbon\Carbon::parse($booking->tanggal)->format('d/m/Y') }}</p>
-                                <p><strong>Start Time:</strong> {{ \Carbon\Carbon::parse($booking->jam_mulai)->format('H:i') }}</p>
-                                <p><strong>Finish Time:</strong> {{ \Carbon\Carbon::parse($booking->jam_selesai)->format('H:i') }}</p>
+                            <!-- <img src="{{ asset('img/ruangan.jpg') }}" alt="Meeting Room" class="gambar-ruangan"> -->
+                             <h3> Pending Request</h3>
+                            <table class="booking-details">
+                                <thead>
+                                    <tr>
+                                        <th>Room Name</th>
+                                        <th>Name</th>
+                                        <th>Division</th>
+                                        <th>Event</th>
+                                        <th>Date</th>
+                                        <th>Start Time</th>
+                                        <th>Finish Time</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{ $booking->ruangan->nama_ruangan ?? 'Ruang Rapat' }}</td>
+                                        <td>{{ $booking->nama_pemesan }}</td>
+                                        <td>{{ $booking->divisi }}</td>
+                                        <td>{{ $booking->event }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($booking->tanggal)->format('d/m/Y') }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($booking->jam_mulai)->format('H:i') }}</td>
+                                        <td>{{ \Carbon\Carbon::parse($booking->jam_selesai)->format('H:i') }}</td>
+                                        <td>
+                                            <form action="{{ route('booking.reject', $booking->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('PATCH')
+                                            <button type="submit" class="reject-button">Reject</button>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form action="{{ route('booking.approve', $booking->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            @method('PATCH')
+                                            <button type="submit" class="accept-button">Accept</button>
+                                            </form>
+                                            
+                                        </td>
+                                    </tr>
+                                </tbody>
                             </div>
 
-                            <div class="action-buttons">
+                            <!-- <div class="action-buttons">
                                 <form action="{{ route('booking.approve', $booking->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('PATCH')
@@ -115,10 +145,10 @@
                                     @method('PATCH')
                                     <button type="submit" class="reject-button">Reject</button>
                                 </form>
-                            </div>
+                            </div> -->
                         </div>
                     @empty
-                        <p>No bookings awaiting approval.</p>
+                        <p>No bookings a waiting approval.</p>
                     @endforelse
                 </div>
 

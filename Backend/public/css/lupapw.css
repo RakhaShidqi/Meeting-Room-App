@@ -90,9 +90,9 @@ form h2{
 }
 
     input#email {
-    width: 100%;           /* disamakan dengan button */
-    padding: 8px 12px;    /* padding seimbang */
-    margin-top: -25px;    /* boleh disesuaikan */
+    width: 100%;         
+    padding: 8px 12px;    
+    margin-top: -25px;    
     border: 1px solid #ccc;
     border-radius: 8px;
     transition: border .3s ease-in-out;
