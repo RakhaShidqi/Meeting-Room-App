@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meeting X - Home</title>
+    <title>HyperMeet - Home</title>
     <link rel="stylesheet" href="../css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,10 +18,8 @@
             <div class="container-dashboard">
                 <div class="dashboard-header">
                     <img src="../img/logo_hypernet2.png" alt="">
-                    <h2>Meeting X</h2>
+                    <h2>HyperMeet</h2>
                 </div>
-
-                <hr>
                 
                 <div class="dashboard-body">
                     <div class="dashboard-menu">
@@ -32,12 +30,12 @@
                         <p>Menu<p>                      
                             <div class="tombol" id="ruang-meeting">                               
                                 <img src="../img/room.png" class="gambar" alt="">
-                                <a href="{{ route('ruangan.index') }}"><h3>Ruang Meeting</h3></a>                                                    
+                                <a href="{{ route('ruangan.index') }}"><h3>Meeting Room</h3></a>                                                    
                             </div>
 
                             <div class="tombol" id="jadwal">
                                 <img src="../img/calender.png" class="gambar" alt="">
-                                <a href="{{ url('/jadwal') }}"><h3>Jadwal</h3></a>                            
+                                <a href="{{ route('jadwal') }}"><h3>Schedule</h3></a>                            
                             </div>
 
                             <div class="tombol" id="log-activity">
@@ -50,7 +48,7 @@
                         <p>Akun<p>
                         <div class="tombol" id="akun-saya">
                             <img src="../img/account.png" class="gambar" alt="">
-                            <a href="{{ url('/akun') }}"><h3>Akun Saya</h3></a>                        
+                            <a href="{{ route('admin.akun') }}"><h3>My Account</h3></a>                        
                         </div>
                     </div>
                 </div>

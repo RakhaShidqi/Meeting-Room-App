@@ -41,7 +41,7 @@
                         </div>
                         <div class="tombol" id="log-activity">
                             <img src="../img/log.png" class="gambar" alt="Log Activity Icon">
-                            <a href="{{ url('/log-activity') }}"><h3>Log Activity</h3></a>
+                            <a href="{{ route('admin.activity-log') }}"><h3>Activity Log</h3></a>
                         </div>
                         <div class="tombol" id="user-manage">
                             <img src="../img/umanage.png" class="gambar" alt="User Management Icon"> 
@@ -61,8 +61,8 @@
 
         <main class="box-2">
             <div class="main-header">
-                <a href="{{ url('/akun') }}"><p class="username"></p></a>
-                <a href="{{ url('/akun') }}"><img class="profile-image" src="../img/user.png" alt=""></a>
+                <a href="{{ route('admin.akun') }}"><p class="username"></p></a>
+                <a href="{{ route('admin.akun') }}"><img class="profile-image" src="../img/user.png" alt=""></a>
             </div>
 
             <div class="main-body">
@@ -72,7 +72,7 @@
                         <table class="log-table-wrapper">
                             <thead>
                                 <tr>
-                                    <th>Time</th>
+                                    <th>Date</th>
                                     <th>User</th>
                                     <th>Activity</th>
                                     <th>Detail</th>
@@ -81,14 +81,14 @@
                             <tbody>
                                 @forelse ($logs as $log)
                                     <tr>
-                                        <td>{{ $log->created_at->format('Y-m-d H:i') }}</td>
+                                        <td>{{ $log->created_at->format('d-m-Y H:i') }}</td>
                                         <td>{{ $log->user_name ?? 'System' }}</td>
                                         <td>{{ $log->activity }}</td>
                                         <td>{{ $log->details }}</td>
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="4" style="text-align: center;">Tidak ada log aktivitas</td>
+                                        <td colspan="4" style="text-align: center;">No activity log</td>
                                     </tr>
                                 @endforelse
                                 </tbody>

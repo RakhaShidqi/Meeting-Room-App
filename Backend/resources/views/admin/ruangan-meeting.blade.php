@@ -8,10 +8,18 @@
                 <div class="card">
                     <img src="{{ asset('storage/' . $ruangan->foto) }}" class="gambar-ruangan" alt="{{ $ruangan->nama }}">
                     <h3>{{ $ruangan->nama_ruangan }}</h3>
-                    <p>{{ $ruangan->kapasitas }}</p>
-                    <p>{{ $ruangan->lokasi }}</p>
-                    <p>{{ $ruangan->deskripsi }}</p>
-
+                    <div class="info-row">
+                        <span class="material-icons-outlined">person</span>
+                        <p>{{ $ruangan->kapasitas }}</p>
+                    </div>
+                    <div class="info-row">
+                        <span class="material-icons-outlined">location_on</span>
+                        <p>{{ $ruangan->lokasi }}</p>
+                    </div>
+                    <div class="info-row">
+                        <span class="material-icons-outlined">description</span>
+                        <p>{{ $ruangan->deskripsi }}</p>
+                    </div>
                     <form method="GET" action="{{ route('ruangan.booking.form', ['id' => $ruangan->id, 'nama' => Str::slug($ruangan->nama_ruangan)]) }}">
                         <button class="pilih" type="submit">Select Room</button>
                     </form>
@@ -40,9 +48,15 @@
         @if(session('successcreate'))
             <script>
                     Swal.fire({
-                    title: "Berhasil",
-                    text: "Berhasil Tambah Ruangan",
-                    icon: "success"
+                    title: "Success",
+                    text: "Successfully Added Room",
+                    icon: "success",
+                    customClass: {
+                        popup: 'my-popup',
+                        title: 'my-title',
+                        htmlContainer: 'my-text',
+                        icon: 'my-icon'
+                    }
                 });
             </script>
         @endif
@@ -52,8 +66,14 @@
             <script>
                     Swal.fire({
                     title: "Error",
-                    text: "Jadwal Sudah Penuh",
-                    icon: "error"
+                    text: "Schedule is Full",
+                    icon: "error",
+                    customClass: {
+                        popup: 'my-popup',
+                        title: 'my-title',
+                        htmlContainer: 'my-text',
+                        icon: 'my-error'
+                    }
                 });
             </script>
         @endif
@@ -61,9 +81,15 @@
         @if(session('success'))
             <script>
                     Swal.fire({
-                    title: "Booking Berhasil",
-                    text: "Silahkan Menunggu Approval",
-                    icon: "success"
+                    title: "Booking Successful",
+                    text: "Please Wait for Approval",
+                    icon: "success",
+                    customClass: {
+                        popup: 'my-popup',
+                        title: 'my-title',
+                        htmlContainer: 'my-text',
+                        icon: 'my-icon'
+                    }
                 });
             </script>
         @endif
@@ -71,9 +97,15 @@
         @if(session('editsuccess'))
             <script>
                     Swal.fire({
-                    title: "Success Edit",
-                    text: "Data Ruangan Diperbaharui",
-                    icon: "success"
+                    title: "Successful Edit",
+                    text: "Room Data Updated",
+                    icon: "success",
+                    customClass: {
+                        popup: 'my-popup',
+                        title: 'my-title',
+                        htmlContainer: 'my-text',
+                        icon: 'my-icon'
+                    }
                 });
             </script>
         @endif
@@ -81,11 +113,52 @@
         @if(session('deletesuccess'))
             <script>
                     Swal.fire({
-                    title: "Success Delete",
-                    text: "Data Ruangan Berhasil Dihapus",
-                    icon: "success"
+                    title: "Successfully Deleted",
+                    text: "Room Data Successfully Deleted",
+                    icon: "success",
+                    customClass: {
+                        popup: 'my-popup',
+                        title: 'my-title',
+                        htmlContainer: 'my-text',
+                        icon: 'my-icon'
+                    }
                 });
             </script>
         @endif
+
+        <button onclick="testPopup()" style="margin:20px;">Test Popup</button>
+
+        <script>
+        function testPopup() {
+        Swal.fire({
+            title: "Preview Popup",
+            text: "Ini hanya testing popup",
+            icon: "success",
+            customClass: {
+                        popup: 'my-popup',
+                        title: 'my-title',
+                        htmlContainer: 'my-text',
+                        icon: 'my-icon'
+            }
+        });
+        }
+        </script>
+        <button onclick="testPopup2()" style="margin:20px;">Test Popup error</button>
+
+        <script>
+        function testPopup2() {
+        Swal.fire({
+            title: "Preview Popup",
+            text: "Ini hanya testing popup",
+            icon: "error",
+            customClass: {
+                        popup: 'my-popup',
+                        title: 'my-title',
+                        htmlContainer: 'my-text',
+                        icon: 'my-error'
+            }
+        });
+        }
+        </script>
     </div>
 @endsection

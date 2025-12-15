@@ -33,12 +33,12 @@
                         
                             <div class="tombol" id="ruangan-meeting">
                                 <img src="../img/room.png" class="gambar" alt="">
-                                <a href="{{ url('/ruangan-meeting') }}"><h3>Meeting Room</h3></a>                           
+                                <a href="{{ route('ruangan.index') }}"><h3>Meeting Room</h3></a>                           
                             </div>
                         
                         <div class="tombol" id="jadwal">
                             <img src="../img/calender.png" class="gambar" alt="">
-                            <a href="{{ route('ruangan.index') }}"><h3>Schedule</h3></a>                            
+                            <a href="{{ route('jadwal') }}"><h3>Schedule</h3></a>                            
                         </div>
 
                          <div class="tombol" id="pending-request">
@@ -48,7 +48,7 @@
 
                         <div class="tombol" id="log-activity">
                             <img src="../img/log.png" class="gambar" alt="Log Activity Icon"> {{-- Assuming you have a log.png icon --}}
-                            <a href="{{ route('admin.log') }}"><h3>Log Activity</h3></a>
+                            <a href="{{ route('admin.activity-log') }}"><h3>Activity Log</h3></a>
                         </div>
 
                         <div class="tombol" id="user-manage">
@@ -69,12 +69,21 @@
 
         <main class="box-2">
             <div class="main-header">
-                <a href="{{ url('/akun') }}"><p class="username"></p></a>
-                <a href="{{ url('/akun') }}"><img class="profile-image" src="../img/user.png" alt=""></a>
+                <a href="{{ route('admin.akun') }}"><p class="username"></p></a>
+                <a href="{{ route('admin.akun') }}"><img class="profile-image" src="../img/user.png" alt=""></a>
             </div>
             <div class="main-body">
                 <div class="container-akun">
-                    <img src="../img/user.png" class="profile-image" id="profile-image-akun" alt="">
+                    <!-- <img src="../img/user.png" class="profile-image" id="profile-image-akun" alt=""> -->
+                    <!-- FOTO PROFIL -->
+                    <img class="profile-image" id="profile-image-akun" src="../img/user.png" alt="Profile Photo">
+
+                    <!-- POPUP VIEWER -->
+                    <div id="popup-profile" class="popup-overlay" onclick="closePopup()">
+                    <div class="popup-content">
+                        <img id="popup-image" src="" alt="Profile Detail">
+                    </div>
+                    </div>
                     <div class="info-akun">
                     <h1 class="username"></h1> 
                     <label for="username">New Username</label>

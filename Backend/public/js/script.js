@@ -67,6 +67,22 @@ else if (halaman === "halaman-akun") {
             reader.readAsDataURL(fileInput.files[0]);
         }
     };
+
+    const popup = document.getElementById("popup-profile");
+    const popupImage = document.getElementById("popup-image");
+
+    // Saat klik foto profil → buka popup
+    document.querySelectorAll(".profile-image").forEach(img => {
+        img.addEventListener("click", function () {
+            popupImage.src = this.src;
+            popup.style.display = "flex";
+        });
+    });
+
+    // Klik area gelap → tutup popup
+    popup.addEventListener("click", function (e) {
+        if (e.target === popup) popup.style.display = "none";
+    });
 }
 
 else if (halaman === "halaman-jadwal") {

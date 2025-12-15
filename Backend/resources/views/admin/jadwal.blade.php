@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/jadwal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="https://www.hypernet.co.id/wp-content/uploads/2020/01/cropped-hypernet-logo-192x192.png">
 </head>
@@ -48,7 +49,7 @@
 
                         <div class="tombol" id="log-activity">
                             <img src="../img/log.png" class="gambar" alt="Log Activity Icon">
-                            <a href="{{ route('admin.activity-log') }}"><h3>Log Activity</h3></a>
+                            <a href="{{ route('admin.activity-log') }}"><h3>Activity Log</h3></a>
                         </div>
 
                         <div class="tombol" id="user-manage">
@@ -69,31 +70,31 @@
 
         <main class="box-2">
             <div class="main-header">
-                <a href="{{ url('/akun') }}"><p class="username"></p></a>
-                <a href="{{ url('/akun') }}"><img class="profile-image" src="../img/user.png" alt=""></a>    
+                <a href="{{ route('admin.akun') }}"><p class="username"></p></a>
+                <a href="{{ route('admin.akun') }}"><img class="profile-image" src="../img/user.png" alt=""></a>    
             </div>
             <div class="main-body">
                 <div class="container-kalender">
                     <div class="kalender">
                       <div class="header-kalender">
-                        <button id="prevMonth">&lt;</button>
+                        <button id="prevMonth"><span class="material-icons">arrow_back_ios_new</span></button>
                         <span id="monthYear"></span>
-                        <button id="nextMonth">&gt;</button>
+                        <button id="nextMonth"><span class="material-icons">arrow_forward_ios</span></button>
                       </div>
                       <div class="days-name">
-                        <div>Min</div>
-                        <div>Sen</div>
-                        <div>Sel</div>
-                        <div>Rab</div>
-                        <div>Kam</div>
-                        <div>Jum</div>
-                        <div>Sab</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wen</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                        <div>Sun</div>
                       </div>
                       <div class="days" id="days"></div>
                     </div>
                   </div>
             </div>
-            <p id="copyright">Made with heart by Ryan/Tama/Rynetz/Tamskutt</p>
+            <!-- <p id="copyright">&copy; 2025 Hypernet.</p> -->
         </main>
     </div>
     <!-- Popup Jadwal -->

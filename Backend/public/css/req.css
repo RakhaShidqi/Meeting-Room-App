@@ -298,15 +298,16 @@ hr{
 }
 
 .pending-card {
-    width: 280px; /* Slightly wider cards for more details */
+    width: 900px; /* Slightly wider cards for more details */
     padding: 20px;
     text-align: left; /* Align text to the left within the card */
 }
 
 .pending-card h3 {
     text-align: center; /* Center room name */
-    margin-bottom: 15px;
-    color: #333;
+    margin: 5px;
+    color: #00aa8b;
+    font-size: 24px;
 }
 
 .booking-details p {
@@ -361,4 +362,8 @@ hr{
     border-radius: 5px;
     background-color: rgb(0, 170, 139);
     color: aliceblue;
+}
+
+th, td{
+    padding: 8px 10px;
 }

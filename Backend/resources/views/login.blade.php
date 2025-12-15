@@ -7,9 +7,8 @@
     <title>Meeting Room App</title>
     <link rel="icon" type="image/x-icon" href="../img/home.png ">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.google.com/specimen/Lato" rel="stylesheet">
-    <link href="https://fonts.google.com/specimen/Rubik" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="icon" href="https://www.hypernet.co.id/wp-content/uploads/2020/01/cropped-hypernet-logo-192x192.png">
 </head>
 <body>
@@ -20,14 +19,17 @@
         </div>
 <div class="right-panel">
     <div class="welcome-text">
-        <h1>Hello !</h1>
+        <h1>Hello,</h1>
         <h2>Welcome Back</h2>
-        <h3>Please enter your details</h3>
+        <!-- <h3>Please enter your details</h3> -->
     </div>
 
     <div class="container">
         <div class="login-header">
-            <h3>ADMIN LOGIN</h3>
+            <h3>LOGIN</h3>
+            <div class="login-sign">
+            <h3>Sign In to Your Account</h3>
+            </div>
         </div>
         <form method="POST" action="{{ route('login.post') }}">
             @csrf
@@ -49,11 +51,8 @@
             <a href="{{ url('/forgot-password') }}">Forgot Password?</a>
             <br><br>
 
-            <button type="submit" class="log">LOGIN</button>
+            <button type="submit" class="log">Log in</button>
             <br><br>
-
-            <!-- <a href="{{ route('register') }}">Belum ada akun? Daftar</a> -->
-
         </form>
     </div>
     {{-- SweetAlert Success --}}

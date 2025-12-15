@@ -42,7 +42,7 @@
                         </div>
             <div class="tombol" id="log-activity">
                             <img src="../img/log.png" class="gambar" alt="Log Activity Icon"> {{-- Assuming you have a log.png icon --}}
-                            <a href="{{ url('/log-activity') }}"><h3>Log Activity</h3></a>
+                            <a href="{{ url('/log-activity') }}"><h3>Activity Log</h3></a>
                         </div>
                         
                         <div class="tombol" id="user-manage">
