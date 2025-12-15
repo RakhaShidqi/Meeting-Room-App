@@ -111,8 +111,13 @@
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->role }}</td>
                                     <td>
-                                        <button class="action-button edit-button" 
-                                            onclick="openEditUserModal('{{ $user->email }}', '{{ $user->name }}')">
+                                        <button class="action-button edit-button"
+                                            onclick="openEditUserModal(
+                                                '{{ $user->id }}',
+                                                '{{ $user->email }}',
+                                                '{{ $user->name }}',
+                                                '{{ $user->role }}'
+                                            )">
                                             Edit
                                         </button>
 
@@ -138,27 +143,29 @@
                         <h2 id="modalTitle">Tambah Pengguna</h2>
                         <form id="userForm" method="post" action="{{ route('users.store') }}">
                             @csrf
+                            <input type="hidden" id="user_id" name="user_id">
 
-                            <label for="email">Email:</label>
+                            <label>Email:</label>
                             <input type="email" id="email" name="email" required>
-                            
-                            <label for="name">Nama:</label>
+
+                            <label>Nama:</label>
                             <input type="text" id="name" name="name" required>
-                            
-                            <label for="password">Password:</label>
-                            <input type="password" id="password" name="password" minlength="8" required>
 
-                            <label for="password_confirmation">Konfirmasi Password:</label>
-                            <input type="password" id="password_confirmation" name="password_confirmation" minlength="8" required>
+                            <div id="password-section">
+                                <label>Password:</label>
+                                <input type="password" id="password" name="password" minlength="8">
 
-                            <label for="role">Role</label>
-                            <select name="role" required>
-                                <option value="">-- Pilih Role --</option>
+                                <label>Konfirmasi Password:</label>
+                                <input type="password" id="password_confirmation" name="password_confirmation" minlength="8">
+                            </div>
+
+                            <label>Role</label>
+                            <select name="role" id="role" required>
                                 <option value="user">User</option>
                                 <option value="approver">Approver</option>
                                 <option value="admin">Admin</option>
                             </select>
-                            
+
                             <button type="submit" class="submit-button">Simpan</button>
                         </form>
 
@@ -173,19 +180,37 @@
 
     // Fungsi untuk membuka modal tambah pengguna
     function openAddUserModal() {
-        document.getElementById('modalTitle').innerText = 'Tambah Pengguna Baru';
-        document.getElementById('userForm').reset();
-        document.getElementById('userModal').style.display = 'flex'; 
-    }
+    document.getElementById('modalTitle').innerText = 'Tambah User Baru';
+    document.getElementById('userForm').reset();
+    document.getElementById('user_id').value = '';
+
+    document.getElementById('password').required = true;
+    document.getElementById('password_confirmation').required = true;
+
+    document.getElementById('userForm').action =
+        "{{ route('users.store') }}";
+
+    document.getElementById('userModal').style.display = 'flex';
+}
 
     // Fungsi untuk membuka modal edit pengguna
-    function openEditUserModal(email, name) {
-        document.getElementById('modalTitle').innerText = 'Edit Pengguna';
-        document.getElementById('email').value = email;
-        document.getElementById('name').value = name;
-        document.getElementById('password').value = ''; 
-        document.getElementById('userModal').style.display = 'flex'; 
-    }
+    function openEditUserModal(id, email, name, role) {
+    document.getElementById('modalTitle').innerText = 'Edit User';
+    document.getElementById('user_id').value = id;
+    document.getElementById('email').value = email;
+    document.getElementById('name').value = name;
+    document.getElementById('role').value = role;
+
+    // password tidak wajib saat edit
+    document.getElementById('password').required = false;
+    document.getElementById('password_confirmation').required = false;
+
+    // ganti action ke update role
+    document.getElementById('userForm').action =
+        `/admin/users/${id}/update-role`;
+
+    document.getElementById('userModal').style.display = 'flex';
+}
 
     // Fungsi untuk menutup modal
     function closeUserModal() {

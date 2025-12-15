@@ -2,21 +2,35 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Ruangan;
-use App\Models\Booking;
-use App\Helpers\ActivityLogHelper;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Log;
+    use Illuminate\Http\Request;
+    use App\Models\Ruangan;
+    use App\Models\Booking;
+    use App\Helpers\ActivityLogHelper;
+    use Illuminate\Support\Facades\Storage;
+    use Illuminate\Support\Facades\Log;
+    use Illuminate\Support\Facades\Auth;
 
-class RuanganController extends Controller
-{
-    // Tampilkan Semua Ruangan Dari Database
-    public function index()
+
+    class RuanganController extends Controller
     {
-        $ruangans = Ruangan::all(); // ambil semua data dari tabel ruangan
-        return view('admin.ruangan-meeting', compact('ruangans'));
+        // Tampilkan Semua Ruangan Dari Database
+        public function index()
+    {
+        $user = Auth::user();
+
+        if (!$user) {
+            abort(403, 'Unauthorized');
+        }
+
+        $ruangans = Ruangan::all();
+        // dd($user->role);
+        return match ($user->role) {
+            'admin'    => view('admin.ruangan-meeting', compact('ruangans')),
+            'user'     => view('user.uruangan-meeting', compact('ruangans')),
+            default    => abort(403, 'Role tidak diizinkan'),
+        };
     }
+
 
     // Form tambah Ruangan
     public function create()

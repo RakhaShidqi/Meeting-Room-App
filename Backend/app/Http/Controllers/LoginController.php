@@ -32,7 +32,9 @@ class LoginController extends Controller
         // cek role
         if ($user->role === 'admin') {
             return redirect()->route('admin.home');
-        } else {
+        } else if ($user->role === 'approver') {
+            return redirect()->route('user.uhome'); // default untuk approver
+        }else{
             return redirect()->route('user.uhome'); // default untuk user
         }
     }

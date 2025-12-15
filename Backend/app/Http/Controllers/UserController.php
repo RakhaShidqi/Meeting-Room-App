@@ -98,6 +98,74 @@ class UserController extends Controller
             }
         }
 
+        public function updateUserRole(Request $request, $id)
+{
+    Log::info("📩 Masuk ke method updateUserRole()", [
+        'user_id' => $id,
+        'request' => $request->all()
+    ]);
+
+    try {
+        // 🔍 Validasi input
+        $validated = $request->validate([
+            'role' => 'required|in:user,approver,admin',
+        ]);
+
+        Log::info("✅ Validasi role sukses", ['validated' => $validated]);
+
+        // 🔎 Ambil user
+        $user = User::findOrFail($id);
+
+        $oldRole = $user->role;
+
+        // 🔄 Update role
+        $user->update([
+            'role' => $validated['role'],
+        ]);
+
+        Log::info("✅ Role user berhasil diupdate", [
+            'user_id' => $user->id,
+            'old_role' => $oldRole,
+            'new_role' => $user->role
+        ]);
+
+        // 🧾 Activity log
+        $details = sprintf(
+            "Role user %s diubah dari %s ke %s",
+            $user->email,
+            $oldRole,
+            $user->role
+        );
+        ActivityLogHelper::add('Update User Role', $details);
+
+        return redirect()->back()->with('success', 'Role user berhasil diperbarui!');
+
+    } catch (\Illuminate\Validation\ValidationException $e) {
+        Log::warning("⚠️ Validasi update role gagal", [
+            'errors' => $e->errors()
+        ]);
+
+        return back()
+            ->withErrors($e->errors())
+            ->withInput();
+
+    } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+        Log::warning("⚠️ User tidak ditemukan", ['user_id' => $id]);
+
+        return back()->with('error', 'User tidak ditemukan.');
+
+    } catch (\Exception $e) {
+        Log::error("💥 Error saat update role: " . $e->getMessage(), [
+            'trace' => $e->getTraceAsString()
+        ]);
+
+        ActivityLogHelper::add('Update User Role Failed', $e->getMessage());
+
+        return back()->with('error', 'Terjadi kesalahan saat memperbarui role.');
+    }
+}
+
+
 
 
     // // Dashboard untuk admin
