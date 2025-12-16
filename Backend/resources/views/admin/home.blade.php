@@ -48,7 +48,7 @@
 
                             <div class="tombol" id="log-activity">
                             <img src="../img/log.png" class="gambar" alt="Log Activity Icon"> {{-- Assuming you have a log.png icon --}}
-                            <a href="{{ route('admin.activity-log') }}"><h3>Activity Log</h3></a>
+                            <a href="{{ route('admin.activity-log') }}"><h3>Log Activity</h3></a>
                         </div>
 
                         <div class="tombol" id="user-manage">
@@ -91,10 +91,10 @@
 
     <div class="card booked">
         <div class="card-inner">
-            <h2>{{ $approvedBookings }}</h2>
+            <h2>{{ $requestBookings }}</h2>
             <span class="material-icons-outlined">lock</span>
         </div>
-        <h1>Booked Requests</h1>
+        <h1>Booking Requests</h1>
         <span>dd/mm/yy</span>
     </div>
 

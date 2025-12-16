@@ -10,10 +10,33 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Validation\ValidationException;
 use App\Helpers\ActivityLogHelper;
+use Illuminate\Support\Facades\Auth;
 use Throwable;
 
 class BookingController extends Controller
 {
+    // Jadwal View
+    public function jadwal()
+    {
+        // Pastikan user login
+        if (!Auth::check()) {
+            abort(403, 'Unauthorized');
+        }
+
+        // Ambil booking approved
+        $bookings = Booking::where('status', 'approved')->get();
+
+        // Ambil role user
+        $role = Auth::user()->role;
+
+        return match ($role) {
+            'admin'    => view('admin.jadwal', compact('bookings')),
+            'approver' => view('approver.ajadwal', compact('bookings')),
+            'user'     => view('user.ujadwal', compact('bookings')),
+            default    => abort(403, 'Role tidak diizinkan'),
+        };
+    }
+
     // Form booking ruangan
     public function showBookingForm($id)
     {
@@ -171,16 +194,6 @@ public function reject($id)
     ActivityLogHelper::add('Booking Rejected', $details);
 
     return back()->with('success', 'Booking berhasil di-reject');
-}
-
-public function jadwal()
-{
-    // Ambil semua booking yang statusnya approved
-
-    $bookings = Booking::where('status', 'approved')->get();
-
-    // Kirim ke view jadwal.blade.php
-    return view('admin.jadwal', compact('bookings'));
 }
 
 public function getApprovedBookings()

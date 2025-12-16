@@ -19,13 +19,17 @@ class DashboardController extends Controller
         ->where('status', 'approved')
         ->count();
 
+    $requestBookings = DB::table('bookings')
+        ->where('status', 'Waiting Approval')
+        ->count();
+
     // Hitung Total Booking yg di reject
     $rejectedBookings = DB::table('bookings')
         ->where('status', 'rejected')
         ->count();
 
     // Kirim keduanya ke view
-    return view('admin.home', compact('totalRuangans', 'approvedBookings', 'rejectedBookings'));
+    return view('admin.home', compact('totalRuangans', 'requestBookings' ,'approvedBookings', 'rejectedBookings'));
 }
 
 

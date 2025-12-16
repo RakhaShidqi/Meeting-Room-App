@@ -18,10 +18,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/home', [DashboardController::class, 'adminHome'])->name('admin.home');
 });
 
-// Hanya user
-Route::middleware(['auth', 'role:user'])->group(function () {
-    Route::get('/user/home', [DashboardController::class, 'userHome'])->name('user.uhome');
+Route::middleware(['auth', 'role:user,approver'])->group(function () {
+    Route::get('/user/home', [DashboardController::class, 'userHome'])
+        ->name('user.uhome');
 });
+
 
 Route::get('/logtest', function () {
     Log::info("✅ Test log masuk");
@@ -84,7 +85,7 @@ Route::get('/forgot-password', function () {
 });
 
 // Sidebar Ruang Meeting
-Route::get('/ruangan-meeting', [RuanganController::class, 'index'])->name('ruangan.index');
+Route::get('/ruangan-meeting', [RuanganController::class, 'index'])->middleware('auth')->name('ruangan.index');
 Route::get('/tambah-ruangan', [RuanganController::class, 'create'])->name('ruangan.create');
 Route::post('/tambah-ruangan', [RuanganController::class, 'storeRuangan'])->name('ruangan.store');
 
@@ -97,7 +98,7 @@ Route::patch('/booking/{id}/approve', [BookingController::class, 'approve'])->na
 Route::patch('/booking/{id}/reject', [BookingController::class, 'reject'])->name('booking.reject');
 
 // Sidebar Jadwal
-Route::get('/jadwal', [BookingController::class, 'jadwal'])->name('jadwal');
+Route::get('/jadwal', [BookingController::class, 'jadwal'])->middleware('auth')->name('jadwal');
 Route::get('/api/bookings/approved', [BookingController::class, 'getApprovedBookings']);
 
 // Sidebar Log Activity
@@ -107,6 +108,7 @@ Route::get('/admin/activity-log', [ActivityLogController::class, 'index'])->name
 Route::get('/admin/user-management', [UserController::class, 'index'])->name('user.index');
 Route::post('admin/user-management/addUser', [UserController::class, 'storeuser'])->name('users.store');
 Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::post('/admin/users/{id}/update-role', [UserController::class, 'updateUserRole'])->name('users.updateRole');
 
 
 
