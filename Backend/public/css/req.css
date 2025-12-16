@@ -284,36 +284,51 @@ hr{
 /* NEW: Styles for Pending Requests */
 .container-pending-requests {
     display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  width: 90%;
-  max-height: calc(75vh - 70px);
-  margin-top: 10px;
-  padding: 20px;
-  overflow-y: auto;
-  background-color: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    width: 90%;
+    max-height: calc(75vh - 70px);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
 }
 
 .pending-card {
     width: 900px; /* Slightly wider cards for more details */
-    padding: 20px;
+    /* padding: 15px; */
+    border-collapse: collapse;
     text-align: left; /* Align text to the left within the card */
 }
 
 .pending-card h3 {
     text-align: center; /* Center room name */
-    margin: 5px;
+    margin: 3px;
     color: #00aa8b;
     font-size: 24px;
+}
+
+.pending-card th, .pending-card td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.pending-card th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #555;
 }
 
 .booking-details p {
     margin: 5px 0;
     font-size: 14px;
     color: #555;
+    border-collapse: collapse;
 }
 
 .booking-details strong {
@@ -334,7 +349,7 @@ hr{
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* transition: background-color 0.3s ease, transform 0.2s ease; */
     width: 100%; /* Make buttons take up almost half the width */
 }
 
@@ -345,7 +360,7 @@ hr{
 
 .accept-button:hover {
     background-color: #218838;
-    transform: translateY(-2px);
+    /* transform: translateY(-2px); */
 }
 
 .reject-button {
@@ -355,7 +370,7 @@ hr{
 
 .reject-button:hover {
     background-color: #c82333;
-    transform: translateY(-2px);
+    /* transform: translateY(-2px); */
 }
 /* END NEW */
 #pending-requests{

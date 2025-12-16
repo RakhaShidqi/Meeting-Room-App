@@ -24,12 +24,12 @@ if (halaman === "halaman-home") {
     function updateTanggal() {
         const now = new Date();
         const hariAngka = now.getDay(); // 0 = Minggu
-        const arrayHari = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', "Jum'at", 'Sabtu'];
+        const arrayHari = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         const hari = arrayHari[hariAngka];
 
         const tanggal = now.getDate();
         const bulanAngka = now.getMonth();
-        const arrayBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+        const arrayBulan = ['January', 'February', 'March', 'April', 'Mei', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         const bulan = arrayBulan[bulanAngka];
 
         const tahun = now.getFullYear();

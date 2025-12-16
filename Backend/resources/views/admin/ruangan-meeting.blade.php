@@ -126,39 +126,6 @@
             </script>
         @endif
 
-        <button onclick="testPopup()" style="margin:20px;">Test Popup</button>
 
-        <script>
-        function testPopup() {
-        Swal.fire({
-            title: "Preview Popup",
-            text: "Ini hanya testing popup",
-            icon: "success",
-            customClass: {
-                        popup: 'my-popup',
-                        title: 'my-title',
-                        htmlContainer: 'my-text',
-                        icon: 'my-icon'
-            }
-        });
-        }
-        </script>
-        <button onclick="testPopup2()" style="margin:20px;">Test Popup error</button>
-
-        <script>
-        function testPopup2() {
-        Swal.fire({
-            title: "Preview Popup",
-            text: "Ini hanya testing popup",
-            icon: "error",
-            customClass: {
-                        popup: 'my-popup',
-                        title: 'my-title',
-                        htmlContainer: 'my-text',
-                        icon: 'my-error'
-            }
-        });
-        }
-        </script>
     </div>
 @endsection

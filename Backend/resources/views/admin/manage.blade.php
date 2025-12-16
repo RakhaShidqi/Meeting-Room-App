@@ -135,31 +135,31 @@
                 <div id="userModal" class="modal">
                     <div class="modal-content">
                         <span class="close-button" onclick="closeUserModal()">&times;</span>
-                        <h2 id="modalTitle">Tambah Pengguna</h2>
+                        <h2 id="modalTitle">Add User</h2>
                         <form id="userForm" method="post" action="{{ route('users.store') }}">
                             @csrf
 
-                            <label for="email">Email:</label>
+                            <label for="email">Email</label>
                             <input type="email" id="email" name="email" required>
                             
-                            <label for="name">Nama:</label>
+                            <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
                             
-                            <label for="password">Password:</label>
+                            <label for="password">Password</label>
                             <input type="password" id="password" name="password" minlength="8" required>
 
-                            <label for="password_confirmation">Konfirmasi Password:</label>
+                            <label for="password_confirmation">Confirm Password</label>
                             <input type="password" id="password_confirmation" name="password_confirmation" minlength="8" required>
 
                             <label for="role">Role</label>
                             <select name="role" required>
-                                <option value="">-- Pilih Role --</option>
+                                <option value="">-- Choose Role --</option>
                                 <option value="user">User</option>
                                 <option value="approver">Approver</option>
                                 <option value="admin">Admin</option>
                             </select>
                             
-                            <button type="submit" class="submit-button">Simpan</button>
+                            <button type="submit" class="submit-button">Save</button>
                         </form>
 
                     </div>
@@ -173,14 +173,14 @@
 
     // Fungsi untuk membuka modal tambah pengguna
     function openAddUserModal() {
-        document.getElementById('modalTitle').innerText = 'Tambah Pengguna Baru';
+        document.getElementById('modalTitle').innerText = 'Add New User';
         document.getElementById('userForm').reset();
         document.getElementById('userModal').style.display = 'flex'; 
     }
 
     // Fungsi untuk membuka modal edit pengguna
     function openEditUserModal(email, name) {
-        document.getElementById('modalTitle').innerText = 'Edit Pengguna';
+        document.getElementById('modalTitle').innerText = 'Edit User';
         document.getElementById('email').value = email;
         document.getElementById('name').value = name;
         document.getElementById('password').value = ''; 

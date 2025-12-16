@@ -87,9 +87,8 @@
             <div class="main-body">
                 <!-- <h2>Pending Request</h2> -->
                 {{-- NEW: Content for Pending Requests --}}
-            <div class="container-pending-requests">
-                    @forelse($bookings as $booking)
-                        <div class="card pending-card">
+                <div class="container-pending-requests">
+                        <div class="pending-card">
                             <!-- <img src="{{ asset('img/ruangan.jpg') }}" alt="Meeting Room" class="gambar-ruangan"> -->
                              <h3> Pending Request</h3>
                             <table class="booking-details">
@@ -106,6 +105,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @forelse($bookings as $booking)
                                     <tr>
                                         <td>{{ $booking->ruangan->nama_ruangan ?? 'Ruang Rapat' }}</td>
                                         <td>{{ $booking->nama_pemesan }}</td>
@@ -131,6 +131,7 @@
                                         </td>
                                     </tr>
                                 </tbody>
+                            </table>
                             </div>
 
                             <!-- <div class="action-buttons">
