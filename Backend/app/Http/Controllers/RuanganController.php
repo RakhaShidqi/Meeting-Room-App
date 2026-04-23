@@ -83,38 +83,47 @@ namespace App\Http\Controllers;
 
     // Update ruangan
     public function update(Request $request, $id)
-    {
-        $ruangan = Ruangan::findOrFail($id);
+{
+    $ruangan = Ruangan::findOrFail($id);
 
-        $request->validate([
-            'nama_ruangan' => 'required',
-            'kapasitas' => 'required|integer',
-            'lokasi' => 'required',
-            'deskripsi' => 'nullable|string',
-            'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-        ]);
+    $request->validate([
+        'nama_ruangan' => 'required',
+        'kapasitas'    => 'required|integer',
+        'lokasi'       => 'required',
+        'deskripsi'    => 'nullable|string',
+        'foto'         => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+    ]);
 
-        if ($request->hasFile('foto')) {
-            if ($ruangan->foto) {
-                Storage::disk('public')->delete($ruangan->foto);
-            }
-            $ruangan->foto = $request->file('foto')->store('ruangan', 'public');
+    $data = [
+        'nama_ruangan' => $request->nama_ruangan,
+        'kapasitas'    => $request->kapasitas,
+        'lokasi'       => $request->lokasi,
+        'deskripsi'    => $request->deskripsi,
+    ];
+
+    // 🔥 handle foto dengan benar
+    if ($request->hasFile('foto')) {
+
+        // hapus foto lama
+        if ($ruangan->foto) {
+            Storage::disk('public')->delete($ruangan->foto);
         }
-        $ruangan->update([
-            'nama_ruangan' => $request->nama_ruangan,
-            'kapasitas' => $request->kapasitas,
-            'lokasi' => $request->lokasi,
-            'deskripsi' => $request->deskripsi,
-        ]);
 
-        // 🔥 Log activity
-        ActivityLogHelper::add(
-        'Update Ruangan',
-        "ID: {$ruangan->id}, Nama: {$ruangan->nama_ruangan}, Kapasitas: {$ruangan->kapasitas}, Lokasi: {$ruangan->lokasi}"
-        );
-
-        return redirect()->route('ruangan.index')->with('editsuccess', 'Data ruangan diperbarui.');
+        // simpan foto baru
+        $data['foto'] = $request->file('foto')->store('ruangan', 'public');
     }
+
+    $ruangan->update($data);
+
+    ActivityLogHelper::add(
+        'Update Ruangan',
+        "ID: {$ruangan->id}, Nama: {$data['nama_ruangan']}, Kapasitas: {$data['kapasitas']}, Lokasi: {$data['lokasi']}"
+    );
+
+    return redirect()
+        ->route('ruangan.index')
+        ->with('editsuccess', 'Data ruangan diperbarui.');
+}
 
     public function destroy($id)
 {

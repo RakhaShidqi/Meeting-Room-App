@@ -6,7 +6,7 @@
     <div class="container-ruangan">
         @foreach ($ruangans as $ruangan)
                 <div class="card">
-                    <img src="{{ asset('storage/' . $ruangan->foto) }}" class="gambar-ruangan" alt="{{ $ruangan->nama }}">
+                    <img src="{{ asset('storage/' . $ruangan->foto) }}" class="gambar-ruangan" alt="{{ $ruangan->nama_ruangan }}">
                     <h3>{{ $ruangan->nama_ruangan }}</h3>
                     <div class="info-row">
                         <span class="material-icons-outlined">person</span>
